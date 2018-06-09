@@ -25,5 +25,41 @@
 ### EOS
 - [EOS白皮书](https://github.com/EOSIO/Documentation/blob/master/TechnicalWhitePaper.md)
 
+
+
+## 技术模块
+
+### 共识算法
+
+- [dpos+pbft算法分析](https://github.com/sqfasd/dpos-pbft)
+- [proof-of-work](https://github.com/indutny/proof-of-work)
+
+### 密码学
+
+### 网络层
+
+- [libp2p](https://github.com/libp2p)
+- [grpc](https://github.com/grpc)
+
+### 序列化
+
+- protobuf
+  - [Go](https://github.com/golang/protobuf)
+  - [C++](https://github.com/google/protobuf)
+- JSON
+  - [Jsoniter](https://github.com/json-iterator)
+
+### 消息中间件
+
+- 以太坊TypeMux&Feed
+- [ontology-eventbux](https://github.com/ontio/ontology-eventbus)
+
+### 虚拟机
+
+- EVM
+  - [awesome-list](https://github.com/ethereum/wiki/wiki/Ethereum-Virtual-Machine-(EVM)-Awesome-List)
+  - [EVM解析](https://github.com/CoinCulture/evm-tools/blob/master/analysis/guide.md)
+- [EWASM](https://github.com/ewasm)
+
 ## 优质资源
 - [awesome-blockchain](https://github.com/chaozh/awesome-blockchain-cn)
