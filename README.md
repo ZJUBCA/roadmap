@@ -3,7 +3,7 @@
 
 ## 书籍
 ### 入门
-- [精通比特币](http://8btc.com/topic-mastering-bitcoin.html)
+- [精通比特币](http://book.8btc.com/books/6/masterbitcoin2cn/_book/)
 - [区块链-技术驱动金融](https://book.douban.com/subject/26860970/)
 - [区块链-从数字货币到信用社会](http://book.8btc.com/blockchain-credit)
 
@@ -24,6 +24,11 @@
 
 ### EOS
 - [EOS白皮书](https://github.com/EOSIO/Documentation/blob/master/TechnicalWhitePaper.md)
+
+### DAG相关
+
+- [IOTA](https://docs.iota.org/introduction)
+- [Byteball](https://byteball.org/)
 
 
 
