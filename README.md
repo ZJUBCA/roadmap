@@ -31,7 +31,7 @@
 - [Byteball](https://byteball.org/)
 
 ### WEB3.0
-- [WIKI](https://github.com/w3f/Web3-wiki)
+- [WIKI](https://github.com/w3f/Web3-wiki/wiki)
 
 
 ## 技术模块
