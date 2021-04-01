@@ -1,10 +1,10 @@
-# blockchainer-roadmap 2020
+# blockchainer-roadmap 2021
 
-区块链者学习路线2020🚀🚀🚀
+区块链者学习路线2021🚀🚀🚀🚀
 
 —— By 浙江大学区块链协会（Zhejiang University BlockChain Association, ZJUBCA）
 
-在总结2018年🙂、2019年😀的学习资料、路线的基础上，结合最新的区块链前沿技术，制定了本学习路线😁。
+在总结2018年🙂、2019年😀、2020年😁的学习资料、路线的基础上，结合最新的区块链前沿技术，制定了本学习路线😆。
 
 ## 第一层
 
@@ -16,11 +16,16 @@
   + 《Mastering Bitcoin》（**必看**）（中文版译名为《区块链》，公认的区块链1.0的最好的书，豆瓣介绍[🔗](https://book.douban.com/subject/30180770/)；在线阅读[🔗](http://book.8btc.com/books/6/masterbitcoin2cn/_book/) ）
   + 《区块链：从数字货币到信用社会》（豆瓣介绍[🔗](https://book.douban.com/subject/22993903/)；在线阅读[🔗](http://book.8btc.com/blockchain-credit) ）
   + 《区块链：技术驱动金融》（豆瓣介绍[🔗](https://book.douban.com/subject/26860970/)；在线阅读[🔗](https://book.douban.com/subject/26860970/)）
-+ 数字货币初级（选做）：
-  + 常用数字货币行情手机软件：mytoken；
-    + 行情网站：[🔗](https://coinmarketcap.com)
-  + 常用数字货币手机钱包：imtoken
-  + 知道中国的大交易所：火币、OKEX、币安
++ 数字货币初级：遵守国家法律法规
+  + 了解常用数字货币行情软件：
+    + Mytoken：
+    + CoinMarkCap：[🔗](https://coinmarketcap.com)
+  + 了解常用数字货币手机钱包：Imtoken
+  + 知道主流三大交易所：火币、OKEX、币安
+  + 我国法律法规
+    + 关于防范比特币风险的通知（2014-01-22） [🔗](http://www.csrc.gov.cn/pub/newsite/flb/flfg/bmgf/zh/gfxwjfxq/201401/t20140122_242972.html)
+    + 中国人民银行 中央网信办 工业和信息化部 工商总局 银监会 证监会 保监会关于防范代币发行融资风险的公告（2017-09-04）[🔗](http://www.csrc.gov.cn/pub/newsite/zjhxwfb/xwdd/201709/t20170904_323047.html)
+    + 国家对数字货币都做了哪些规定 [🔗](https://www.yeebee.com.cn/Knowledge/Detail?id=32)
 + 媒体资讯初级：获取行业新闻
   + 国内最大区块链论坛巴比特：[🔗](http://www.8btc.com/)；也有相应的手机App、微信公众号。
   + 其他不错的媒体（有些有App，也有微信公众号）：Odaily星球日报、链闻、区块律动、币乎、碳链价值、金色财经...
@@ -78,6 +83,7 @@
     + 搜索并了解什么是DeFi
   + NFT（Non-fungible Token）：
     + 搜索并了解NFT、ERC-721
+    + Roadmap-NFT
 
 ## 第三层
 
