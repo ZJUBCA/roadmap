@@ -25,22 +25,22 @@ NFT学习路线总结，不断更新。
 
 + **技术原理**（至少了解ERC-721，其次ERC-1155）
   + ERC-721：最基础的NFT
-    + EIP：https://eips.ethereum.org/EIPS/eip-721
-    + 第三方中文翻译：https://www.jianshu.com/p/e6d4f57fbba6
-    + 第三方中文翻译：https://www.jianshu.com/p/d5604554c324
+    + EIP：[🔗](https://eips.ethereum.org/EIPS/eip-721)
+    + 第三方中文翻译：[🔗](https://www.jianshu.com/p/e6d4f57fbba6)
+    + 第三方中文翻译：[🔗](https://www.jianshu.com/p/d5604554c324)
   + ERC-1155：单合约多资产
-    + EIP：https://eips.ethereum.org/EIPS/eip-1155
+    + EIP：[🔗](https://eips.ethereum.org/EIPS/eip-1155)
     + 第三方中文翻译
   + ERC-1523：保险单NFT
-    + EIP：https://eips.ethereum.org/EIPS/eip-1523
+    + EIP：[🔗](https://eips.ethereum.org/EIPS/eip-1523)
   + ERC-998：可组合NFT
-    + EIP：https://eips.ethereum.org/EIPS/eip-998
+    + EIP：[🔗](https://eips.ethereum.org/EIPS/eip-998)
   + EIP-1948：可变信息的NFT
-    + EIP：https://eips.ethereum.org/EIPS/eip-1948
+    + EIP：[🔗](https://eips.ethereum.org/EIPS/eip-1948)
   + EIP-2981：NFT版税
-    + EIP：https://eips.ethereum.org/EIPS/eip-2981
+    + EIP：[🔗](https://eips.ethereum.org/EIPS/eip-2981)
   + ERC-875：批量转移NFT
-    + EIP：https://eips.ethereum.org/EIPS/eip-875
+    + EIP：[🔗](https://eips.ethereum.org/EIPS/eip-875)
 + **市场细分**
   + 收藏品：
     + 项目：CryptoKitties、CryptoPunks、Avastars、GoPepe、Marble.Cards、pixEOS Gallery、PixelChain、Pixel Master
@@ -60,34 +60,36 @@ NFT学习路线总结，不断更新。
   + 文化代币：n0wear、Zora、 Foundation
   + 其它：传统物理产品，门票、产权、数字身份
   + 指数基金：
-    + NFTX：https://nftx.org/#/
+    + NFTX：[🔗](https://nftx.org/#/)
   + 数据聚合器：
-    + https://nonfungible.com（NFT数据聚合、数据分析、新闻评论），介绍：https://nonfungible.com/pages/about-us
-    + https://cryptoslam.io
-  + NFT浏览器：
-    + https://etherscan.io/tokens/label/nft
+    + nonfungible（NFT数据聚合、数据分析、新闻评论） 
+      + 官网：[🔗](https://nonfungible.com)
+      + 介绍：[🔗](https://nonfungible.com/pages/about-us)
+    + cryptoslam：[🔗](https://cryptoslam.io)
+  + NFT浏览器-：
+    + etherscan：[🔗](https://etherscan.io/tokens/label/nft)
 
 ## 第三层
 
 + NFT基础设施
   + FLOW
-    + 官网：https://www.onflow.org
-    + 技术白皮书：https://www.onflow.org/technical-paper
+    + 官网：[🔗](https://www.onflow.org)
+    + 技术白皮书：[🔗](https://www.onflow.org/technical-paper)
     + Flow的团队叫Dapper Labs，制作了NFT历史上交易量最大的2个NFT应用：CryptoKitties、NBA Top Shot。
   + ETH
-    + [CryptoPunks](https://cryptoslam.io/cryptopunks)
-    + [Sorare](https://cryptoslam.io/sorare)
-    + [Axie Infinity](https://cryptoslam.io/axie-infinity)
-    + [CryptoKitties](https://www.cryptokitties.co)
-    + [MyCryptoHeroes](https://cryptoslam.io/mycryptoheroes)
-    + [Gods Unchained](https://godsunchained.com)
-    + [F1 Delta Time](https://cryptoslam.io/f1-delta-time)
+    + CryptoPunks：[🔗](https://cryptoslam.io/cryptopunks)
+    + Sorare：[🔗](https://cryptoslam.io/sorare)
+    + Axie Infinity：[🔗](https://cryptoslam.io/axie-infinity)
+    + CryptoKitties：[🔗](https://www.cryptokitties.co)
+    + MyCryptoHeroes：[🔗](https://cryptoslam.io/mycryptoheroes)
+    + Gods Unchained：[🔗](https://godsunchained.com)
+    + F1 Delta Time：[🔗](https://cryptoslam.io/f1-delta-time)
   + WAX
     + WAX = Worldwide Asset eXchange
-    + 官网：https://on.wax.io/wax-io/
-    + 白皮书：https://github.com/worldwide-asset-exchange/whitepaper
+    + 官网：[🔗](https://on.wax.io/wax-io/)
+    + 白皮书：[🔗](https://github.com/worldwide-asset-exchange/whitepaper)
     + WAX被称为NFT之王，在Cryptoslam的数据统计中，前三十名的NFT 发行项目目有20 个建立在WAX 之上，市场份额超过2/3，如同比特币长期占有加密市场约2/3 的市值一样，WAX 在NFT领域也长期处于领导地位
   + Polkadot
     + 协议层：
-      + NFT-Pallet：https://github.com/danforbes/pallet-nft
-      + NFT-Parachain：https://github.com/w3f-community/nft_parachain
+      + NFT-Pallet：[🔗](https://github.com/danforbes/pallet-nft)
+      + NFT-Parachain：[🔗](https://github.com/w3f-community/nft_parachain)
