@@ -79,11 +79,11 @@
     + 搜索并了解什么是代币经济学
   + Staking：
     + 搜索并了解什么是Staking Economy
-  + DeFi：
+  + **DeFi**：Decentralized Finance
     + 搜索并了解什么是DeFi
-  + NFT（Non-fungible Token）：
+  + **NFT**：Non-fungible Token
     + 搜索并了解NFT、ERC-721
-    + Roadmap-NFT
+    + **Roadmap-NFT 第一层**：[🔗](./nft/NFTer-roadmap.md)
 
 ## 第三层
 
@@ -130,6 +130,7 @@
     + **NFT**
       + 搜索并了解ERC-1155
       + 深入体验多款NFT产品
+      + **Roadmap-NFT 第二层**：[🔗](./nft/NFTer-roadmap.md)
   + 联盟链方向，深入了解各种企业、产业的落地场景：
     + 存证、溯源、供应链金融、数字身份、政务、版权保护....
     + 建议先看《2018年中国区块链产业白皮书》，虽然目前已经是2020年了，但是这个报告确实不错
