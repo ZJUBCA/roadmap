@@ -18,16 +18,19 @@
   + 《区块链：技术驱动金融》（豆瓣介绍[🔗](https://book.douban.com/subject/26860970/)；在线阅读[🔗](https://book.douban.com/subject/26860970/)）
 + 数字货币初级：遵守国家法律法规
   + 了解常用数字货币行情软件：
-    + Mytoken：
+    + Mytoken：[🔗](http://pre.mytoken.io/app)
     + CoinMarkCap：[🔗](https://coinmarketcap.com)
   + 了解常用数字货币手机钱包：Imtoken
-  + 知道主流三大交易所：火币、OKEX、币安
+  + 知道主流三大交易所：
+    + 火币：[🔗](https://www.huobi.com/zh-cn/)
+    + OKEX：[🔗](https://www.okex.com)
+    + 币安：[🔗](https://www.binance.com/zh-CN)
   + 我国法律法规
     + 关于防范比特币风险的通知（2014-01-22） [🔗](http://www.csrc.gov.cn/pub/newsite/flb/flfg/bmgf/zh/gfxwjfxq/201401/t20140122_242972.html)
     + 中国人民银行 中央网信办 工业和信息化部 工商总局 银监会 证监会 保监会关于防范代币发行融资风险的公告（2017-09-04）[🔗](http://www.csrc.gov.cn/pub/newsite/zjhxwfb/xwdd/201709/t20170904_323047.html)
     + 国家对数字货币都做了哪些规定 [🔗](https://www.yeebee.com.cn/Knowledge/Detail?id=32)
 + 媒体资讯初级：获取行业新闻
-  + 国内最大区块链论坛巴比特：[🔗](http://www.8btc.com/)；也有相应的手机App、微信公众号。
+  + 国内最大区块链论坛巴比特：[🔗](http://www.8btc.com/)
   + 其他不错的媒体（有些有App，也有微信公众号）：Odaily星球日报、链闻、区块律动、币乎、碳链价值、金色财经...
 
 ## 第二层
@@ -60,7 +63,10 @@
     + wasm（WebAssembly）
       +  eth-ewasm：[🔗](https://github.com/ewasm)
   + 网络：
+    + 
   + 密码学：
+    + 应用密码学-书籍 [🔗](https://book.douban.com/subject/1088180/)
+    + 信息安全原理-书籍 [🔗](https://book.douban.com/subject/24733262/)
   + DAG：
     
     + IOTA：[🔗](https://docs.iota.org/introduction)
@@ -81,6 +87,7 @@
     + 搜索并了解什么是Staking Economy
   + **DeFi**：Decentralized Finance
     + 搜索并了解什么是DeFi
+    + 书籍推荐：《How to DeFi》：[🔗](./defi/How_to_DeFi_CHN.pdf)
   + **NFT**：Non-fungible Token
     + 搜索并了解NFT、ERC-721
     + **Roadmap-NFT 第一层**：[🔗](./nft/NFTer-roadmap.md)
@@ -121,14 +128,14 @@
   + ETH2.0：
     + 了解ETH1.0的扩容方案
     + 了解ETH2.0的Roadmap路线图
-    + 了解rollup、分片等技术方案
+    + 了解layer2和分片的区别
+    + 了解layer2最新进展rollup的两大方向optimistic-rollup和zk-rollup的区别
 + **商业向**（可以在公有链和联盟链中选一个，有精力的话建议全部都搞）：
   + 公有链方向，深入了解DeFi和NFT：
     + **DeFi**
-      + 书籍推荐：《How to DeFi》：[🔗](./defi/How_to_DeFi_CHN.pdf)
       + 深入体验多款DeFi产品
+      + 了解DeFi的生态，阅读一些DeFi的研究报告
     + **NFT**
-      + 搜索并了解ERC-1155
       + 深入体验多款NFT产品
       + **Roadmap-NFT 第二层**：[🔗](./nft/NFTer-roadmap.md)
   + 联盟链方向，深入了解各种企业、产业的落地场景：
