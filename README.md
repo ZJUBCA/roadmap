@@ -134,7 +134,7 @@
   + 公有链方向，深入了解DeFi和NFT：
     + **DeFi**
       + 深入体验多款DeFi产品
-      + 了解DeFi的生态，阅读一些DeFi的研究报告
+      + 了解DeFi的生态，阅读一些DeFi的研究报告 [🔗](./defi/defi_report.pdf)
     + **NFT**
       + 深入体验多款NFT产品
       + **Roadmap-NFT 第二层**：[🔗](./nft/NFTer-roadmap.md)
