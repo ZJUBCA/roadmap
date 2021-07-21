@@ -10,10 +10,10 @@
 
 此阶段建立其对区块链的基本认知，增强对区块链的认同感，对区块链生态有一个大致的了解。此阶段不分技术与商业。同学们可以按照自己的实际水平进行学习，对区块链认知比较少的同学建议认真过一下这里的内容。
 
-+ **记录片**（**必看**）：
++ **记录片**（**必看**🌟）：
   + 《区块链之新》6集（豆瓣介绍[🔗](https://movie.douban.com/subject/27941811/)；B站视频[🔗](https://www.bilibili.com/bangumi/play/ep290332?from=search&seid=4820733908948631673)）
 + **书籍**：
-  + 《Mastering Bitcoin》（**必看**）（中文版译名为《区块链》，公认的区块链1.0的最好的书，豆瓣介绍[🔗](https://book.douban.com/subject/30180770/)；在线阅读[🔗](http://book.8btc.com/books/6/masterbitcoin2cn/_book/) ）
+  + 《Mastering Bitcoin》（**必看**🌟）（中文版译名为《区块链》，公认的区块链1.0的最好的书，豆瓣介绍[🔗](https://book.douban.com/subject/30180770/)；在线阅读[🔗](http://book.8btc.com/books/6/masterbitcoin2cn/_book/) ）
   + 《区块链：从数字货币到信用社会》（豆瓣介绍[🔗](https://book.douban.com/subject/22993903/)；在线阅读[🔗](http://book.8btc.com/blockchain-credit) ）
   + 《区块链：技术驱动金融》（豆瓣介绍[🔗](https://book.douban.com/subject/26860970/)；在线阅读[🔗](https://book.douban.com/subject/26860970/)）
 + 数字货币初级：遵守国家法律法规
@@ -29,6 +29,7 @@
     + 关于防范比特币风险的通知（2014-01-22） [🔗](http://www.csrc.gov.cn/pub/newsite/flb/flfg/bmgf/zh/gfxwjfxq/201401/t20140122_242972.html)
     + 中国人民银行 中央网信办 工业和信息化部 工商总局 银监会 证监会 保监会关于防范代币发行融资风险的公告（2017-09-04）[🔗](http://www.csrc.gov.cn/pub/newsite/zjhxwfb/xwdd/201709/t20170904_323047.html)
     + 国家对数字货币都做了哪些规定 [🔗](https://www.yeebee.com.cn/Knowledge/Detail?id=32)
++ Metaverse元宇宙初级：[🔗](https://www.yuque.com/books/share/a8a2de86-76de-4531-8486-ac3d40944557/pyu4w0)
 + 媒体资讯初级：获取行业新闻
   + 国内最大区块链论坛巴比特：[🔗](http://www.8btc.com/)
   + 其他不错的媒体（有些有App，也有微信公众号）：Odaily星球日报、链闻、区块律动、币乎、碳链价值、金色财经...
@@ -63,7 +64,6 @@
     + wasm（WebAssembly）
       +  eth-ewasm：[🔗](https://github.com/ewasm)
   + 网络：
-    + 
   + 密码学：
     + 应用密码学-书籍 [🔗](https://book.douban.com/subject/1088180/)
     + 信息安全原理-书籍 [🔗](https://book.douban.com/subject/24733262/)

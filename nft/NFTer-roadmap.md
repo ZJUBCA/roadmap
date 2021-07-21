@@ -20,6 +20,8 @@ NFT学习路线总结，不断更新。
 + **生态现状**：
   + NFT生态大起底：最值得关注的项目都在这里 [🔗](https://m.theblockbeats.com/news/22526)
   + 全景式解读NFT生态全貌，这些重点项目不容错过 [🔗](https://mp.weixin.qq.com/s/r4oxyGw6eB7WdibMNcaOgA)
++ **精品宝藏**：
+  + 《从0到1: 精通 NFT——一本万能的 NFT 知识图谱》[🔗](https://www.yuque.com/books/share/a8a2de86-76de-4531-8486-ac3d40944557) 🌟
 
 ## 第二层
 
