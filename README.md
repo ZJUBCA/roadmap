@@ -151,6 +151,7 @@
 
 + awesome-blockchain：[🔗](https://github.com/chaozh/awesome-blockchain-cn)
 + awesome-zjubca：[🔗](https://github.com/Blockchain-zju/awesome-zjubca)
++ awesome-metaverse：[🔗](https://github.com/M3-org/awesome-metaverse)
 
 多用Google，多逛国外论坛，多水群，时刻关注区块链前沿。
 
