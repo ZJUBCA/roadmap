@@ -45,7 +45,6 @@
     + 书籍《区块链技术进阶实战》（豆瓣介绍[🔗](https://book.douban.com/subject/30177480/)，介绍了Hyperledger Fabric、以太坊、Hyperchain）
     + 书籍《区块链原理、设计与应用》（豆瓣介绍[🔗](https://book.douban.com/subject/27127839/)，全书都是在讲Hyperledger Fabric，有源码分析）
   + 共识算法：
-
     + PoW相关：[🔗](https://github.com/indutny/proof-of-work)
     + PoS：
     + PBFT：
@@ -57,7 +56,6 @@
     + 书籍：《精通以太坊》（豆瓣介绍[🔗](https://book.douban.com/subject/33424766/)，主要就是介绍以太坊，以及如何在以太坊上写智能合约，以太坊CTO著）
     + 有兴趣的同学还可以了解下EOS，是除了以太坊以外，第二有名的公有区块链。对于联盟链的智能合约，如Hyperledger Fabric，可以自行找一些书或者文档看。
   + 虚拟机：
-
     + evm
       + evm-awesome-list：[🔗](https://github.com/ethereum/wiki/wiki/Ethereum-Virtual-Machine-(EVM)-Awesome-List)
       + evm解析：[🔗](https://github.com/CoinCulture/evm-tools/blob/master/analysis/guide.md)
@@ -68,9 +66,10 @@
     + 应用密码学-书籍 [🔗](https://book.douban.com/subject/1088180/)
     + 信息安全原理-书籍 [🔗](https://book.douban.com/subject/24733262/)
   + DAG：
-    
     + IOTA：[🔗](https://docs.iota.org/introduction)
     + Byteball：[🔗](https://byteball.org/)
+  + 去中心化存储
+    + IPFS/Filecoin：[🔗](https://github.com/Blockchain-zju/blockchainer-roadmap/tree/master/ipfs)
 + **商业向**：
   + 加密货币/数字货币：
     + 了解历史上的币价走势
@@ -158,6 +157,12 @@
 
 从狭义区块链的视角转向广义区块链的视角：Web3。
 
->  区块链只是手段，Web3才是目的
+>  区块链是手段，Web3是目的。
 
 + Web3-WIKI：[🔗](https://github.com/w3f/Web3-wiki/wiki)
+
+## 太空宇宙
+
+> + Metaverse：下一代互联网/数字世界的形态。
+
++ Metaverse-WIKI：[🔗](https://en.wikipedia.org/wiki/Metaverse)
