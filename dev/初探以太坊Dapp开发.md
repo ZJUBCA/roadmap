@@ -16,12 +16,16 @@
 可能大家对上一节中提到的「状态机」的概念还有点模糊不清，为了让大家更清晰的深入到以太坊的技术原理中去，本节会以传统互联网为起点，循序渐进至以太坊的底层技术原理。<br>
 <br>
 用计算机技术来说，以太坊就是一个保存了数字交易永久记录的「公共数据库」。重要的是，这个数据库不需要任何中间方来维护双方的权益。相反，它可以作为一种「无需信任」的交易系统来运作，也就是你可以在不需要第三方的情况下进行点对点（P2P）交易。<br>
+![image](https://github.com/DessertHeart/blockchainer-roadmap/blob/master/dev/1.png)
 <br>
 以太坊区块链本质上是一个为交易服务的状态机。在计算机科学中，一个状态机指的是这样一种东西，它可以读取一系列的输入，并基于这些输入产生一个新的状态。<br>
+![image](https://github.com/DessertHeart/blockchainer-roadmap/blob/master/dev/2.png)
 <br>
 以太坊状态机的运行从一个「元状态」开始，这类似于在网络上没有发生任何交易之前的一个空白匣子。当交易执行时，这个元状态就转变为一些最终状态。在任何时候，这个最终状态都代表着以太坊区块链的现状。<br>
+![image](https://github.com/DessertHeart/blockchainer-roadmap/blob/master/dev/3.png)
 <br>
 以太坊系统中运行着数百万笔交易，这些交易被分组归类为「区块」。每个区块由「区块头」（Header）和一系列「交易信息」(Transactions）组成。在这里，你可以简单地将区块头理解为一个包含决定区块链共识状态关键信息的 “数据集合”， 每个块只有通过对区块头的验证，才能与其前面的区块通过区块头串联在一起形成有向无环的链式结构。<br>
+![image](https://github.com/DessertHeart/blockchainer-roadmap/blob/master/dev/4.png)
 <br>
 前文中提到，以太坊是由交易驱动的状态机。那么要想以太坊正确的从一个状态转到另一个状态，必须证明交易是有效且真实的，否则以太坊便失去了其不需要第三方维护这一核心价值。要想证明一个交易是有效的，就必须通过一个验证过程，这一过程称为「挖矿」。<br>
 <br>
@@ -34,8 +38,10 @@
 正如我们在上文给区块链的定义，区块链是一个具有共享状态的交易状态机。这个定义决定了，区块链的当前状态是一个单一的全局状态，每个人都必须接受。如果拥有多个链（状态）会破坏整个系统，因为人们不可能就哪个状态是正确的状态达成一致意见。如果这些链是分开的，就会出现一个人在一条链上有10个以太币，在另一条链上有20个的情况。在这种情况下，我们没有办法确定哪一个链最「有效」，无法确定一个人有多少有效的以太币。<br>
 <br>
 这一产生多条链的过程，被称为「分叉」（Fork）。因为分叉会破坏系统，因此我们通常会避免分叉，要求或者说迫使人们选择他们「相信」唯一有效的一条链。<br>
+![image](https://github.com/DessertHeart/blockchainer-roadmap/blob/master/dev/5.png)
 <br>
 为了确定哪个路径是最有效的，并防止分叉的发生，以太坊使用了一种叫做「GHOST协议」的机制。简单地说，GHOST协议让我们必须选择在链上做「最多计算」的路径。确定该路径的一种方法是通过计算每条链所使用最新区块的数量，来表示当前每条链上的区块总数（不包括创世区块）。块数越多，路径越长，则说明挖矿的难度越大，因此该链就为最多计算链。因此这个方法也可以被简称为「最长链原则」。通过这个方式，最终使每一个节点对当前区块链的状态（链）的唯一性达成共识。<br>
+![image](https://github.com/DessertHeart/blockchainer-roadmap/blob/master/dev/6.png)
 <br>
 到这里，我们就对以太坊区块链就有了一个宏观的认识。在这个链式架构的基础上，以太坊系统由如下所述的各主要组成部分支撑，如果你想更深入的了解这些，我们推荐你阅读以太坊黄皮书，不过请注意，他并没有那么易懂~<br>
 <br>
@@ -57,6 +63,7 @@ Solidity是由以太坊创始人之一的Gavin Wood所编写，是一门面向�
 当然，除了Solidity以外，还有例如与Python接近的、文件名以.se结尾Serpent编程语言也曾经流行过一段时间，除此之外也有开发者更喜欢使用Vyper。但随着时间的推移和开发者们不断地学习和迭代，现在最成熟且应用最多的当数是Solidity了，因此这也是我们鼓励大家学习它的原因。<br>
 <br>
 以下是通过Solidity编写的“Hello Wordl!”代码，其中，^0.8.0是编译器的版本号，HelloWorld是合约名，greet是状态变量。<br>
+![image](https://github.com/DessertHeart/blockchainer-roadmap/blob/master/dev/7.png)
 <br>
 如果你已经迫不及待的想要成为一名智能合约开发者，那么以下列出的学习工具一定有助于你：<br>
 <br>
@@ -75,10 +82,10 @@ Solidity by Example ---以太坊官方教程：🔗https://solidity-by-example.o
 如果听到这里你觉得有些困惑，不必担心，坚持看完下面的例子，一定能“柳暗花明又一村”。<br>
 <br>
 假设一名ZJUBCAer小蓝是一个英语盲，但作为一名区块链爱好者，它需要经常查看一些英语文章来及时掌握行业信息。为了解决语言障碍，它会把文章通过翻译软件转译成中文再阅读。<br>
-
+![image](https://github.com/DessertHeart/blockchainer-roadmap/blob/master/dev/8.png)<br>
 一篇用英语写成的文章被翻译为中文，变成了小蓝能看懂的语言，从而帮助小蓝能够轻松掌握区块链的行业信息。同理，一个用 C++ 编成的程序被编译为字节代码，变成 CPU 能看懂的语言，CPU 可以运行软件程序。<br>
 可这跟以太坊的 EVM 有什么关系？答案是，EVM 之于以太坊，就像 CPU 之于计算机。<br>
-
+![image](https://github.com/DessertHeart/blockchainer-roadmap/blob/master/dev/9.png)<br>
 以太坊是一台世界级计算机，但它毕竟不是实体电脑，也没有CPU，那么智能合约要如何在以太坊上运行呢？EVM 就是以太坊的 CPU，以太坊开发者们通过编程语言 Solidity 写好的程序，被编译为 EVM 可以理解的 EVM 字节代码，EVM 就可以运行智能合约的程序。<br>
 <br>
 到这里，相信你一定对EVM有了初步的认识，如果你想更进一步，那么我们建议你通过EVM练兵场，通过学以致用的方式，更好的掌握EVM的底层逻辑。<br>
@@ -107,18 +114,19 @@ Solidity by Example ---以太坊官方教程：🔗https://solidity-by-example.o
 Truffle是第一套基于以太坊的Solidity语言的成熟的开发框架。本身是基于JavaScript。它对客户端做了深度集成，使开发、测试、部署都只需要一个命令行，可以在控制台使用命令行直接调用输出结果，方便调试。
 Truffle是本地编译、部署智能合约的框架；而向前文中提到的geth客户端连接的才是真正的以太坊环境；testrpc是Truffle本地使用内存模拟的以太坊环境，关闭终端后，部署到testrpc的智能合约不会保存下来，对于开发调试更加方便，合约可以在testrpc中通过测试后，再部署到geth上，从而减少不必要的损失。
 
-Truffle：🔗https://learnblockchain.cn/docs/truffle/quickstart.html
+Truffle：🔗https://learnblockchain.cn/docs/truffle/quickstart.html<br>
 #### - Hardhat
 Hardhat是一个编译、部署、测试和调试以太坊应用的开发环境。它可以帮助开发者管理和自动化构建智能合约和dApps过程中固有的重复性任务，并围绕这一工作流程轻松引入更多功能。
 Hardhat内置了Hardhat网络，这是一个专为开发设计的本地以太坊网络。主要功能有Solidity调试，跟踪调用堆栈、console.log()和交易失败时的明确错误信息提示等，其在智能合约的Debug调试过程的交互性要优于Truffle。
 除此之外，与Truffle不同的是，Hardhat是一款基于插件的开发框架，其很多功能都来自于插件，开发者可以自由选择想使用的插件，甚至还可以将现有的Truffle项目迁移到Hardhat上。
 
-Hardhat：🔗https://learnblockchain.cn/docs/hardhat/getting-started
+Hardhat：🔗https://learnblockchain.cn/docs/hardhat/getting-started<br>
 ### 三、Dapp开发
 #### 什么是Dapp?
 App我们都知道是客户端应用，是application的简称。DApp就是D+App，D是英文单词decentralization的首字母，单词翻译中文是去中心化，即DApp为去中心化应用。<br>
 <br>
 看到这里，大家思维中第一反应可能是，为什么要有DApp，现在的App不是挺好吗？其实，两者并不是取代关系，而是并存关系，或者说DApp是对App的丰富和完善。因为DApp是依托于区块链底层技术的上层建筑，它和交易数据、交易资产有关联，和不可篡改去中心化存储也有关联，所以随着区块链技术越来越成熟普及，DApp也更受到人们的青睐与期望，并更多地出现在各个生活场景中，如生产链防伪，捐款资金流向等等。<br>
+![image](https://github.com/DessertHeart/blockchainer-roadmap/blob/master/dev/10.png)<br>
 <br>
 那么作为一名开发者，是开发一款自己的Dapp需要做的具体步骤是什么？
 Dapp的一般开发流程：
