@@ -44,6 +44,7 @@
 ![image](https://github.com/DessertHeart/blockchainer-roadmap/blob/master/dev/6.png)
 <br>
 到这里，我们就对以太坊区块链就有了一个宏观的认识。在这个链式架构的基础上，以太坊系统由如下所述的各主要组成部分支撑，如果你想更深入的了解这些，我们推荐你阅读以太坊黄皮书，不过请注意，他并没有那么易懂~<br>
+<br>
 🔗以太坊黄皮书https://gitcode.net/mirrors/wanshan1024/ethereum_yellowpaper<br>
 <br>
 - 帐户；
