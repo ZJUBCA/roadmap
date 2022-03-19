@@ -44,6 +44,7 @@
 ![image](https://github.com/DessertHeart/blockchainer-roadmap/blob/master/dev/6.png)
 <br>
 到这里，我们就对以太坊区块链就有了一个宏观的认识。在这个链式架构的基础上，以太坊系统由如下所述的各主要组成部分支撑，如果你想更深入的了解这些，我们推荐你阅读以太坊黄皮书，不过请注意，他并没有那么易懂~<br>
+🔗以太坊黄皮书https://gitcode.net/mirrors/wanshan1024/ethereum_yellowpaper<br>
 <br>
 - 帐户；
 - 状态；
@@ -53,7 +54,6 @@
 - 交易执行；
 - 挖矿；
 - 工作量证明。<br>
-🔗以太坊黄皮书https://gitcode.net/mirrors/wanshan1024/ethereum_yellowpaper<br>
 ## Solidity及EVM
 ### 一、Solidity——面向合约对象的编程语言
 Solidity是由以太坊创始人之一的Gavin Wood所编写，是一门面向合约的、为实现智能合约而创建的高级编程语言。这门语言受到了 C++，Javascript等语言的影响，属于静态类型语言，支持继承、库和复杂的用户定义类型等特性。其设计目的是为了能在以太坊虚拟机（EVM）上运行。<br>
