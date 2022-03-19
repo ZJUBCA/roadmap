@@ -67,10 +67,10 @@ Solidity是由以太坊创始人之一的Gavin Wood所编写，是一门面向�
 <br>
 如果你已经迫不及待的想要成为一名智能合约开发者，那么以下列出的学习工具一定有助于你：<br>
 <br>
-Remix ---智能合约在线开发工具：🔗https://remix.ethereum.org<br>
-Solidity最新(0.8.0)中文文档：🔗https://learnblockchain.cn/docs/solidity<br>
-Cryptozombies ---玩游戏的方式学习Solidity：🔗https://cryptozombies.io<br>
-Solidity by Example ---以太坊官方教程：🔗https://solidity-by-example.org<br>
+- Remix ---智能合约在线开发工具：🔗https://remix.ethereum.org<br>
+- Solidity最新(0.8.0)中文文档：🔗https://learnblockchain.cn/docs/solidity<br>
+- Cryptozombies ---玩游戏的方式学习Solidity：🔗https://cryptozombies.io<br>
+- Solidity by Example ---以太坊官方教程：🔗https://solidity-by-example.org<br>
 ### 二、EVM——基于堆栈的以太坊虚拟机
 在了解EVM之前，首先清楚什么是虚拟机？传统的虚拟机指的是，通过软件模拟的，具备完整硬件系统功能，并运行在隔离环境下的完整计算机系统，比如VMware、Java虚拟机等。
 那么什么是以太坊虚拟机呢？<br>
@@ -114,13 +114,13 @@ Solidity by Example ---以太坊官方教程：🔗https://solidity-by-example.o
 Truffle是第一套基于以太坊的Solidity语言的成熟的开发框架。本身是基于JavaScript。它对客户端做了深度集成，使开发、测试、部署都只需要一个命令行，可以在控制台使用命令行直接调用输出结果，方便调试。
 Truffle是本地编译、部署智能合约的框架；而向前文中提到的geth客户端连接的才是真正的以太坊环境；testrpc是Truffle本地使用内存模拟的以太坊环境，关闭终端后，部署到testrpc的智能合约不会保存下来，对于开发调试更加方便，合约可以在testrpc中通过测试后，再部署到geth上，从而减少不必要的损失。
 
-Truffle：🔗https://learnblockchain.cn/docs/truffle/quickstart.html<br>
+- Truffle：🔗https://learnblockchain.cn/docs/truffle/quickstart.html<br>
 #### - Hardhat
 Hardhat是一个编译、部署、测试和调试以太坊应用的开发环境。它可以帮助开发者管理和自动化构建智能合约和dApps过程中固有的重复性任务，并围绕这一工作流程轻松引入更多功能。
 Hardhat内置了Hardhat网络，这是一个专为开发设计的本地以太坊网络。主要功能有Solidity调试，跟踪调用堆栈、console.log()和交易失败时的明确错误信息提示等，其在智能合约的Debug调试过程的交互性要优于Truffle。
 除此之外，与Truffle不同的是，Hardhat是一款基于插件的开发框架，其很多功能都来自于插件，开发者可以自由选择想使用的插件，甚至还可以将现有的Truffle项目迁移到Hardhat上。
 
-Hardhat：🔗https://learnblockchain.cn/docs/hardhat/getting-started<br>
+- Hardhat：🔗https://learnblockchain.cn/docs/hardhat/getting-started<br>
 ### 三、Dapp开发
 #### 什么是Dapp?
 App我们都知道是客户端应用，是application的简称。DApp就是D+App，D是英文单词decentralization的首字母，单词翻译中文是去中心化，即DApp为去中心化应用。<br>
@@ -142,17 +142,17 @@ web3.js(1.0)中文文档：🔗http://cw.hubwiz.com/card/c/web3.js-1.0/1/1/1/<br
 
 ## 常用工具及网站
 ### 一、数据查询
-Etherscan ---以太坊区块链浏览器：🔗https://etherscan.io<br>
-Ethereum Signature Database ---EVM调用记录数据库：🔗https://www.4byte.directory<br>
-ENS ---以太坊域名系统：🔗https://app.ens.domains<br>
+- Etherscan ---以太坊区块链浏览器：🔗https://etherscan.io<br>
+- Ethereum Signature Database ---EVM调用记录数据库：🔗https://www.4byte.directory<br>
+- ENS ---以太坊域名系统：🔗https://app.ens.domains<br>
 ### 二、合约开发
-ChainIDE ---支持多链的在线合约开发工具：🔗https://chainide.com/zh-CN<br>
-Chainlist ---EVM网络列表：🔗https://chainlist.org/<br>
-The Graph ---链上数据获取：🔗https://thegraph.com<br>
-Chainlink ---第三方预言机：🔗https://docs.chain.link<br>
-Alchemy ---第三方节点提供商：🔗https://dashboard.alchemyapi.io/signup/chain<br>
+- ChainIDE ---支持多链的在线合约开发工具：🔗https://chainide.com/zh-CN<br>
+- Chainlist ---EVM网络列表：🔗https://chainlist.org/<br>
+- The Graph ---链上数据获取：🔗https://thegraph.com<br>
+- Chainlink ---第三方预言机：🔗https://docs.chain.link<br>
+- Alchemy ---第三方节点提供商：🔗https://dashboard.alchemyapi.io/signup/chain<br>
 ### 三、社区交流
-登链社区 ---区块链开发者论坛：🔗https://learnblockchain.cn<br>
-巴比特 ---区块链资讯平台：🔗https://www.8btc.com<br>
-Ethereum ---以太坊基金会官方开发网站：🔗https://ethereum.org/en/developers<br>
-Stack Overflow ---程序开发交流社区：🔗https://stackoverflow.com<br>
+- 登链社区 ---区块链开发者论坛：🔗https://learnblockchain.cn<br>
+- 巴比特 ---区块链资讯平台：🔗https://www.8btc.com<br>
+- Ethereum ---以太坊基金会官方开发网站：🔗https://ethereum.org/en/developers<br>
+- Stack Overflow ---程序开发交流社区：🔗https://stackoverflow.com<br>
