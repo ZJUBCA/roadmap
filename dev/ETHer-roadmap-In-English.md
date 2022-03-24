@@ -1,83 +1,85 @@
-# 初探以太坊Dapp开发
+# Preliminary Study on ETH Dapp
   BY ZJUBCA
 
-  本文假设读者已经对区块链有了基本的概念，如果你对诸如区块链、智能合约与Dapp这类词语完全陌生，那么我们建议读者先阅读协会的：[🔗ZJUBCA-Roadmap](../README.md)
-## 以太坊技术原理
-### 一、什么是以太坊（Ethereum）
-对以太坊的定义往往仁者见仁，但如果集大成来解释，以太坊是基于状态转换的「世界计算机」（所有人都可以访问并使用的计算机，不受空间限制）
+  We assume that you already have a basic understanding of blockchain. If you are new to terms like blockchain, smart contracts and Dapps, we deeply recommend that you read：[🔗ZJUBCA-Roadmap](../README.md)
+## Technical Principles of Ethereum
+### 一、What is Ethereum
+Definitions of Ethereum vary, but in a nutshell, Ethereum is a "World Computer" based on state transitions (a computer that everyone can access and use, regardless of space constraints).
 
-从计算机科学的角度来看，以太坊是一种确定但无界的由交易驱动的「状态机」（改变程序或系统保存的信息并保持共识的机体），它由全局可访问的离散单个状态和将变化应用于这种状态的虚拟机组成；从更实际的角度来看，以太坊是一种开源、在全球范围内呈去中心化并且能够执行「智能合约」（下文会详述，可简单理解为代码）的基础设施。
+From a computer science perspective, Ethereum is a deterministic but unbounded transaction-driven "State Machine" (an organism that changes the information held by programme or system and maintains consensus) composed of globally accessible discrete individual states and virtual groups that apply changes to that state. From a more practical point of view, Ethereum is an open source, globally decentralized infrastructure capable of executing "Smart Contracts" (more on that below, which can be simply understood as code).
 
-在以太坊平台上，开发人员能够构建具有内置经济功能的强大的去中心化应用程序。它使用区块链来同步和存储系统的状态变化，并使用一种被称为「以太币」（Ether）的加密货币来计量和限制执行资源成本，提供了高可用性，可审计性，透明性和中立性。
+On the Ethereum platform, developers are able to build powerful decentralized applications with built-in economies. It uses blockchain to synchronize and store system state changes, and uses a cryptocurrency called "Ether" to measure and limit execution resource costs, providing high availability, auditability, transparency and neutrality
 
-[🔗以太坊白皮书](https://kauri.io/#collections/A%20Hackathon%20Survival%20Guide/ethereum-101-part-1-what-is-ethereum/)
-### 二、深入理解以太坊技术原理
-可能大家对上一节中提到的「状态机」的概念还有点模糊不清，为了让大家更清晰的深入到以太坊的技术原理中去，本节会以传统互联网为起点，循序渐进至以太坊的底层技术原理。
+[🔗Ethereum White Paper](https://kauri.io/#collections/A%20Hackathon%20Survival%20Guide/ethereum-101-part-1-what-is-ethereum/)
+### 二、In-depth Understanding of Ethereum
+Maybe you are still a little confused about the concept of "State Machine" mentioned in the previous section. In order to make you more clearly understand the technical principles of Ethereum, this section will take the traditional Internet as the starting point and step by step to the underlying technical principles of Ethereum.
 
-用计算机技术来说，以太坊就是一个保存了数字交易永久记录的「公共数据库」。重要的是，这个数据库不需要任何中间方来维护双方的权益。相反，它可以作为一种「无需信任」的交易系统来运作，也就是你可以在不需要第三方的情况下进行点对点（P2P）交易。
+In computer terms, Ethereum is a kind of "Public Database" that holds permanent records of digital transactions. Importantly, the database does not require any middlemen to safeguard the interests of both parties. Instead, it works as a "No Trust" trading system, meaning you can conduct peer-to-peer transactions without the need for a third party.
 <div align=center>
 <img src="img/1.png" alt="image" style="zoom:67%;"  />
 </div>
 
-以太坊区块链本质上是一个为交易服务的状态机。在计算机科学中，一个状态机指的是这样一种东西，它可以读取一系列的输入，并基于这些输入产生一个新的状态。
+The Ethereum blockchain is essentially a state machine for transactions. In computer science, a state machine is something that reads a series of inputs and produces a new state based on those inputs.
 <div align=center>
 <img src="img/2.png" alt="image"  />
 </div>
-以太坊状态机的运行从一个「元状态」开始，这类似于在网络上没有发生任何交易之前的一个空白匣子。当交易执行时，这个元状态就转变为一些最终状态。在任何时候，这个最终状态都代表着以太坊区块链的现状。
+The Ethereum state machine starts with a "Genesis State," which is similar to a blank box before any transactions take place on the network. When the transaction is executed, this genesis-state transitions into some other states. At any time, it represents the current state of the Ethereum blockchain.
 
 <div align=center>
 <img src="img/3.png" alt="image"  />
 </div>
 
-以太坊系统中运行着数百万笔交易，这些交易被分组归类为「区块」。每个区块由「区块头」（Header）和一系列「交易信息」(Transactions）组成。在这里，你可以简单地将区块头理解为一个包含决定区块链共识状态关键信息的 “数据集合”， 每个块只有通过对区块头的验证，才能与其前面的区块通过区块头串联在一起形成有向无环的链式结构。
-
+There are millions of transactions running in the Ethereum system, grouped into "Block". Each block consists of "Headers" and a series of "Transactions". Here, you can simply think of a block header as a "Collection of Data" containing key information that determines the consensus state of the blockchain. Each block can only be verified by the block header before it is connected in series to form a directed acyclic chain structure.
 <div align=center>
 <img src="img/4.png" alt="image"  />
 </div>
 
-前文中提到，以太坊是由交易驱动的状态机。那么要想以太坊正确的从一个状态转到另一个状态，必须证明交易是有效且真实的，否则以太坊便失去了其不需要第三方维护这一核心价值。要想证明一个交易是有效的，就必须通过一个验证过程，这一过程称为「挖矿」。
+As mentioned earlier, Ethereum is a transaction-driven state machine. For Ethereum to properly transition from one state to another, the transaction must prove to be valid and authentic, otherwise Ethereum loses its core value of not needing third party maintenance. To prove that a trade is valid, you have to go through a verification process called "Mining."
 
-挖矿是指一组节点（即物理意义上的计算机）消耗它们的计算资源来创建一个有效交易的区块（这里仅以Pow为例）。网络中参与挖矿的节点被称为「矿工」。任何声明自己是「矿工」的节点都可以尝试创建和验证区块，全世界有许多矿工试图同时创建和验证区块。每个矿工在向区块链提交一个区块时同时，都要提供一个数学的证明，且把这个证明作为一个保证：如果这个数学证明存在，则该区块必然是有效的。
+Mining is when a group of nodes (computers in the physical sense) consume their computing resources to create a block of valid transactions (just the POW here). Nodes in the network that participate in mining are called miners. Any node that declares itself to be a "Miner" can try to create and verify blocks, and many miners around the world try to create and verify blocks at the same time. Each miner submits a block to the blockchain along with a mathematical proof, which serves as a guarantee that if the mathematical proof exists, the block must be valid.
 
-一个矿工如果想要在主区块链上添加一个合法区块，就必须比其他矿工更快地对其证明。那么，通过让矿工提供数学证明来验证每个区块的过程被称为「工作量证明」。
+A miner who wants to add a legitimate block to the main blockchain has to prove it faster than other miners. So the process of verifying each block by having miners provide mathematical proofs is called "Proof of Work, POW".
 
-那么矿工为什么要消耗自己的计算机资源来验证并添加区块呢？答案是价值回报。任何完成这个验证工作的矿工都可以得到一定数额的价值回报。以太坊正是采用其链上数字货币「以太币」作为奖励。 每当一个矿工证明了一个区块，就会生成并得到一定数量的以太币。
+So why would miners expend their own computer resources to validate and add blocks? The answer is return on value. Any miner who completes this verification gets a certain amount of value in return. Ethereum uses its on-chain digital currency, Ether, as a reward. Each time a miner proved a block, a certain amount of ether was generated and received.
 
-正如我们在上文给区块链的定义，区块链是一个具有共享状态的交易状态机。这个定义决定了，区块链的当前状态是一个单一的全局状态，每个人都必须接受。如果拥有多个链（状态）会破坏整个系统，因为人们不可能就哪个状态是正确的状态达成一致意见。如果这些链是分开的，就会出现一个人在一条链上有10个以太币，在另一条链上有20个的情况。在这种情况下，我们没有办法确定哪一个链最「有效」，无法确定一个人有多少有效的以太币。
+As we defined blockchain above, a blockchain is a transaction state machine with shared state. This definition determines that the current state of the blockchain is a single global state that everyone must accept. Having more than one chain (state) breaks the whole system because it is impossible to agree on which state is the right one. If the chains were separate, a person would have 10 Ether on one chain and 20 Ether on the other. In this case, there is no way to determine which chain is the most "Efficient" and how many valid Ether coins a person has.
 
-这一产生多条链的过程，被称为「分叉」（Fork）。因为分叉会破坏系统，因此我们通常会避免分叉，要求或者说迫使人们选择他们「相信」唯一有效的一条链。
+This process of producing multiple strands is called forking. Because forks break the system, we often avoid forks by requiring or forcing people to choose the only chain they trust works.
 
 <div align=center>
 <img src="img/5.png" alt="image"  />
 </div>
 
-为了确定哪个路径是最有效的，并防止分叉的发生，以太坊使用了一种叫做「GHOST协议」的机制。简单地说，GHOST协议让我们必须选择在链上做「最多计算」的路径。确定该路径的一种方法是通过计算每条链所使用最新区块的数量，来表示当前每条链上的区块总数（不包括创世区块）。块数越多，路径越长，则说明挖矿的难度越大，因此该链就为最多计算链。因此这个方法也可以被简称为「最长链原则」。通过这个方式，最终使每一个节点对当前区块链的状态（链）的唯一性达成共识。
+To determine which path is the most efficient and prevent forking, Ethereum uses a mechanism called the GHOST protocol.
+
+Simply put, the GHOST protocol forces us to choose the path that does the "Most Computation" on the chain. One way to determine this path is to represent the total number of blocks currently on each chain (excluding genesis blocks) by counting the number of most recent blocks used by each chain. The more blocks, the longer the path, the more difficult it is to mine, so the chain is the most computational chain. Therefore, this method can also be shortened to the "Longest Chain Principle". In this way, each node eventually agrees on the uniqueness of the current state of the blockchain (chain).
 
 <div align=center>
 <img src="img/6.png" alt="image"  />
 </div>
 
-到这里，我们就对以太坊区块链就有了一个宏观的认识。在这个链式架构的基础上，以太坊系统由如下所述的各主要组成部分支撑，如果你想更深入的了解这些，我们推荐你阅读以太坊黄皮书，不过请注意，他并没有那么易懂~
-
+At this point, we have a macro understanding of the Ethereum blockchain. On the basis of this chain architecture, the Ethereum system is supported by the main components described below. If you want to learn more about this, we recommend you to read the Ethereum Yellow Book, but please note that it is not that easy to understand~
 [🔗以太坊黄皮书](https://gitcode.net/mirrors/wanshan1024/ethereum_yellowpaper)
 
-- 帐户；
-- 状态；
-- Gas与费用；
-- 交易；
-- 区块；
-- 交易执行；
-- 挖矿；
-- 工作量证明。
-## Solidity及EVM
-### 一、Solidity——面向合约对象的编程语言
-Solidity是由以太坊创始人之一的Gavin Wood所编写，是一门面向合约的、为实现智能合约而创建的高级编程语言。这门语言受到了 C++，Javascript等语言的影响，属于静态类型语言，支持继承、库和复杂的用户定义类型等特性。其设计目的是为了能在以太坊虚拟机（EVM）上运行。
+- Account
+- State
+- Gas and Expenses
+- Trading
+- Block
+- Transaction Execution
+- Mining
+- Proof of Work
+## Solidity & EVM
+### 一、Solidity——Smart Contract Oriented Programming Language
+Solidity, written by Gavin Wood, one of the founders of Ethereum, is a contract-oriented high-level programming language created for implementing smart contracts. Influenced by languages like C++ and Javascript, the statically typed language supports inheritance, libraries, and complex user-defined types. It is designed to run on Ethereum virtual machines (EVM).
 
-众所周知，以太坊之所以被称为区块链2.0的开山鼻祖，其中重要的一点就是实现了「图灵完备」。所谓图灵完备，就是一切可计算的问题都能计算，这样的虚拟机或者编程语言就叫图灵完备的，图灵完备通常指具有无限存储能力的通用物理机器或编程语言。那么与图灵完备相反的是图灵不完备，比如比特币的脚本系统，就是图灵不完备的。要想充分发挥以太坊图灵完备的优势，就要通过编写运行在EVM上（也可以理解为链上）的「智能合约」。那么Solidity，就是编写智能合约的编程语言。
+As we all know, Ethereum is known as the pioneer of blockchain 2.0, one of the significant points is the realization of "Turing Complete". Turing complete is a virtual machine or programming language that can compute all computable problems. Turing complete usually refers to a general-purpose physical machine or programming language with unlimited storage capacity. So the opposite of "Turing Complete" is "Turing Incomplete", like bitcoin's scripting system, which is "Turing Incomplete".
 
-当然，除了Solidity以外，还有例如与Python接近的、文件名以.se结尾Serpent编程语言也曾经流行过一段时间，除此之外也有开发者更喜欢使用Vyper。但随着时间的推移和开发者们不断地学习和迭代，现在最成熟且应用最多的当数是Solidity了，因此这也是我们鼓励大家学习它的原因。
+The way to take full advantage of Ethereum's Turing-complete capabilities is by writing "smart contracts" that run on EVM (aka on the chain). The answer is Solidity, the programming language for writing smart contracts.
 
-以下是通过Solidity编写的“Hello Wordl!”代码，其中，^0.8.0是编译器的版本号，HelloWorld是合约名，greet是状态变量。
+Of course, as well as Solidity, Serpent, a Python - like programming language with a ".Se" ending in filename, has also been popular for a while, and Vyper is preferred by developers. But as time goes on and developers keep learning and iterating, the most mature and used thing now is Solidity, so that's why we encourage you to learn it.
+
+Here is the "Hello Wordl!" prepared with Solidity ^0.8.0 is the compiler version, HelloWorld is the contract name, and greet is the state variable.
 
 ```solidity
 // SPDX-Lisence-Identifier: MIT
@@ -89,106 +91,115 @@ contract HelloWorld {
 }
 ```
 
-如果你已经迫不及待的想要成为一名智能合约开发者，那么以下列出的学习工具一定有助于你：
+If you can't wait to become a smart contract developer, the following learning tools will definitely help you：
 
-- Remix ---智能合约在线开发工具：[🔗](https://remix.ethereum.org)
-- Solidity最新(0.8.0)中文文档：[🔗](https://learnblockchain.cn/docs/solidity)
-- Cryptozombies ---玩游戏的方式学习Solidity：[🔗](https://cryptozombies.io)
-- Solidity by Example ---以太坊官方教程：[🔗](https://solidity-by-example.org)
-### 二、EVM——基于堆栈的以太坊虚拟机
-在了解EVM之前，首先清楚什么是虚拟机？传统的虚拟机指的是，通过软件模拟的，具备完整硬件系统功能，并运行在隔离环境下的完整计算机系统，比如VMware、Java虚拟机等。
-那么什么是以太坊虚拟机呢？
+- Remix ---Smart contract online development tools：[🔗](https://remix.ethereum.org)
+- Solidity(0.8.0)Chinese document：[🔗](https://learnblockchain.cn/docs/solidity)
+- Cryptozombies ---Play to learn Solidity：[🔗](https://cryptozombies.io)
+- Solidity by Example ---Official Ethereum tutorial：[🔗](https://solidity-by-example.org)
+### 二、EVM——Stack-based Ethereum Virtual Machine
+Before you look at EVM, what is a virtual machine? Traditional virtual machines refer to complete computer systems, such as VMware and JVM, that are simulated by software and have complete hardware system functions and run in an isolated environment.
 
-以太坊虚拟机的英文全称为“Ethereum Virtual Machine”，简称为EVM，这个EVM就是建立在以太坊区块链上的代码运行环境，是一个完全独立的沙盒，合约代码可对外完全隔离并在EVM内部运行，其主要作用是处理以太坊系统内的智能合约。上文提到的Solidity代码在部署到以太坊网络之前需要被编译成字节码。这个字节码所对应的底层机制，实际上就是EVM所解析的一系列操作码指令，然后由EVM根据此操作码，真正的完成代码的执行。
+So what is EVM?
 
-从传统互联网的角度来说，程序员在为一个软件编写程序时，会使用到编程语言，例如 C++。但 C++ 是计算机的 CPU 无法理解的高级语言。程序员通过 C++ 编写好的程序需要通过编译器翻译成 CPU 可以理解的语言，即字节代码（机器语言），从而对 CPU 发号施令让软件可以在计算机上顺利运行。
+Ethereum Virtual Machine is called "Ethereum Virtual Machine", or EVM for short. The EVM is a code running environment built on Ethereum blockchain. It is a completely independent sandbox, and the contract code can be completely isolated from the outside and run inside the EVM. Its main role is to process smart contracts within the Ethereum system. The Solidity code mentioned above needs to be compiled into bytecode before being deployed to the Ethereum network. The underlying mechanism corresponding to this bytecode is actually a series of opcode instructions parsed by EVM, and then EVM completes the code execution according to this opcode.
 
-如果听到这里你觉得有些困惑，不必担心，坚持看完下面的例子，一定能“柳暗花明又一村”。
+In traditional Internet terms, when programmers write programs for a piece of software, they use a programming language such as C++. But C++ is a high-level language that a computer's CPU can't understand. Programmers who write good programs in C++ need to have the compiler translate them into a language that the CPU understands, called bytecode (machine language), to dictate to the CPU that the software will run smoothly on the computer.
 
-假设一名ZJUBCAer小蓝是一个英语盲，但作为一名区块链爱好者，它需要经常查看一些英语文章来及时掌握行业信息。为了解决语言障碍，它会把文章通过翻译软件转译成中文再阅读。
+If you find this confusing, don't worry. Stick to the examples below.
+
+Suppose a ZJUBCAer named Tom is an English illiterate, but as a blockchain enthusiast, he needs to check some English articles frequently to keep abreast of the industry information. To address the language barrier, it uses translation software to translate articles into Chinese for reading.
 
 <div align=center>
 <img src="img/8.png" alt="image" style="zoom:75%;"  />
 </div>
 
-一篇用英语写成的文章被翻译为中文，变成了小蓝能看懂的语言，从而帮助小蓝能够轻松掌握区块链的行业信息。同理，一个用 C++ 编成的程序被编译为字节代码，变成 CPU 能看懂的语言，CPU 可以运行软件程序。
-可这跟以太坊的 EVM 有什么关系？答案是，EVM 之于以太坊，就像 CPU 之于计算机。
+An article written in English was translated into Chinese, which became a language that Tom could understand, so that Tom could easily master the industry information of blockchain. Similarly, a program written in C++ is compiled into bytecode, a language that the CPU can understand, and the CPU can run the software program.
+What does this have to do with Ethereum's EVM? The answer is that EVM is to Ethereum what CPU is to computers.
 
 <div align=center>
 <img src="img/9.png" alt="image" style="zoom:75%;"  />
 </div>
 
 
-以太坊是一台世界级计算机，但它毕竟不是实体电脑，也没有CPU，那么智能合约要如何在以太坊上运行呢？EVM 就是以太坊的 CPU，以太坊开发者们通过编程语言 Solidity 写好的程序，被编译为 EVM 可以理解的 EVM 字节代码，EVM 就可以运行智能合约的程序。
+Ethereum is a world-class computer, but it's not a physical computer, and it doesn't have a CPU, so how do smart contracts work on Ethereum? EVM is the CPU of Ethereum, and when the programs written by Ethereum developers in the programming language Solidity are compiled into EVM byte code that EVM can understand, EVM can run smart contract programs.
+Here, I believe you must have a preliminary understanding of EVM, if you want to go further, then we suggest you he through EVM Playground, through the way of learning to apply, better grasp the underlying logic of EVM.
 
-到这里，相信你一定对EVM有了初步的认识，如果你想更进一步，那么我们建议你通过EVM练兵场，通过学以致用的方式，更好的掌握EVM的底层逻辑。
+EVM Playground：[🔗](https://www.evm.codes/)
+## Smart Contract Development
+What is a smart contract? <br>
+The application running on Ethereum is called a smart contract, which, like any other application, is a collection of code and data (state).
 
-EVM练兵场：[🔗](https://www.evm.codes/)
-## 智能合约开发
-什么是智能合约？其实通过上文的阅读，相信读者已经大概做到了心中有数，以太坊网络上运行程序就称之为智能合约，它和其他的程序一样，也是代码和数据(状态)的集合。
+Smart contracts have nothing to do with the Intelligence of Artificial Intelligence. Smart contracts were first proposed by Nick Saab in 1995. The concept of Smart contracts is simple, that is, laws are written into executable code. The idea of neutralizing the enforcement of the law coincides with the idea that a program on a blockchain can be executed without tampering or interference (only if someone triggers a transaction, it will automatically execute), hence the concept introduced by blockchain.
 
-智能合约（Smart Contract）和人工智能（Artificial Intelligence ）的智能没有关系，智能合约最早由尼克萨博在95年提出，它的概念很简单，就是将法律条文写成可执行代码。让法律条文的执行中立化，这个理念和区块链上的程序可以不被篡改、不被干预（只有有人触发交易，它将自动执行）的执行不谋而合，因此区块链引入了这个概念。以太坊网络上运行程序就称之为智能合约。
-### 一、以太坊客户端
-大家都知道，如果想跟一个独立系统交互，仅仅编写了可以被该系统编译识别的代码还不够，还需要与该系统建立稳定的连接才能将数据传输过去。前文提到，以太坊虚拟机EVM是一个封闭的沙盒系统，其内部代码的运行是不受到外部世界的干扰的。那么，开发者如果想访问到以太坊并且期望与之交互应该怎么做呢？答案是通过以太坊客户端。
+Running applications on the Ethereum network is called "Smart Contract".
+### 一、Ethereum Client
+As you all know, if you want to interact with an independent system, it's not enough to write code that can be compiled and recognized by that system. You also need to establish a stable connection to that system in order to send data.
 
-「以太坊客户端」是一个软件应用程序，它实现以太坊规范并通过P2P网络与其他以太坊客户端（节点）进行通信。如果不同的以太坊客户端符合参考规范和标准化通信协议，则可以进行相互操作。
+As mentioned earlier, EVM is a closed sandbox system whose internal code runs undisturbed by the outside world. So what should developers do if they want to access and interact with Ethereum? The answer is through Ethereum clients.
 
-以太坊是一个开源项目，由“黄皮书”正式规范定义。除了各种以太坊改进提案之外，此正式规范还定义了以太坊客户端的标准行为。因为以太坊有明确的正式规范，所以，任何一个独立开发的软件，只要实现了该范式，那他就可以作为一个以太坊节点，与以太坊或其它以太坊客户端交互。
-目前以太坊客户端支持8种语言的客户端，这里推荐其中两款：
-- go-ethereum（geth）[🔗](https://github.com/ethereum/go-ethereum)：Golang实现，官方推荐，开发使用最多
-- Parity[🔗](https://github.com/ethcore/parity/releases)：Rust实现，最轻便客户端，在历次以太网攻击中表现卓越
-### 二、开发框架
-上文讲到，开发者如果想要跟以太坊交互，需要借助客户端来搭建节点才行。理论上虽然如此，但不禁想一下，如果每次开发都要手动搭建节点，且面向不同以太坊网络时还应重新搭建，未免给我们的开发增添了太多不必要的负担，对开发者的技术要求也更加严格，这显然是不利于以太坊乃至区块链技术的普及。
+"Ethereum Client" is a software application that implements the Ethereum specification and communicates with other Ethereum clients (nodes) over a P2P network. Different Ethereum clients can interoperate if they comply with reference specifications and standardized communication protocols.
 
-互联网软件开发的历史已有数十年之久。我们受益于半个世纪以来积累的最佳实践，设计模式和智慧。相反，智能合约开发才刚刚开始。2015推出的以太坊和 Solidity 仅有几年的时间。在智能合约刚推出的前几年，没有确定的工具堆栈来帮助开发者部署智能合约以及构建去中心化应用。
+Ethereum is an open source project, formally defined by the "Ethereum Yellow Book" specification. In addition to various proposed Ethereum improvements, this formal specification defines the standard behavior of Ethereum clients. Because Ethereum has a clear formal specification, any independently developed software that implements this paradigm can interact with Ethereum or other Ethereum clients as an Ethereum node.
 
-但随着区块链技术的蓬勃发展以及广大开发者极客们的集思广益，诸如Truffle、Hardhat的Dapp开发框架应用的出现，极大的方便了开发者与区块链的交互，丰富了整个以太坊生态系统。
+Currently, Ethereum clients support 8 languages, two of which are recommended here：
+- go-ethereum（geth）[🔗](https://github.com/ethereum/go-ethereum)：Golang
+- Parity[🔗](https://github.com/ethcore/parity/releases)：Rust
+### 二、Development Framework
+As mentioned above, developers who want to interact with Ethereum need to build nodes with the help of clients. Though in theory, but can not help but think about it, if every development to manually build node, and for different etheric fang networks should also build afresh, is added too much unnecessary burden to our development, technical requirements of the developers are more strict, this is obviously not conducive to the etheric lane and the popularity of block chain technology.
+
+The history of Internet software development is decades old. We benefit from half a century of accumulated best practices, design patterns and wisdom. Instead, smart contract development has only just begun. Ethereum and Solidity, launched in 2015, are only a few years old. In the early years of smart contracts, there was no established tool stack to help developers deploy smart contracts and build decentralized applications.
+
+However, with the booming development of blockchain technology and the collective wisdom of developers and geeks, the emergence of Dapp development framework applications such as Truffle and Hardhat has greatly facilitated the interaction between developers and blockchain and enriched the entire Ethereum ecosystem.
 #### - Truffle
-Truffle是第一套基于以太坊的Solidity语言的成熟的开发框架。本身是基于JavaScript。它对客户端做了深度集成，使开发、测试、部署都只需要一个命令行，可以在控制台使用命令行直接调用输出结果，方便调试。
-Truffle是本地编译、部署智能合约的框架；而向前文中提到的geth客户端连接的才是真正的以太坊环境；testrpc是Truffle本地使用内存模拟的以太坊环境，关闭终端后，部署到testrpc的智能合约不会保存下来，对于开发调试更加方便，合约可以在testrpc中通过测试后，再部署到geth上，从而减少不必要的损失。
+Truffle is the first full-fledged development framework based on Ethereum's Solidity language. Itself is based on JavaScript. It has a deep integration of the client, so that development, testing, deployment only need a command line, you can use the command line directly call output results in the console, convenient debugging.
+
+Truffle is a framework for compiling and deploying smart contracts locally; The aforementioned geth client is connected to a real Ethereum environment; Testrpc is an Ethereum environment simulated locally by Truffle using memory. After closing the terminal, the smart contract deployed to Testrpc will not be saved, which is more convenient for development and debugging. The contract can be tested in Testrpc and then deployed to geth , thus reducing unnecessary losses.
 
 - Truffle：[🔗](https://learnblockchain.cn/docs/truffle/quickstart.html)
 #### - Hardhat
-Hardhat是一个编译、部署、测试和调试以太坊应用的开发环境。它可以帮助开发者管理和自动化构建智能合约和dApps过程中固有的重复性任务，并围绕这一工作流程轻松引入更多功能。
-Hardhat内置了Hardhat网络，这是一个专为开发设计的本地以太坊网络。主要功能有Solidity调试，跟踪调用堆栈、console.log()和交易失败时的明确错误信息提示等，其在智能合约的Debug调试过程的交互性要优于Truffle。
-除此之外，与Truffle不同的是，Hardhat是一款基于插件的开发框架，其很多功能都来自于插件，开发者可以自由选择想使用的插件，甚至还可以将现有的Truffle项目迁移到Hardhat上。
+Hardhat is a development environment for compiling, deploying, testing, and debugging Ethereum applications. It helps developers manage and automate the repetitive tasks inherent in building smart contracts and dApps and easily introduce more functionality around this workflow.
+
+Hardhat comes with Hardhat Network, a native Ethereum network designed for development. The main features include Solidity debugging, tracking call stacks, console.log() and clear error messages when transactions fail, which is more interactive than Truffle during smart contract debugging.
+
+In addition, unlike Truffle, Hardhat is a plug-in based development framework. Many of its functions come from plug-ins, and developers can choose which plug-ins they want to use. They can even migrate existing Truffle projects to Hardhat.
 
 - Hardhat：[🔗](https://learnblockchain.cn/docs/hardhat/getting-started)
-### 三、Dapp开发
-#### 什么是Dapp?
-App我们都知道是客户端应用，是application的简称。DApp就是D+App，D是英文单词decentralization的首字母，单词翻译中文是去中心化，即DApp为去中心化应用。
+### 三、Development of Dapp
+#### What is a Dapp?
+App, the client application, is short for application. And DApp is D+App, which means the first letter of the English word, "Decentralization" in Chinese. DApp is a decentralized application.
 
-看到这里，大家思维中第一反应可能是，为什么要有DApp，现在的App不是挺好吗？其实，两者并不是取代关系，而是并存关系，或者说DApp是对App的丰富和完善。因为DApp是依托于区块链底层技术的上层建筑，它和交易数据、交易资产有关联，和不可篡改去中心化存储也有关联，所以随着区块链技术越来越成熟普及，DApp也更受到人们的青睐与期望，并更多地出现在各个生活场景中，如生产链防伪，捐款资金流向等等。
+When you look at this, your first thought might be, why do we have DApp? Isn't the current App good enough? In fact, the two are not a replacement relationship, but a coexistence relationship, or DApp is the enrichment and improvement of App. Because DApp is depends on the superstructure of chain blocks, the underlying technology, it and deal with data related to assets, trading, and do not tamper with the decentralized storage and related, so as the block chain technology is more and more mature, DApp also more get the favour of people and expectations, and more appear in various life scenes.
 
 <div align=center>
 <img src="img/10.png" alt="image" style="zoom:50%;"  />
 </div>
 
-那么作为一名开发者，是开发一款自己的Dapp需要做的具体步骤是什么？
-Dapp的一般开发流程：
-1. 创建自己的Web3.0钱包
-2. 使用Solidity编写智能合约代码
-3. 通过Dapp开发框架如Hardhat、Truffle，通过node.js测试合约并部署
-4. 编写前端界面，并通过如ether.js、web3.js与智能合约进行交互
-5. 项目发布与测试
+So as a developer, what are the specific steps you need to take to develop your own Dapp?
+General Dapp development process:
+1. Create your own Web3.0 wallet
+2. Code smart contracts with Solidity
+3. Use Dapp development frameworks such as Hardhat and Truffle to test the contract and deploy it through Node.js
+4. Write front-end interfaces and interact with smart contracts through things like ether.js and web3.js
+5. Project release and testing
 
-- node.js介绍文档：[🔗](https://www.runoob.com/nodejs/nodejs-tutorial.html)
-- ether.js中文文档：[🔗](https://learnblockchain.cn/docs/ethers.js)
-- web3.js(1.0)中文文档：[🔗](http://cw.hubwiz.com/card/c/web3.js-1.0/1/1/1/)
+- node.js document：[🔗](https://www.runoob.com/nodejs/nodejs-tutorial.html)
+- ether.js document：[🔗](https://learnblockchain.cn/docs/ethers.js)
+- web3.js(1.0) document：[🔗](http://cw.hubwiz.com/card/c/web3.js-1.0/1/1/1/)
 
 ## 常用工具及网站
 ### 一、数据查询
-- Etherscan ---以太坊区块链浏览器：[🔗](https://etherscan.io)
-- Ethereum Signature Database ---EVM调用记录数据库：[🔗](https://www.4byte.directory)
-- ENS ---以太坊域名系统：[🔗](https://app.ens.domains)
+- Etherscan ---Ethereum Blockchain Browser：[🔗](https://etherscan.io)
+- Ethereum Signature Database ---EVM Calls Record Database：[🔗](https://www.4byte.directory)
+- ENS ---Ethereum Domain Name System：[🔗](https://app.ens.domains)
 ### 二、合约开发
-- ChainIDE ---支持多链的在线合约开发工具：[🔗](https://chainide.com/zh-CN)
-- Chainlist ---EVM网络列表：[🔗](https://chainlist.org/)
-- The Graph ---链上数据获取：[🔗](https://thegraph.com)
-- Chainlink ---第三方预言机：[🔗](https://docs.chain.link)
-- Alchemy ---第三方节点提供商：[🔗](https://dashboard.alchemyapi.io/signup/chain)
+- ChainIDE ---Multi-Chain Online Contract Development Tools：[🔗](https://chainide.com/zh-CN)
+- Chainlist ---EVM network list：[🔗](https://chainlist.org/)
+- The Graph ---On-chain data acquisition：[🔗](https://thegraph.com)
+- Chainlink ---Third party predictor：[🔗](https://docs.chain.link)
+- Alchemy ---Third-party node Provider：[🔗](https://dashboard.alchemyapi.io/signup/chain)
 ### 三、社区交流
-- 登链社区 ---区块链开发者论坛：[🔗](https://learnblockchain.cn)
-- 巴比特 ---区块链资讯平台：[🔗](https://www.8btc.com)
-- Ethereum ---以太坊基金会官方开发网站：[🔗](https://ethereum.org/en/developers)
-- Stack Overflow ---程序开发交流社区：[🔗](https://stackoverflow.com)
+- Community of DengLian ---Blockchain Developer forum：[🔗](https://learnblockchain.cn)
+- Babbitt ---Blockchain information platform：[🔗](https://www.8btc.com)
+- Ethereum ---Ethereum Foundation development website：[🔗](https://ethereum.org/en/developers)
+- Stack Overflow ---Program development community：[🔗](https://stackoverflow.com)
