@@ -16,7 +16,7 @@ Maybe you are still a little confused about the concept of "State Machine" menti
 
 In computer terms, Ethereum is a kind of "Public Database" that holds permanent records of digital transactions. Importantly, the database does not require any middlemen to safeguard the interests of both parties. Instead, it works as a "No Trust" trading system, meaning you can conduct peer-to-peer transactions without the need for a third party.
 <div align=center>
-<img src="img/1.png" alt="image" style="zoom:67%;"  />
+<img src="img/11.png" alt="image" style="zoom:67%;"  />
 </div>
 
 The Ethereum blockchain is essentially a state machine for transactions. In computer science, a state machine is something that reads a series of inputs and produces a new state based on those inputs.
@@ -111,14 +111,14 @@ If you find this confusing, don't worry. Stick to the examples below.
 Suppose a ZJUBCAer named Tom is an English illiterate, but as a blockchain enthusiast, he needs to check some English articles frequently to keep abreast of the industry information. To address the language barrier, it uses translation software to translate articles into Chinese for reading.
 
 <div align=center>
-<img src="img/8.png" alt="image" style="zoom:75%;"  />
+<img src="img/12.png" alt="image" style="zoom:75%;"  />
 </div>
 
 An article written in English was translated into Chinese, which became a language that Tom could understand, so that Tom could easily master the industry information of blockchain. Similarly, a program written in C++ is compiled into bytecode, a language that the CPU can understand, and the CPU can run the software program.
 What does this have to do with Ethereum's EVM? The answer is that EVM is to Ethereum what CPU is to computers.
 
 <div align=center>
-<img src="img/9.png" alt="image" style="zoom:75%;"  />
+<img src="img/13.png" alt="image" style="zoom:75%;"  />
 </div>
 
 
@@ -172,7 +172,7 @@ App, the client application, is short for application. And DApp is D+App, which 
 When you look at this, your first thought might be, why do we have DApp? Isn't the current App good enough? In fact, the two are not a replacement relationship, but a coexistence relationship, or DApp is the enrichment and improvement of App. Because DApp is depends on the superstructure of chain blocks, the underlying technology, it and deal with data related to assets, trading, and do not tamper with the decentralized storage and related, so as the block chain technology is more and more mature, DApp also more get the favour of people and expectations, and more appear in various life scenes.
 
 <div align=center>
-<img src="img/10.png" alt="image" style="zoom:50%;"  />
+<img src="img/14.png" alt="image" style="zoom:50%;"  />
 </div>
 
 So as a developer, what are the specific steps you need to take to develop your own Dapp?
