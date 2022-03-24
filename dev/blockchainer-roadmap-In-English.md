@@ -7,7 +7,7 @@ How to learn blockchain -2022🚀🚀🚀🚀
 
 ## L1: Genesis
 
-At this stage, we weill help you establish your basic understanding of blockchain, enhance your recognition of blockchain and have a general understanding of blockchain ecology. This stage is not divided into technology and business. You can learn according to your actual ability. <br>
+At this stage, we will help you establish your basic understanding of blockchain, enhance your recognition of blockchain and have a general understanding of blockchain ecology. This stage is not divided into technology and business. You can learn according to your actual ability. <br>
 <br>
 ZJUBCA's learners who have little knowledge of blockchain are advised to carefully read the content here!
 
@@ -45,8 +45,8 @@ ZJUBCA's learners who have little knowledge of blockchain are advised to careful
 With the foundation of introduction, in fact, there are some optional topics, in which you can understand and learn the topics you are interested in.
 
 + **Fork: Technical group**：
-  + Consortium chain：
-    + In the field of consortium chain, as long as we understand the Hyperledger Fabric and R3 Corda, we basically understand 80% of the content; The way of learning can be to directly read the documents on these projects, blogs written by others, or read books.
+  + Enterprise-grade blockchain：
+    + In the field of Enterprise-grade blockchain, as long as we understand the Hyperledger Fabric and R3 Corda, we basically understand 80% of the content; The way of learning can be to directly read the documents on these projects, blogs written by others, or read books.
     + Hyperledger Fabric official document：[🔗](https://hyperledger-fabric.readthedocs.io/en/latest/)
     + Book: Advanced Practical Combat of Blockchain Technology（Introduction [🔗](https://book.douban.com/subject/30177480/)，Introduce Hyperledger Fabric、Ethereum、Hyperchain）
     + Book: Principle, Design and Application of Blockchain（Introduction [🔗](https://book.douban.com/subject/27127839/)，The whole book is about Hyperledger Fabric, with source code analysis）
@@ -61,7 +61,7 @@ With the foundation of introduction, in fact, there are some optional topics, in
     + Solidity documents （you can switch versions to view documents of other versions）：[🔗](hhttps://docs.soliditylang.org/en/latest/)
     + Book：Mastering Ethereum（Introduction[🔗](https://book.douban.com/subject/33424766/)，It mainly introduces Ethereum and how to write smart contracts on Ethereum, written by Ethereum CTO）
     + Ethereum Dapp development learning rout：[🔗](./dev/ETHer-roadmap)
-    + Interested students can also learn about EOS, the second famous public blockchain besides Ethereum. For smart contracts of Consortium chain, such as hyperledger fabric, you can find some books or documents to read.
+    + Interested students can also learn about EOS, the second famous public blockchain besides Ethereum. For smart contracts of Enterprise-grade blockchain, such as hyperledger fabric, you can find some books or documents to read.
   + Virtual Machine：
     + EVM
       + EVM-awesome-list：[🔗](https://github.com/ethereum/wiki/wiki/Ethereum-Virtual-Machine-(EVM)-Awesome-List)
@@ -143,7 +143,7 @@ With the foundation of introduction, in fact, there are some optional topics, in
     + **NFT**
       +   1. In depth experience of multiple NFT products
       + **Roadmap-NFT second floor**：[🔗](./nft/NFTer-roadmap.md)
-  + Consortium chain, deeply understand the landing scenarios of various enterprises and industries：
+  + Enterprise-grade blockchain, deeply understand the landing scenarios of various enterprises and industries：
     + Certificate storage, traceability, supply chain finance, digital identity, government affairs, copyright protection....
     + It is suggested to first look at The 2018 White Paper on China's Blockchain Industry. Although it is 2022, this report is really good
     + There are some books: Industrial Blockchain（Introduction [🔗](https://book.douban.com/subject/35030217/)， Tencent's blockchain practice, can play a role in understanding）
