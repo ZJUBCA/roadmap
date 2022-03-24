@@ -37,7 +37,7 @@ ZJUBCA's learners who have little knowledge of blockchain are advised to careful
     + Houbi：[🔗](https://www.huobi.com/zh-cn/)
 + Metaverse primary：[🔗](https://www.yuque.com/books/share/a8a2de86-76de-4531-8486-ac3d40944557/pyu4w0)
 + Primary media information: obtain industry news
-  + 巴比特 -the largest blockchain forum in China：[🔗](http://www.8btc.com/)
+  + Babbitt -the largest blockchain forum in China：[🔗](http://www.8btc.com/)
   + Other good media：Odaily[🔗](https://www.odaily.news/)、Blockbeats[🔗](https://theblockbeats.info)、Golden Finance[🔗](https://www.jinse.com/)...
 
 ## L2: Homestead
