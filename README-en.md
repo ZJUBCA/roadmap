@@ -4,14 +4,13 @@ How to learn blockchain -2022🚀🚀🚀🚀
 
 —— By Zhejiang University BlockChain Association, ZJUBCA😁
 
-
 ## L1: Genesis
 
-At this stage, we will help you establish your basic understanding of blockchain, enhance your recognition of blockchain and have a general understanding of blockchain ecology. This stage is not divided into technology and business. You can learn according to your actual ability. <br>
-<br>
+At this stage, we will help you establish your basic understanding of blockchain, enhance your recognition of blockchain and have a general understanding of blockchain ecology. This stage is not divided into technology and business. You can learn according to your actual ability.
+
 ZJUBCA's learners who have little knowledge of blockchain are advised to carefully read the content here!
 
-+ **Documentary **(**required**🌟)）：
++ **Documentary** (**required**🌟)）：
   + Next: Blockchain（Introduction[🔗](https://movie.douban.com/subject/27941811/)；videos[🔗](https://www.bilibili.com/bangumi/play/ep290332?from=search&seid=4820733908948631673)）
 + **Reference books**：
   + Mastering Bitcoin（**required**🌟）（the Chinese version is translated as blockchain, which is recognized as the best book of blockchain 1.0, introduction to Douban[🔗](https://book.douban.com/subject/30180770/)；Online reading[🔗](https://github.com/inoutcode/bitcoin_book_2nd) ）
@@ -58,7 +57,7 @@ With the foundation of introduction, in fact, there are some optional topics, in
   + Smart contract：
     + Smart contract development is the basis of blockchain applications. Smart contracts of different blockchain platforms may be different, but most of them refer to Ethereum's smart contracts. For the public chain field, understanding Ethereum and its smart contracts is the first thing. As before, you can read the official documents of Ethereum or some books.
     + Ethereum official documents：[🔗](https://ethereum.org/en/developers/docs/)
-    + Solidity documents （you can switch versions to view documents of other versions）：[🔗](hhttps://docs.soliditylang.org/en/latest/)
+    + Solidity documents （you can switch versions to view documents of other versions）：[🔗](https://docs.soliditylang.org/en/latest/)
     + Book：Mastering Ethereum（Introduction[🔗](https://book.douban.com/subject/33424766/)，It mainly introduces Ethereum and how to write smart contracts on Ethereum, written by Ethereum CTO）
     + Ethereum Dapp development learning rout：[🔗](./dev/ETHer-roadmap)
     + Interested students can also learn about EOS, the second famous public blockchain besides Ethereum. For smart contracts of Enterprise-grade blockchain, such as hyperledger fabric, you can find some books or documents to read.
@@ -67,7 +66,7 @@ With the foundation of introduction, in fact, there are some optional topics, in
       + EVM-awesome-list：[🔗](https://github.com/ethereum/wiki/wiki/Ethereum-Virtual-Machine-(EVM)-Awesome-List)
       + EVM resolution：[🔗](https://github.com/CoinCulture/evm-tools/blob/master/analysis/guide.md)
     + wasm（WebAssembly）
-      +  eth-ewasm：[🔗](https://github.com/ewasm)
+      + eth-ewasm：[🔗](https://github.com/ewasm)
   + Network：
   + Cryptography：
     + Book：Applied Cryptography [🔗](https://book.douban.com/subject/1088180/)
@@ -106,7 +105,6 @@ With the foundation of introduction, in fact, there are some optional topics, in
   + Read classic papers / articles：
     + Bitcoin white paper：Bitcoin: A Peer-to-Peer Electronic Cash System[🔗](https://bitcoin.org/bitcoin.pdf)
     + Ethereum white paper：Ethereum: A next-generation smart contract and decentralized application platform[🔗](https://github.com/ethereum/wiki/wiki/White-Paper)
-      
       + If you have the ability, you should also read the Ethereum yellow book：Ethereum: A secure decentralised generalised transaction ledger[🔗](https://ethereum.github.io/yellowpaper/paper.pdf)
       + Ethereum wiki：[🔗](https://github.com/ethereum/wiki/wiki)
       + go-ethereum-code-analysis：[🔗](https://github.com/ZtesoftCS/go-ethereum-code-analysis)
@@ -167,6 +165,6 @@ From the perspective of narrow blockchain to the perspective of broad blockchain
 
 ## More and more...
 
-> + Metaverse：the form of the next generation Internet / digital world
+> Metaverse：the form of the next generation Internet / digital world
 
 + Metaverse-WIKI：[🔗](https://en.wikipedia.org/wiki/Metaverse)
