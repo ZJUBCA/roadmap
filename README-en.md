@@ -45,7 +45,7 @@ With the foundation of introduction, in fact, there are some optional topics, in
 
 + **Fork: Technical group**：
   + **Consortium blockchain**：
-    + **Consortium blockchain roadmap - layer 1**:[🔗](./consortium blockchain/Consortium Blockchian-roadmap.md)
+    + **Consortium blockchain roadmap - layer 1**:[🔗](./consortium_blockchain/Consortium_Blockchian_Roadmap.md)
     + In the field of Consortium blockchain, as long as we understand the Hyperledger Fabric and R3 Corda, we basically understand 80% of the content; The way of learning can be to directly read the documents on these projects, blogs written by others, or read books.
     + Hyperledger Fabric official document：[🔗](https://hyperledger-fabric.readthedocs.io/en/latest/)
     + Book: Advanced Practical Combat of Blockchain Technology（Introduction [🔗](https://book.douban.com/subject/30177480/)，Introduce Hyperledger Fabric、Ethereum、Hyperchain）
@@ -109,6 +109,7 @@ With the foundation of introduction, in fact, there are some optional topics, in
     + Bitcoin white paper：Bitcoin: A Peer-to-Peer Electronic Cash System[🔗](https://bitcoin.org/bitcoin.pdf)
     
     + Ethereum white paper：Ethereum: A next-generation smart contract and decentralized application platform[🔗](https://github.com/ethereum/wiki/wiki/White-Paper)
+      
       + If you have the ability, you should also read the Ethereum yellow book：Ethereum: A secure decentralised generalised transaction ledger[🔗](https://ethereum.github.io/yellowpaper/paper.pdf)
       + Ethereum wiki：[🔗](https://github.com/ethereum/wiki/wiki)
       + go-ethereum-code-analysis：[🔗](https://github.com/ZtesoftCS/go-ethereum-code-analysis)
@@ -149,7 +150,7 @@ With the foundation of introduction, in fact, there are some optional topics, in
   
   + **Consortium blockchain**
     
-    + **Consortium blockchain roadmap - layer 2**:[🔗](./consortium blockchain/Consortium Blockchian-roadmap.md)
+    + **Consortium blockchain roadmap - layer 2**:[🔗](./consortium_blockchain/Consortium_Blockchian_Roadmap.md)
 
 + **Fork: Business group**
   
@@ -161,7 +162,7 @@ With the foundation of introduction, in fact, there are some optional topics, in
       + In depth experience of multiple NFT products
       + **Roadmap-NFT second floor**：[🔗](./nft/NFTer-roadmap.md)
   + Consortium blockchain area : deeply understand famous framework of consortium blockchain and find out its commercial value：
-    + **Consortium blockchain roadmap - layer 3**:[🔗](./consortium blockchain/Consortium Blockchian-roadmap.md)
+    + **Consortium blockchain roadmap - layer 3**:[🔗](./consortium_blockchain/Consortium_Blockchian_Roadmap.md)
     + Certificate storage, traceability, supply chain finance, digital identity, government affairs, copyright protection....
     + It is suggested to first look at The 2018 White Paper on China's Blockchain Industry. Although it is 2022, this report is really good
     + There are some books: Industrial Blockchain（Introduction [🔗](https://book.douban.com/subject/35030217/)， Tencent's blockchain practice, can play a role in understanding）

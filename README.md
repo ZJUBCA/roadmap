@@ -45,7 +45,7 @@
 
 + **技术向**：
   + **联盟链**：
-    + **联盟链学习roadmap - 第一层**：[🔗](./consortium blockchain/Consortium Blockchian-roadmap.md)
+    + **联盟链学习roadmap - 第一层**：[🔗](./consortium_blockchain/Consortium_Blockchian_Roadmap.md)
     + 联盟链领域只要搞懂了Hyperledger Fabric、R3 Corda这两个项目的东西基本上就搞懂了80%的内容；学习方式可以是直接阅读这些项目上的文档、其他人写的博客、或者看书。
     + Hyperledger Fabric官方文档：[🔗](https://hyperledger-fabric.readthedocs.io/en/latest/)
     + 书籍《区块链技术进阶实战》（豆瓣介绍[🔗](https://book.douban.com/subject/30177480/)，介绍了Hyperledger Fabric、以太坊、Hyperchain）
@@ -109,6 +109,7 @@
     + bitcoin白皮书：Bitcoin: A Peer-to-Peer Electronic Cash System[🔗](https://bitcoin.org/bitcoin.pdf)
     
     + 以太坊白皮书：Ethereum: A next-generation smart contract and decentralized application platform[🔗](https://github.com/ethereum/wiki/wiki/White-Paper)
+      
       + 如果有能力也应该看下以太坊黄皮书：Ethereum: A secure decentralised generalised transaction ledger[🔗](https://ethereum.github.io/yellowpaper/paper.pdf)
       + 以太坊的wiki：[🔗](https://github.com/ethereum/wiki/wiki)
       + go-ethereum-code-analysis：[🔗](https://github.com/ZtesoftCS/go-ethereum-code-analysis)
@@ -151,7 +152,7 @@
   
   + **联盟链**：
     
-    + **联盟链学习roadmap - 第二层**：[🔗](./consortium blockchain/Consortium Blockchian-roadmap.md)
+    + **联盟链学习roadmap - 第二层**：[🔗](./consortium_blockchain/Consortium_Blockchian_Roadmap.md)
 
 + **商业向**（可以在公有链和联盟链中选一个，有精力的话建议全部都搞）：
   
@@ -163,7 +164,7 @@
       + 深入体验多款NFT产品
       + **Roadmap-NFT 第二层**：[🔗](./nft/NFTer-roadmap.md)
   + 联盟链方向，深入了解各个联盟链框架以及联盟链的商业价值和应用实践：
-    + **联盟链学习roadmap - 第三层**：[🔗](./consortium blockchain/Consortium Blockchian-roadmap.md)
+    + **联盟链学习roadmap - 第三层**：[🔗](./consortium_blockchain/Consortium_Blockchian_Roadmap.md)
     + 存证、溯源、供应链金融、数字身份、政务、版权保护....
     + 建议先看《2018年中国区块链产业白皮书》，虽然目前已经是2020年了，但是这个报告确实不错
     + 有一些书籍：《产业区块链》（豆瓣介绍[🔗](https://book.douban.com/subject/35030217/)，腾讯系的区块链实践，马化腾作序，可以起到一些了解的作用）
