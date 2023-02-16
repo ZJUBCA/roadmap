@@ -4,7 +4,6 @@ How to learn blockchain -2022🚀🚀🚀🚀
 
 —— By Zhejiang University BlockChain Association, ZJUBCA😁
 
-
 ## L1: Genesis
 
 At this stage, we will help you establish your basic understanding of blockchain, enhance your recognition of blockchain and have a general understanding of blockchain ecology. This stage is not divided into technology and business. You can learn according to your actual ability. <br>
@@ -45,8 +44,9 @@ ZJUBCA's learners who have little knowledge of blockchain are advised to careful
 With the foundation of introduction, in fact, there are some optional topics, in which you can understand and learn the topics you are interested in.
 
 + **Fork: Technical group**：
-  + Enterprise-grade blockchain：
-    + In the field of Enterprise-grade blockchain, as long as we understand the Hyperledger Fabric and R3 Corda, we basically understand 80% of the content; The way of learning can be to directly read the documents on these projects, blogs written by others, or read books.
+  + **Consortium blockchain**：
+    + **Consortium blockchain roadmap - layer 1**:[🔗](./consortium blockchain/Consortium Blockchian-roadmap.md)
+    + In the field of Consortium blockchain, as long as we understand the Hyperledger Fabric and R3 Corda, we basically understand 80% of the content; The way of learning can be to directly read the documents on these projects, blogs written by others, or read books.
     + Hyperledger Fabric official document：[🔗](https://hyperledger-fabric.readthedocs.io/en/latest/)
     + Book: Advanced Practical Combat of Blockchain Technology（Introduction [🔗](https://book.douban.com/subject/30177480/)，Introduce Hyperledger Fabric、Ethereum、Hyperchain）
     + Book: Principle, Design and Application of Blockchain（Introduction [🔗](https://book.douban.com/subject/27127839/)，The whole book is about Hyperledger Fabric, with source code analysis）
@@ -61,13 +61,13 @@ With the foundation of introduction, in fact, there are some optional topics, in
     + Solidity documents （you can switch versions to view documents of other versions）：[🔗](hhttps://docs.soliditylang.org/en/latest/)
     + Book：Mastering Ethereum（Introduction[🔗](https://book.douban.com/subject/33424766/)，It mainly introduces Ethereum and how to write smart contracts on Ethereum, written by Ethereum CTO）
     + Ethereum Dapp development learning rout：[🔗](./dev/ETHer-roadmap)
-    + Interested students can also learn about EOS, the second famous public blockchain besides Ethereum. For smart contracts of Enterprise-grade blockchain, such as hyperledger fabric, you can find some books or documents to read.
+    + Interested students can also learn about EOS, the second famous public blockchain besides Ethereum. For smart contracts of Consortium blockchain, such as hyperledger fabric, you can find some books or documents to read.
   + Virtual Machine：
     + EVM
       + EVM-awesome-list：[🔗](https://github.com/ethereum/wiki/wiki/Ethereum-Virtual-Machine-(EVM)-Awesome-List)
       + EVM resolution：[🔗](https://github.com/CoinCulture/evm-tools/blob/master/analysis/guide.md)
     + wasm（WebAssembly）
-      +  eth-ewasm：[🔗](https://github.com/ewasm)
+      + eth-ewasm：[🔗](https://github.com/ewasm)
   + Network：
   + Cryptography：
     + Book：Applied Cryptography [🔗](https://book.douban.com/subject/1088180/)
@@ -103,8 +103,11 @@ With the foundation of introduction, in fact, there are some optional topics, in
 >  The more you understand, the broader it will be
 
 + **Fork: Technical group**：
+  
   + Read classic papers / articles：
+    
     + Bitcoin white paper：Bitcoin: A Peer-to-Peer Electronic Cash System[🔗](https://bitcoin.org/bitcoin.pdf)
+    
     + Ethereum white paper：Ethereum: A next-generation smart contract and decentralized application platform[🔗](https://github.com/ethereum/wiki/wiki/White-Paper)
       
       + If you have the ability, you should also read the Ethereum yellow book：Ethereum: A secure decentralised generalised transaction ledger[🔗](https://ethereum.github.io/yellowpaper/paper.pdf)
@@ -112,15 +115,22 @@ With the foundation of introduction, in fact, there are some optional topics, in
       + go-ethereum-code-analysis：[🔗](https://github.com/ZtesoftCS/go-ethereum-code-analysis)
       + Ethereum source code analysis-Technical column of teaspring：[🔗](https://blog.csdn.net/teaspring)
       + Ethereum segmentation: overview and finalit:overview and finalit：[🔗](https://ethfans.org/posts/ethereum-sharding-and-finality)
+    
     + EOS white paper：[🔗](https://github.com/EOSIO/Documentation/blob/master/TechnicalWhitePaper.md)
+    
     + Polkadot white paper：Polkadot: Vision for a heterogeneous multi-chain framework
+    
     + It is suggested that you can search Google Scholar according to the topics you are interested in, such as blockchain, distribution ledger, etc.
+  
   + Read the classic project source code：
+    
     + Bitcoin source code：[🔗](https://github.com/bitcoin/bitcoin)
     + Ethereum source code(go-ethereum)：[🔗](https://github.com/ethereum/go-ethereum)
     + EOS source code：[🔗](https://github.com/EOSIO/eos)
     + Hyperledger Fabric source code：[🔗](https://github.com/hyperledger/fabric)
+  
   + Cross chain：
+    
     + Cross chain is the most cutting-edge technology of blockchain at present, and it is also one of the important directions of future development
     + Paper: blockchain interoperability article：Buterin V. Chain interoperabilit [🔗](https://www.r3.com/wp-content/uploads/2017/06/chain_interoperability_r3.pdf)
     + Some good blog posts：
@@ -130,20 +140,29 @@ With the foundation of introduction, in fact, there are some optional topics, in
     + Polkadot source code（rust）：[🔗](https://github.com/paritytech/polkadot)
     + Bitxhub, the leading cross chain platform in China, source code（go）：[🔗](https://github.com/meshplus/bitxhub)
     + Interested and energetic people can also learn about Subtrate：[🔗](https://substrate.dev)
+  
   + ETH2.0：
+    
     + Understand ETH1.0 Capacity expansion scheme
     + Understand ETH2.0 Roadmap
     + Understand the difference between layer2 and slice
     + Understand the latest development of layer2 and the difference between optimistic-rollup and zk-rollup
+  
+  + **Consortium blockchain**
+    
+    + **Consortium blockchain roadmap - layer 2**:[🔗](./consortium blockchain/Consortium Blockchian-roadmap.md)
+
 + **Fork: Business group**
+  
   + Public chain direction, in-depth understanding of Defi and NFT：
     + **DeFi**
       + In depth experience of multiple Defi products
       + Learn about the ecology of Defi and read some Defi research reports [🔗](./defi/defi_report.pdf)
     + **NFT**
-      +   1. In depth experience of multiple NFT products
+      + In depth experience of multiple NFT products
       + **Roadmap-NFT second floor**：[🔗](./nft/NFTer-roadmap.md)
-  + Enterprise-grade blockchain, deeply understand the landing scenarios of various enterprises and industries：
+  + Consortium blockchain area : deeply understand famous framework of consortium blockchain and find out its commercial value：
+    + **Consortium blockchain roadmap - layer 3**:[🔗](./consortium blockchain/Consortium Blockchian-roadmap.md)
     + Certificate storage, traceability, supply chain finance, digital identity, government affairs, copyright protection....
     + It is suggested to first look at The 2018 White Paper on China's Blockchain Industry. Although it is 2022, this report is really good
     + There are some books: Industrial Blockchain（Introduction [🔗](https://book.douban.com/subject/35030217/)， Tencent's blockchain practice, can play a role in understanding）
@@ -161,6 +180,7 @@ With the foundation of introduction, in fact, there are some optional topics, in
 ## Deeper and deeper...
 
 From the perspective of narrow blockchain to the perspective of broad blockchain: Web3
+
 >  Blockchain is the means and Web3 is the purpose
 
 + Web3-WIKI：[🔗](https://github.com/w3f/Web3-wiki/wiki)
