@@ -44,7 +44,8 @@
 有了入门的基础后，其实接下去都是一些可选的专题，对其中感兴趣的专题可以进行了解与学习。
 
 + **技术向**：
-  + 联盟链：
+  + **联盟链**：
+    + **联盟链学习roadmap - 第一层**：[🔗](./consortium_blockchain/Consortium_Blockchian_Roadmap.md)
     + 联盟链领域只要搞懂了Hyperledger Fabric、R3 Corda这两个项目的东西基本上就搞懂了80%的内容；学习方式可以是直接阅读这些项目上的文档、其他人写的博客、或者看书。
     + Hyperledger Fabric官方文档：[🔗](https://hyperledger-fabric.readthedocs.io/en/latest/)
     + 书籍《区块链技术进阶实战》（豆瓣介绍[🔗](https://book.douban.com/subject/30177480/)，介绍了Hyperledger Fabric、以太坊、Hyperchain）
@@ -66,7 +67,7 @@
       + evm-awesome-list：[🔗](https://github.com/ethereum/wiki/wiki/Ethereum-Virtual-Machine-(EVM)-Awesome-List)
       + evm解析：[🔗](https://github.com/CoinCulture/evm-tools/blob/master/analysis/guide.md)
     + wasm（WebAssembly）
-      +  eth-ewasm：[🔗](https://github.com/ewasm)
+      + eth-ewasm：[🔗](https://github.com/ewasm)
   + 网络：
   + 密码学：
     + 应用密码学-书籍 [🔗](https://book.douban.com/subject/1088180/)
@@ -102,24 +103,36 @@
 >  越了解，越广阔
 
 + **技术向**：
+  
   + 阅读经典论文/文章：
+    
     + bitcoin白皮书：Bitcoin: A Peer-to-Peer Electronic Cash System[🔗](https://bitcoin.org/bitcoin.pdf)
+    
     + 以太坊白皮书：Ethereum: A next-generation smart contract and decentralized application platform[🔗](https://github.com/ethereum/wiki/wiki/White-Paper)
+      
       + 如果有能力也应该看下以太坊黄皮书：Ethereum: A secure decentralised generalised transaction ledger[🔗](https://ethereum.github.io/yellowpaper/paper.pdf)
       + 以太坊的wiki：[🔗](https://github.com/ethereum/wiki/wiki)
       + go-ethereum-code-analysis：[🔗](https://github.com/ZtesoftCS/go-ethereum-code-analysis)
       + 以太坊源码分析-teaspring的技术专栏：[🔗](https://blog.csdn.net/teaspring)
       + 干货|以太坊分片:overview and finalit：[🔗](https://ethfans.org/posts/ethereum-sharding-and-finality)
+    
     + EOS白皮书：[🔗](https://github.com/EOSIO/Documentation/blob/master/TechnicalWhitePaper.md)
+    
     + Polkadot白皮书：Polkadot: Vision for a heterogeneous multi-chain framework
+    
     + **这 33 篇区块链必读论文 , 读过 5 篇以上的竟不到 1%**：[🔗](https://www.chainnews.com/articles/363251574672.htm)
+    
     + 建议可以按照自己感兴趣的主题去**Google Scholar**里搜索，如：blockchain, distribute ledger等。
+  
   + 阅读经典项目源码：
+    
     + Bitcoin源码：[🔗](https://github.com/bitcoin/bitcoin)
     + Ethereum源码(go-ethereum)：[🔗](https://github.com/ethereum/go-ethereum)
     + EOS源码：[🔗](https://github.com/EOSIO/eos)
     + Hyperledger Fabric源码：[🔗](https://github.com/hyperledger/fabric)
+  
   + 跨链：
+    
     + 跨链是目前区块链最前沿的技术，也是未来发展的重要方向之一
     + 论文：V神总结的区块链互操作性文章：Buterin V. Chain interoperabilit [🔗](https://www.r3.com/wp-content/uploads/2017/06/chain_interoperability_r3.pdf)
     + 一些不错的博客文章：
@@ -129,12 +142,20 @@
     + 国际最领先的跨链平台Polkadot源码（rust）：[🔗](https://github.com/paritytech/polkadot)
     + 国内最领先的跨链平台BitXHub源码（go）：[🔗](https://github.com/meshplus/bitxhub)
     + 有兴趣有精力的还可以了解下Subtrate：[🔗](https://substrate.dev)
+  
   + ETH2.0：
+    
     + 了解ETH1.0的扩容方案
     + 了解ETH2.0的Roadmap路线图
     + 了解layer2和分片的区别
     + 了解layer2最新进展rollup的两大方向optimistic-rollup和zk-rollup的区别
+  
+  + **联盟链**：
+    
+    + **联盟链学习roadmap - 第二层**：[🔗](./consortium_blockchain/Consortium_Blockchian_Roadmap.md)
+
 + **商业向**（可以在公有链和联盟链中选一个，有精力的话建议全部都搞）：
+  
   + 公有链方向，深入了解DeFi和NFT：
     + **DeFi**
       + 深入体验多款DeFi产品
@@ -142,7 +163,8 @@
     + **NFT**
       + 深入体验多款NFT产品
       + **Roadmap-NFT 第二层**：[🔗](./nft/NFTer-roadmap.md)
-  + 联盟链方向，深入了解各种企业、产业的落地场景：
+  + 联盟链方向，深入了解各个联盟链框架以及联盟链的商业价值和应用实践：
+    + **联盟链学习roadmap - 第三层**：[🔗](./consortium_blockchain/Consortium_Blockchian_Roadmap.md)
     + 存证、溯源、供应链金融、数字身份、政务、版权保护....
     + 建议先看《2018年中国区块链产业白皮书》，虽然目前已经是2020年了，但是这个报告确实不错
     + 有一些书籍：《产业区块链》（豆瓣介绍[🔗](https://book.douban.com/subject/35030217/)，腾讯系的区块链实践，马化腾作序，可以起到一些了解的作用）
