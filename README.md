@@ -138,7 +138,7 @@
     + 一些不错的博客文章：
       + 关于跨链技术的分析与思考：[🔗](https://mp.weixin.qq.com/s/fgRPwzVPB3Si5aHSCACvAg)
       + 跨链通信简要研究：[🔗](https://mp.weixin.qq.com/s/X7ztDBG6kqgrBaGwrrsfQw)
-    + 论文：Polkadot最新的论文：Overview of Polkadot and its Design Considerations
+    + 论文：Polkadot最新的论文：Overview of Polkadot and its Design Considerations[🔗](https://eprint.iacr.org/2020/641.pdf)
     + 国际最领先的跨链平台Polkadot源码（rust）：[🔗](https://github.com/paritytech/polkadot)
     + 国内最领先的跨链平台BitXHub源码（go）：[🔗](https://github.com/meshplus/bitxhub)
     + 有兴趣有精力的还可以了解下Subtrate：[🔗](https://substrate.dev)
