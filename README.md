@@ -44,6 +44,7 @@
       + TechFlow 深潮[🔗](https://www.techflowpost.com/)
       + TLDR Newsletter(5min科技新闻)[🔗](https://tldr.tech/)
       + Twitter加密货币消息聚合平台[🔗](https://www.coinfeeds.io/news)，技术内容较少
+      + web3Caff[🔗](https://web3caff.com/zh/)
 + **风险须知**
 	+ 遵守国家法律法规！
 	+ dyor，都是可选项，不是必选项。
