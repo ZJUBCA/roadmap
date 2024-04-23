@@ -17,7 +17,7 @@
 	+ DeFi 入门 ︱    加州大学伯克利分校：DeFi去中心化金融 [🔗](https://www.bilibili.com/video/BV1iV4y1T7iL/)  
 	+ Dapp开发入门，新手友好 [🔗](https://guoyu.mirror.xyz/RD-xkpoxasAU7x5MIJmiCX4gll3Cs0pAd5iM258S1Ek)
 	+ Solidity入门，以太坊开发 [🔗](https://blog.chain.link/learn-blockchain-full-stack-web3-javascript-smart-contract-development-zh/)
-	+ zk入门[🔗](https://zkhack.dev/whiteboard/module-one/)
+	+ zk入门[🔗](https://zkhack.dev/whiteboard/module-one/)  还有个没什么公式代码的书[🔗](https://learn.z2o-k7e.world/zkp-intro/toc.html)
 + **书籍**
 	+ 《Mastering Bitcoin》，公认的区块链1.0的最好的书，[🔗](https://berryjam.gitbook.io/mastering-bitcoin-3rd) 
 	+ 《Inevitable Ethereum》[🔗](https://inevitableeth.com/)  以太坊基本概念的科普
