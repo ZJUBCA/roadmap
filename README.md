@@ -19,7 +19,7 @@
 	+ Solidity入门，以太坊开发 [🔗](https://blog.chain.link/learn-blockchain-full-stack-web3-javascript-smart-contract-development-zh/)
 	+ zk入门[🔗](https://zkhack.dev/whiteboard/module-one/)
 + **书籍**
-	+ 《Mastering Bitcoin》（公认的区块链1.0的最好的书，豆瓣介绍[🔗](https://book.douban.com/subject/30180770/)；在线阅读[🔗](https://berryjam.gitbook.io/mastering-bitcoin-3rd) ）
+	+ 《Mastering Bitcoin》，公认的区块链1.0的最好的书，[🔗](https://berryjam.gitbook.io/mastering-bitcoin-3rd) 
 	+ 《Inevitable Ethereum》[🔗](https://inevitableeth.com/)  以太坊基本概念的科普
 	+  《区块链黑暗森林自救手册》[🔗](https://github.com/slowmist/Blockchain-dark-forest-selfguard-handbook)  降低资产风险
 	+ 《区块链红宝书--最接地气的币圈词典》[🔗](https://www.btc8686.com/wp-content/uploads/2022/02/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%BA%A2%E5%AE%9D%E4%B9%A6%E6%96%B0.pdf)   《Web3 黑话汇总》[🔗](https://github.com/WTFAcademy/WTF-gm)  一些常用的缩写
