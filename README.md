@@ -1,43 +1,55 @@
 # blockchainer-roadmap 2023
 
-区块链者学习路线2023🚀🚀🚀🚀
+区块链者学习路线2024🚀🚀🚀🚀
 
 —— By 浙江大学区块链协会（Zhejiang University BlockChain Association, ZJUBCA）
 
-在总结2018年🙂、2019年😀、2020年😁、2021年😆、2022年:heart_eyes:的学习资料、路线的基础上，结合最新的区块链前沿技术，制定了本学习路线:bowtie:。
+在总结过往学习资料、路线的基础上，结合最新的区块链前沿技术，制定了本学习路线🎨。
 
 ## 第一层
 
-此阶段建立其对区块链的基本认知，增强对区块链的认同感，对区块链生态有一个大致的了解。此阶段不分技术与商业。同学们可以按照自己的实际水平进行学习，对区块链认知比较少的同学建议认真过一下这里的内容。
+区块链入门
 
-+ **纪录片**（**必看**🌟）：
-  + 《区块链之新》6集（豆瓣介绍[🔗](https://movie.douban.com/subject/27941811/)；B站视频[🔗](https://www.bilibili.com/bangumi/play/ep290332?from=search&seid=4820733908948631673)）
-+ **书籍**：
-  + 《Mastering Bitcoin》（**必看**🌟）（中文版译名为《区块链》，公认的区块链1.0的最好的书，豆瓣介绍[🔗](https://book.douban.com/subject/30180770/)；在线阅读[🔗](https://www.8btc.com/books/261/master_bitcoin/_book/) ）
-  + 《区块链：从数字货币到信用社会》（豆瓣介绍[🔗](https://book.douban.com/subject/22993903/)；在线阅读[🔗](http://book.8btc.com/blockchain-credit) ）
-  + 《区块链：技术驱动金融》（豆瓣介绍[🔗](https://book.douban.com/subject/26860970/)；在线阅读[🔗](https://book.douban.com/subject/26860970/)）
-+ 数字货币初级：遵守国家法律法规
-  + 我国法律法规
-    + 关于防范比特币风险的通知（2014-01-22） [🔗](http://www.csrc.gov.cn/pub/newsite/flb/flfg/bmgf/zh/gfxwjfxq/201401/t20140122_242972.html)
-    + 中国人民银行等七部门关于防范代币发行融资风险的公告（2017-09-04）[🔗](http://www.csrc.gov.cn/pub/newsite/zjhxwfb/xwdd/201709/t20170904_323047.html)
-    + 国家对数字货币都做了哪些规定 [🔗](https://www.yeebee.com.cn/Knowledge/Detail?id=32)
-    + 国家发改委等部门关于整治虚拟货币“挖矿”活动的通知（2021-09-03）[🔗](https://www.ndrc.gov.cn/xxgk/zcfb/tz/202109/t20210924_1297474.html)
-    + 关于进一步防范和处置虚拟货币交易炒作风险的通知（2021-09-15）[🔗](http://www.gov.cn/zhengce/zhengceku/2021-10/08/content_5641404.htm)
-  + 了解常用数字货币行情软件：
++ **纪录片**
+	+ 《区块链之新》6集，小小名人录 [🔗](https://www.bilibili.com/bangumi/play/ep290332?from=search&seid=4820733908948631673)
++ **网课**
+	+ 《区块链技术与应用》虽然是2018年的公开课，但是非常经典常看常新。[🔗](https://www.bilibili.com/video/av37065233)
+	+ DeFi 入门 ︱    加州大学伯克利分校：DeFi去中心化金融 [🔗](https://www.bilibili.com/video/BV1iV4y1T7iL/)  
+	+ Dapp开发入门，新手友好 [🔗](https://guoyu.mirror.xyz/RD-xkpoxasAU7x5MIJmiCX4gll3Cs0pAd5iM258S1Ek)
+	+ Solidity入门，以太坊开发 [🔗](https://blog.chain.link/learn-blockchain-full-stack-web3-javascript-smart-contract-development-zh/)
+	+ zk入门[🔗](https://zkhack.dev/whiteboard/module-one/)  还有个没什么公式代码的书[🔗](https://learn.z2o-k7e.world/zkp-intro/toc.html)
++ **书籍**
+	+ 《Mastering Bitcoin》，公认的区块链1.0的最好的书，[🔗](https://berryjam.gitbook.io/mastering-bitcoin-3rd) 
+	+ 《Inevitable Ethereum》[🔗](https://inevitableeth.com/)  以太坊基本概念的科普
+	+  《区块链黑暗森林自救手册》[🔗](https://github.com/slowmist/Blockchain-dark-forest-selfguard-handbook)  降低资产风险
+	+ 《区块链红宝书--最接地气的币圈词典》[🔗](https://www.btc8686.com/wp-content/uploads/2022/02/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%BA%A2%E5%AE%9D%E4%B9%A6%E6%96%B0.pdf)   《Web3 黑话汇总》[🔗](https://github.com/WTFAcademy/WTF-gm)  一些常用的缩写
++ **常用数字货币钱包**
+    + MetaMusk: [🔗](https://metamask.io/)
+    + Trust Wallet: [🔗](https://www.trustwallet.com/)
+    + 其他：[🔗](https://www.coincarp.com/zh/wallets/)
++ **常用数字货币行情软件**
     + CoinGecko：[🔗](https://www.coingecko.com/)
     + CoinMarkCap：[🔗](https://coinmarketcap.com)
-    + Mytoken：[🔗](http://pre.mytoken.io/app)
-  + 了解常用数字货币手机钱包：
-    + Imtoken：[🔗](https://token.im/)
-    + TokenPocket：[🔗](https://www.tokenpocket.pro/)
-  + 知道主流三大交易所：
-    + 币安：[🔗](https://www.binance.com/zh-CN)
-    + OKX：[🔗](https://www.okx.com)
-    + 火币：[🔗](https://www.huobi.com/zh-cn/)
-+ Metaverse元宇宙初级：[🔗](https://www.yuque.com/books/share/a8a2de86-76de-4531-8486-ac3d40944557/pyu4w0)
-+ 媒体资讯初级：获取行业新闻
-  + 国内最大区块链论坛巴比特：[🔗](http://www.8btc.com/)
-  + 其他不错的媒体（有些有App，也有微信公众号）：Odaily星球日报[🔗](https://www.odaily.news/)、区块律动[🔗](https://theblockbeats.info)、瞬Mataki[🔗](https://www.matataki.io/)、PANews[🔗](https://www.panewslab.com/)、金色财经[🔗](https://www.jinse.com/)...
++ **主流交易所**
+	+ CEX：币安：[🔗](https://www.binance.com/zh-CN)    OKX：[🔗](https://www.okx.com)   其他：[🔗](https://www.coincarp.com/zh/exchanges/)
+  + DEX：Uniswap[🔗](https://uniswap.org/)   其他：[🔗](https://uniswap.org/)  
++ **社交媒体资讯**
+	+ X(twitter)，Discord[🔗](https://discord.com/)，Youtube，Telegram，Medium[🔗](https://medium.com/)，登链社区[🔗](https://learnblockchain.cn/)
+	+ 比特币生态资源导航 [🔗](https://123btc.org/)
+	+ 其他不错的媒体：
+      + Foresight News[🔗](https://foresightnews.pro/)
+      + Odaily星球日报[🔗](https://www.odaily.news/)
+      + BlockBeats[🔗](https://theblockbeats.info)
+      + PANews[🔗](https://www.panewslab.com/)
+      + TechFlow 深潮[🔗](https://www.techflowpost.com/)
+      + TLDR Newsletter(5min科技新闻)[🔗](https://tldr.tech/)
+      + Twitter加密货币消息聚合平台[🔗](https://www.coinfeeds.io/news)，技术内容较少
+      + web3Caff[🔗](https://web3caff.com/zh/)
++ **风险须知**
+	+ 遵守国家法律法规！
+	+ dyor，都是可选项，不是必选项。
+	
+
 
 ## 第二层
 
