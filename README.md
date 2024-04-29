@@ -42,11 +42,19 @@
     	+ 币安 [🔗](https://www.binance.com/zh-CN)    
     	+ OKX [🔗](https://www.okx.com)   
     	+ 其他 [🔗](https://www.coincarp.com/zh/exchanges/)
-  + DEX：
+  + DEX
       + EVM DEX：Uniswap [🔗](https://uniswap.org/)
       + SOL DEX：Raydium [🔗](https://raydium.io/) Jupiter [🔗](https://jup.ag/)
       + PancakeSwap，支持多链 [🔗](https://pancakeswap.finance/)
       + 其他 [🔗](https://www.coincarp.com/zh/exchanges/dex/)  
+  + NFT 市场
+      + ETH 市场：Opensea [🔗](https://opensea.io/) Blur [🔗](https://blur.io)
+      + MagicEden：多链，包括 BTC NFT 和符文 [🔗](https://magiceden.io/)
+      + OKX Web3 Marketplace：多链，包括 BTC NFT、铭文、符文和 Atom [🔗](https://www.okx.com/zh-hans/web3/marketplace/nft)
+  + 铭文、符文、Atom、RGB 市场
+      + OKX：最主流使用的 Web3 市场 [🔗](https://www.okx.com/zh-hans/web3/marketplace/nft)
+      + Unisat Market [🔗](https://unisat.io/market)
+      + RGB 市场仍在发展：HueHub [🔗](https://huehub.xyz/) Nomadland [🔗](https://market.nomadland.io/#/trade/info?id=0)
 + **社交媒体资讯**
 	+ X (Twitter)，Discord [🔗](https://discord.com/)，Youtube，Telegram，Medium [🔗](https://medium.com/)，登链社区 [🔗](https://learnblockchain.cn/)
 	+ 比特币生态资源导航 [🔗](https://123btc.org/)
