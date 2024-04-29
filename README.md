@@ -13,38 +13,52 @@
 + **纪录片**
 	+ 《区块链之新》6集，小小名人录 [🔗](https://www.bilibili.com/bangumi/play/ep290332?from=search&seid=4820733908948631673)
 + **网课**
-	+ 《区块链技术与应用》虽然是2018年的公开课，但是非常经典常看常新。[🔗](https://www.bilibili.com/video/av37065233)
-	+ DeFi 入门 ︱    加州大学伯克利分校：DeFi去中心化金融 [🔗](https://www.bilibili.com/video/BV1iV4y1T7iL/)  
-	+ Dapp开发入门，新手友好 [🔗](https://guoyu.mirror.xyz/RD-xkpoxasAU7x5MIJmiCX4gll3Cs0pAd5iM258S1Ek)
-	+ Solidity入门，以太坊开发 [🔗](https://blog.chain.link/learn-blockchain-full-stack-web3-javascript-smart-contract-development-zh/)
-	+ zk入门[🔗](https://zkhack.dev/whiteboard/module-one/)  还有个没什么公式代码的书[🔗](https://learn.z2o-k7e.world/zkp-intro/toc.html)
+	+ 区块链技术与应用，北大肖臻老师出品，内容极佳 [🔗](https://www.bilibili.com/video/av37065233) 笔记 [🔗](https://github.com/CSWellesSun/CSNotes/blob/main/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/Note/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8.md)
+	+ WTF Academy，开发者的 Web3 开源大学 [🔗](https://www.wtf.academy/)
+	+ DeFi 去中心化金融，UCB 课程 [🔗](https://www.bilibili.com/video/BV1iV4y1T7iL/)  
+	+ DAPP 开发入门，新手友好 [🔗](https://guoyu.mirror.xyz/RD-xkpoxasAU7x5MIJmiCX4gll3Cs0pAd5iM258S1Ek)
+	+ Crypto Zombie，通过完成一个小游戏来学习 DAPP 开发 [🔗](https://cryptozombies.io/)
+	+ Solidity 入门，以太坊开发 [🔗](https://blog.chain.link/learn-blockchain-full-stack-web3-javascript-smart-contract-development-zh/)
+	+ ZK 入门 [🔗](https://zkhack.dev/whiteboard/module-one/)  还有个没什么公式代码的书[🔗](https://learn.z2o-k7e.world/zkp-intro/toc.html)
+  
 + **书籍**
-	+ 《Mastering Bitcoin》，公认的区块链1.0的最好的书，[🔗](https://berryjam.gitbook.io/mastering-bitcoin-3rd) 
+	+ 《Mastering Bitcoin》，公认的区块链1.0的最好的书，涉及技术部分也较多 [🔗](https://berryjam.gitbook.io/mastering-bitcoin-3rd) 
 	+ 《Inevitable Ethereum》[🔗](https://inevitableeth.com/)  以太坊基本概念的科普
-	+  《区块链黑暗森林自救手册》[🔗](https://github.com/slowmist/Blockchain-dark-forest-selfguard-handbook)  降低资产风险
+	+  《区块链黑暗森林自救手册》[🔗](https://github.com/slowmist/Blockchain-dark-forest-selfguard-handbook)  慢雾出品，降低资产风险
 	+ 《区块链红宝书--最接地气的币圈词典》[🔗](https://www.btc8686.com/wp-content/uploads/2022/02/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%BA%A2%E5%AE%9D%E4%B9%A6%E6%96%B0.pdf)   《Web3 黑话汇总》[🔗](https://github.com/WTFAcademy/WTF-gm)  一些常用的缩写
+  
 + **常用数字货币钱包**
-    + MetaMusk: [🔗](https://metamask.io/)
-    + Trust Wallet: [🔗](https://www.trustwallet.com/)
-    + 其他：[🔗](https://www.coincarp.com/zh/wallets/)
+    + MetaMusk：EVM 最常用钱包 [🔗](https://metamask.io/)
+    + OKX：支持公链最多，用户体验极好 [🔗](https://www.okx.com/zh-hans/web3)
+    + Unisat：BTC 常用钱包 [🔗](https://unisat.io/)
+    + Phantom：SOL 常用钱包 [🔗](https://phantom.app/)
+    + Trust Wallet [🔗](https://www.trustwallet.com/)
+    + 其他 [🔗](https://www.coincarp.com/zh/wallets/)
 + **常用数字货币行情软件**
-    + CoinGecko：[🔗](https://www.coingecko.com/)
-    + CoinMarkCap：[🔗](https://coinmarketcap.com)
+    + CoinGecko [🔗](https://www.coingecko.com/)
+    + CoinMarkCap [🔗](https://coinmarketcap.com)
 + **主流交易所**
-	+ CEX：币安：[🔗](https://www.binance.com/zh-CN)    OKX：[🔗](https://www.okx.com)   其他：[🔗](https://www.coincarp.com/zh/exchanges/)
-  + DEX：Uniswap[🔗](https://uniswap.org/)   其他：[🔗](https://uniswap.org/)  
+	+ CEX
+    	+ 币安 [🔗](https://www.binance.com/zh-CN)    
+    	+ OKX [🔗](https://www.okx.com)   
+    	+ 其他 [🔗](https://www.coincarp.com/zh/exchanges/)
+  + DEX：
+      + EVM DEX：Uniswap [🔗](https://uniswap.org/)
+      + SOL DEX：Raydium [🔗](https://raydium.io/) Jupiter [🔗](https://jup.ag/)
+      + PancakeSwap，支持多链 [🔗](https://pancakeswap.finance/)
+      + 其他 [🔗](https://www.coincarp.com/zh/exchanges/dex/)  
 + **社交媒体资讯**
-	+ X(twitter)，Discord[🔗](https://discord.com/)，Youtube，Telegram，Medium[🔗](https://medium.com/)，登链社区[🔗](https://learnblockchain.cn/)
+	+ X (Twitter)，Discord [🔗](https://discord.com/)，Youtube，Telegram，Medium [🔗](https://medium.com/)，登链社区 [🔗](https://learnblockchain.cn/)
 	+ 比特币生态资源导航 [🔗](https://123btc.org/)
 	+ 其他不错的媒体：
-      + Foresight News[🔗](https://foresightnews.pro/)
-      + Odaily星球日报[🔗](https://www.odaily.news/)
-      + BlockBeats[🔗](https://theblockbeats.info)
-      + PANews[🔗](https://www.panewslab.com/)
-      + TechFlow 深潮[🔗](https://www.techflowpost.com/)
-      + TLDR Newsletter(5min科技新闻)[🔗](https://tldr.tech/)
-      + Twitter加密货币消息聚合平台[🔗](https://www.coinfeeds.io/news)，技术内容较少
-      + web3Caff[🔗](https://web3caff.com/zh/)
+      + Foresight News [🔗](https://foresightnews.pro/)
+      + Odaily 星球日报 [🔗](https://www.odaily.news/)
+      + BlockBeats [🔗](https://theblockbeats.info)
+      + PANews [🔗](https://www.panewslab.com/)
+      + TechFlow 深潮 [🔗](https://www.techflowpost.com/)
+      + TLDR Newsletter (5min科技新闻) [🔗](https://tldr.tech/)
+      + Twitter加密货币消息聚合平台 [🔗](https://www.coinfeeds.io/news)，技术内容较少
+      + web3Caff [🔗](https://web3caff.com/zh/)
 + **风险须知**
 	+ 遵守国家法律法规！
 	+ dyor，都是可选项，不是必选项。
@@ -74,6 +88,7 @@
     + 书籍：《精通以太坊》（豆瓣介绍[🔗](https://book.douban.com/subject/33424766/)，主要就是介绍以太坊，以及如何在以太坊上写智能合约，以太坊CTO著）
     + 除了以太坊以外，还可以了解波卡、Polygon和Dfinity等公有区块链。对于联盟链的智能合约，如Hyperledger Fabric，可以自行找一些书或者文档看。
     + 以太坊Dapp开发学习路线：[🔗](./dev/初探以太坊Dapp开发.md)
+    + SOL 开发教程，非常详细 [🔗](https://www.soldev.app/course) 
   + 虚拟机：
     + evm
       + evm-awesome-list：[🔗](https://github.com/ethereum/wiki/wiki/Ethereum-Virtual-Machine-(EVM)-Awesome-List)
