@@ -200,7 +200,7 @@
 
 >  区块链是手段，Web3是目的。
 
-+ Web3-WIKI：[🔗](https://github.com/w3f/Web3-wiki/wiki)
++ Web3-WIKI：[🔗](https://github.com/Web3-Club/Web3wiki-Website)
 
 ## 太空宇宙
 
