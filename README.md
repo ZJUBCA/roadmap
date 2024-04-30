@@ -56,17 +56,28 @@
       + Unisat Market [🔗](https://unisat.io/market)
       + RGB 市场仍在发展：HueHub [🔗](https://huehub.xyz/) Nomadland [🔗](https://market.nomadland.io/#/trade/info?id=0)
 + **社交媒体资讯**
-	+ X (Twitter)，Discord [🔗](https://discord.com/)，Youtube，Telegram，Medium [🔗](https://medium.com/)，登链社区 [🔗](https://learnblockchain.cn/)
-	+ 比特币生态资源导航 [🔗](https://123btc.org/)
-	+ 其他不错的媒体：
-      + Foresight News [🔗](https://foresightnews.pro/)
-      + Odaily 星球日报 [🔗](https://www.odaily.news/)
-      + BlockBeats [🔗](https://theblockbeats.info)
-      + PANews [🔗](https://www.panewslab.com/)
-      + TechFlow 深潮 [🔗](https://www.techflowpost.com/)
-      + TLDR Newsletter (5min科技新闻) [🔗](https://tldr.tech/)
-      + Twitter加密货币消息聚合平台 [🔗](https://www.coinfeeds.io/news)，技术内容较少
-      + web3Caff [🔗](https://web3caff.com/zh/)
+  + 社交平台与流媒体
+  	+ X (Twitter) [🔗](https://twitter.com/)，Discord [🔗](https://discord.com/)，Telegram，Youtube
+  + 论坛交流
+    + 登链社区 [🔗](https://learnblockchain.cn/)
+    + Reddit [🔗](https://www.reddit.com/)
+    + Stack Exchange [🔗](https://stackexchange.com/)
+    + Bitcointalk [🔗](https://bitcointalk.org/)
+  + 新闻博客
+    + Medium [🔗](https://medium.com/)
+    + Foresight News [🔗](https://foresightnews.pro/)
+    + Odaily 星球日报 [🔗](https://www.odaily.news/)
+    + BlockBeats [🔗](https://theblockbeats.info)
+    + PANews [🔗](https://www.panewslab.com/)
+    + TechFlow 深潮 [🔗](https://www.techflowpost.com/)
+    + TLDR Newsletter (5min科技新闻) [🔗](https://tldr.tech/)
+    + Web3Caff [🔗](https://web3caff.com/zh/)
+    + Followin  [🔗](https://followin.io/)
+    + Coindest [🔗](https://www.coindesk.com/)
+  + 其他
+  	+ 比特币生态资源导航 [🔗](https://123btc.org/)
+  	+ Twitter加密货币消息聚合平台 [🔗](https://www.coinfeeds.io/news)，技术内容较少
+    + 加密货币新闻聚合平台 [🔗](https://cryptopanic.com/)
 + **风险须知**
 	+ 遵守国家法律法规！
 	+ dyor，都是可选项，不是必选项。
