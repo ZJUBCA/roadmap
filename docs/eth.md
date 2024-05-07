@@ -1,28 +1,26 @@
-# 			ETHer-developer-roadmap 2022
+# ETHer-developer-roadmap 2022
 
-以太坊Dapp开发学习路线
+以太坊 Dapp 开发学习路线
 
 —— By 浙江大学区块链协会（Zhejiang University BlockChain Association, ZJUBCA）
-
-建议读者在学习一下内容前，先读这篇文章：初探以太坊Dapp开发：[🔗](./初探以太坊Dapp开发.md)
 
 ## 以太坊技术原理
 
 ### 初级：
 
-1. 以太坊基本概念，Foundational topics部分：[🔗](https://ethereum.org/en/developers/docs/)
+1. 以太坊基本概念，Foundational topics 部分：[🔗](https://ethereum.org/en/developers/docs/)
 
-2. 利用geth搭建私有链并交互：
+2. 利用 geth 搭建私有链并交互：
 
-3. 利用区块链浏览器Etherscan查看区块、交易、合约等信息：[🔗](http://etherscan.io/)
+3. 利用区块链浏览器 Etherscan 查看区块、交易、合约等信息：[🔗](http://etherscan.io/)
 
-4. 智能合约入门，solidity官方文档Basic部分：[🔗](https://docs.soliditylang.org/en/latest/introduction-to-smart-contracts.html)
+4. 智能合约入门，solidity 官方文档 Basic 部分：[🔗](https://docs.soliditylang.org/en/latest/introduction-to-smart-contracts.html)
 
 5. 以太坊知识库：[🔗](https://learnblockchain.cn/eth/)
 
 ### 中级：
 
-1. 以太坊开发文档，Ethereum stack部分：[🔗](https://ethereum.org/en/developers/docs/)
+1. 以太坊开发文档，Ethereum stack 部分：[🔗](https://ethereum.org/en/developers/docs/)
 2. 《精通以太坊》书籍
    1. 英文版：[🔗](https://github.com/ethereumbook/ethereumbook)
    2. 中文版：[🔗](https://github.com/inoutcode/ethereum_book)
@@ -30,7 +28,7 @@
 
 ### 高级
 
-1. **以太坊客户端**（建议Geth）源码分模块阅读与分析：[🔗](https://geth.ethereum.org)
+1. **以太坊客户端**（建议 Geth）源码分模块阅读与分析：[🔗](https://geth.ethereum.org)
 2. **以太坊黄皮书（optional）**：[🔗](https://files.gitter.im/ethereum/yellowpaper/VIyt/Paper.pdf)
 3. Layer2、ETH2.0 技术方案阅读与分析：
    1. [🔗](https://ethereum.org/en/developers/docs/scaling/)
@@ -39,29 +37,30 @@
 
 ### EVM
 
-1. 深潜EVM系列(EVM Deep Dives)文章：[🔗](https://substack.com/profile/80455042-noxx)
+1. 深潜 EVM 系列(EVM Deep Dives)文章：[🔗](https://substack.com/profile/80455042-noxx)
 
-   - EVM的函数选择原理：[🔗](https://learnblockchain.cn/article/3647)
-   - EVM中的内存数据区：[🔗](https://learnblockchain.cn/article/3684)
+   - EVM 的函数选择原理：[🔗](https://learnblockchain.cn/article/3647)
+   - EVM 中的内存数据区：[🔗](https://learnblockchain.cn/article/3684)
+
 2. 。。。
 
 ## 智能合约开发
 
 ### 初级
 
-1. 掌握“以太坊技术原理部分”初中级75%以上内容
-2. 了解开发工具：2022十大智能合约开发工具[🔗](https://learnblockchain.cn/article/3434)
+1. 掌握“以太坊技术原理部分”初中级 75%以上内容
+2. 了解开发工具：2022 十大智能合约开发工具[🔗](https://learnblockchain.cn/article/3434)
 
 3. 以太坊开发教程（optional）：[🔗](https://ethereum-blockchain-developer.com/000-learn-ethereum/)
-4. *Cryptozombies ---玩游戏的方式学习Solidity：[🔗](https://cryptozombies.io)
+4. \*Cryptozombies ---玩游戏的方式学习 Solidity：[🔗](https://cryptozombies.io)
 
 ### 中级
 
 #### 开发
 
-1. solidity开发文档：[🔗](https://docs.soliditylang.org/en/latest/)
-2. Openzeppelin文档（✨）：[🔗](https://docs.openzeppelin.com/contracts/4.x/)
-3. 一种前端API：
+1. solidity 开发文档：[🔗](https://docs.soliditylang.org/en/latest/)
+2. Openzeppelin 文档（✨）：[🔗](https://docs.openzeppelin.com/contracts/4.x/)
+3. 一种前端 API：
    1. web3.js: [🔗](https://web3js.readthedocs.io/en/v1.7.1/)
    2. ethers.js: [🔗](https://docs.ethers.io/v5/)
    3. 对比分析：[🔗](https://blog.infura.io/ethereum-javascript-libraries-web3-js-vs-ethers-js-part-i/)
@@ -80,11 +79,10 @@
 
 BlockSec：[🔗](https://www.blocksecteam.com/)
 
-
 ## 链上数据
 
-1. *The Graph ---链上数据获取：*[🔗](https://thegraph.com)
-2. *Chainlist ---EVM网络列表：*[🔗](https://chainlist.org/)
+1. _The Graph ---链上数据获取：_[🔗](https://thegraph.com)
+2. _Chainlist ---EVM 网络列表：_[🔗](https://chainlist.org/)
 
 ## 常用工具和网站
 
@@ -96,7 +94,7 @@ BlockSec：[🔗](https://www.blocksecteam.com/)
 
 ### 社区
 
-1. *登链社区 ---区块链开发者社区：*[🔗](https://learnblockchain.cn)
+1. _登链社区 ---区块链开发者社区：_[🔗](https://learnblockchain.cn)
 
 2. Stack Overflow ---程序开发交流社区：[🔗](https://stackoverflow.com)
 
@@ -118,6 +116,6 @@ layer2 方案的备忘录：[🔗](https://mirror.xyz/ethmaxitard.eth/iyCAlOexgQ
 
 ethereum-input-data-decoder：[🔗](https://lab.miguelmota.com/ethereum-input-data-decoder/example/)
 
-evm字节码：[🔗](https://www.evm.codes/)
+evm 字节码：[🔗](https://www.evm.codes/)
 
 加密协议列表：[🔗](https://github.com/bryanhpchiang/protocol-reading-list)

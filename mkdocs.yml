@@ -1,0 +1,7 @@
+site_name: ZJUBCA Blockchain Roadmap
+nav:
+  - 学习路径: index.md
+  - ETH: eth.md
+  - NFT: nft.md
+  - 联盟链: consortium.md
+  - 参考: reference.md
