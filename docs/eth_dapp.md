@@ -69,14 +69,14 @@ BY ZJUBCA
 
 [🔗 以太坊黄皮书](https://gitcode.net/mirrors/wanshan1024/ethereum_yellowpaper)
 
-- 帐户；
-- 状态；
-- Gas 与费用；
-- 交易；
-- 区块；
-- 交易执行；
-- 挖矿；
-- 工作量证明。
+-   帐户；
+-   状态；
+-   Gas 与费用；
+-   交易；
+-   区块；
+-   交易执行；
+-   挖矿；
+-   工作量证明。
 
 ## Solidity 及 EVM
 
@@ -102,10 +102,10 @@ contract HelloWorld {
 
 如果你已经迫不及待的想要成为一名智能合约开发者，那么以下列出的学习工具一定有助于你：
 
-- Remix ---智能合约在线开发工具：[🔗](https://remix.ethereum.org)
-- Solidity 最新(0.8.0)中文文档：[🔗](https://learnblockchain.cn/docs/solidity)
-- Cryptozombies ---玩游戏的方式学习 Solidity：[🔗](https://cryptozombies.io)
-- Solidity by Example ---以太坊官方教程：[🔗](https://solidity-by-example.org)
+-   Remix ---智能合约在线开发工具：[🔗](https://remix.ethereum.org)
+-   Solidity 最新(0.8.0)中文文档：[🔗](https://learnblockchain.cn/docs/solidity)
+-   Cryptozombies ---玩游戏的方式学习 Solidity：[🔗](https://cryptozombies.io)
+-   Solidity by Example ---以太坊官方教程：[🔗](https://solidity-by-example.org)
 
 ### 二、EVM——基于堆栈的以太坊虚拟机
 
@@ -152,8 +152,8 @@ EVM 练兵场：[🔗](https://www.evm.codes/)
 以太坊是一个开源项目，由“黄皮书”正式规范定义。除了各种以太坊改进提案之外，此正式规范还定义了以太坊客户端的标准行为。因为以太坊有明确的正式规范，所以，任何一个独立开发的软件，只要实现了该范式，那他就可以作为一个以太坊节点，与以太坊或其它以太坊客户端交互。
 目前以太坊客户端支持 8 种语言的客户端，这里推荐其中两款：
 
-- go-ethereum（geth）[🔗](https://github.com/ethereum/go-ethereum)：Golang 实现，官方推荐，开发使用最多
-- Parity[🔗](https://github.com/ethcore/parity/releases)：Rust 实现，最轻便客户端，在历次以太网攻击中表现卓越
+-   go-ethereum（geth）[🔗](https://github.com/ethereum/go-ethereum)：Golang 实现，官方推荐，开发使用最多
+-   Parity[🔗](https://github.com/ethcore/parity/releases)：Rust 实现，最轻便客户端，在历次以太网攻击中表现卓越
 
 ### 二、开发框架
 
@@ -168,7 +168,7 @@ EVM 练兵场：[🔗](https://www.evm.codes/)
 Truffle 是第一套基于以太坊的 Solidity 语言的成熟的开发框架。本身是基于 JavaScript。它对客户端做了深度集成，使开发、测试、部署都只需要一个命令行，可以在控制台使用命令行直接调用输出结果，方便调试。
 Truffle 是本地编译、部署智能合约的框架；而向前文中提到的 geth 客户端连接的才是真正的以太坊环境；testrpc 是 Truffle 本地使用内存模拟的以太坊环境，关闭终端后，部署到 testrpc 的智能合约不会保存下来，对于开发调试更加方便，合约可以在 testrpc 中通过测试后，再部署到 geth 上，从而减少不必要的损失。
 
-- Truffle：[🔗](https://learnblockchain.cn/docs/truffle/quickstart.html)
+-   Truffle：[🔗](https://learnblockchain.cn/docs/truffle/quickstart.html)
 
 #### - Hardhat
 
@@ -176,7 +176,7 @@ Hardhat 是一个编译、部署、测试和调试以太坊应用的开发环境
 Hardhat 内置了 Hardhat 网络，这是一个专为开发设计的本地以太坊网络。主要功能有 Solidity 调试，跟踪调用堆栈、console.log()和交易失败时的明确错误信息提示等，其在智能合约的 Debug 调试过程的交互性要优于 Truffle。
 除此之外，与 Truffle 不同的是，Hardhat 是一款基于插件的开发框架，其很多功能都来自于插件，开发者可以自由选择想使用的插件，甚至还可以将现有的 Truffle 项目迁移到 Hardhat 上。
 
-- Hardhat：[🔗](https://learnblockchain.cn/docs/hardhat/getting-started)
+-   Hardhat：[🔗](https://learnblockchain.cn/docs/hardhat/getting-started)
 
 ### 三、Dapp 开发
 
@@ -199,29 +199,29 @@ Dapp 的一般开发流程：
 4. 编写前端界面，并通过如 ether.js、web3.js 与智能合约进行交互
 5. 项目发布与测试
 
-- node.js 介绍文档：[🔗](https://www.runoob.com/nodejs/nodejs-tutorial.html)
-- ether.js 中文文档：[🔗](https://learnblockchain.cn/docs/ethers.js)
-- web3.js(1.0)中文文档：[🔗](http://cw.hubwiz.com/card/c/web3.js-1.0/1/1/1/)
+-   node.js 介绍文档：[🔗](https://www.runoob.com/nodejs/nodejs-tutorial.html)
+-   ether.js 中文文档：[🔗](https://learnblockchain.cn/docs/ethers.js)
+-   web3.js(1.0)中文文档：[🔗](http://cw.hubwiz.com/card/c/web3.js-1.0/1/1/1/)
 
 ## 常用工具及网站
 
 ### 一、数据查询
 
-- Etherscan ---以太坊区块链浏览器：[🔗](https://etherscan.io)
-- Ethereum Signature Database ---EVM 调用记录数据库：[🔗](https://www.4byte.directory)
-- ENS ---以太坊域名系统：[🔗](https://app.ens.domains)
+-   Etherscan ---以太坊区块链浏览器：[🔗](https://etherscan.io)
+-   Ethereum Signature Database ---EVM 调用记录数据库：[🔗](https://www.4byte.directory)
+-   ENS ---以太坊域名系统：[🔗](https://app.ens.domains)
 
 ### 二、合约开发
 
-- ChainIDE ---支持多链的在线合约开发工具：[🔗](https://chainide.com/zh-CN)
-- Chainlist ---EVM 网络列表：[🔗](https://chainlist.org/)
-- The Graph ---链上数据获取：[🔗](https://thegraph.com)
-- Chainlink ---第三方预言机：[🔗](https://docs.chain.link)
-- Alchemy ---第三方节点提供商：[🔗](https://dashboard.alchemyapi.io/signup/chain)
+-   ChainIDE ---支持多链的在线合约开发工具：[🔗](https://chainide.com/zh-CN)
+-   Chainlist ---EVM 网络列表：[🔗](https://chainlist.org/)
+-   The Graph ---链上数据获取：[🔗](https://thegraph.com)
+-   Chainlink ---第三方预言机：[🔗](https://docs.chain.link)
+-   Alchemy ---第三方节点提供商：[🔗](https://dashboard.alchemyapi.io/signup/chain)
 
 ### 三、社区交流
 
-- 登链社区 ---区块链开发者论坛：[🔗](https://learnblockchain.cn)
-- 巴比特 ---区块链资讯平台：[🔗](https://www.8btc.com)
-- Ethereum ---以太坊基金会官方开发网站：[🔗](https://ethereum.org/en/developers)
-- Stack Overflow ---程序开发交流社区：[🔗](https://stackoverflow.com)
+-   登链社区 ---区块链开发者论坛：[🔗](https://learnblockchain.cn)
+-   巴比特 ---区块链资讯平台：[🔗](https://www.8btc.com)
+-   Ethereum ---以太坊基金会官方开发网站：[🔗](https://ethereum.org/en/developers)
+-   Stack Overflow ---程序开发交流社区：[🔗](https://stackoverflow.com)
