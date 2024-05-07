@@ -74,7 +74,7 @@
 
 - **技术向**：
   - **联盟链**：
-    - **联盟链学习 roadmap - 第一层**：[🔗](./consortium_blockchain/Consortium_Blockchian_Roadmap.md)
+    - **联盟链学习 roadmap - 第一层**：[🔗](./consortium.md)
     - 联盟链领域只要搞懂了 Hyperledger Fabric、R3 Corda 这两个项目的东西基本上就搞懂了 80%的内容；学习方式可以是直接阅读这些项目上的文档、其他人写的博客、或者看书。
     - Hyperledger Fabric 官方文档：[🔗](https://hyperledger-fabric.readthedocs.io/en/latest/)
     - 书籍《区块链技术进阶实战》（豆瓣介绍[🔗](https://book.douban.com/subject/30177480/)，介绍了 Hyperledger Fabric、以太坊、Hyperchain）
@@ -90,7 +90,7 @@
     - Solidity 最新文档（可以切换版本查看其他版本的文档）：[🔗](https://docs.soliditylang.org/en/latest/)
     - 书籍：《精通以太坊》（豆瓣介绍[🔗](https://book.douban.com/subject/33424766/)，主要就是介绍以太坊，以及如何在以太坊上写智能合约，以太坊 CTO 著）
     - 除了以太坊以外，还可以了解波卡、Polygon 和 Dfinity 等公有区块链。对于联盟链的智能合约，如 Hyperledger Fabric，可以自行找一些书或者文档看。
-    - 以太坊 Dapp 开发学习路线：[🔗](./dev/初探以太坊Dapp开发.md)
+    - 以太坊 Dapp 开发学习路线：[🔗](./eth_dapp.md)
     - SOL 开发教程，非常详细 [🔗](https://www.soldev.app/course)
   - 虚拟机：
     - evm
@@ -123,10 +123,10 @@
     - 搜索并了解什么是 Staking Economy
   - **DeFi**：Decentralized Finance
     - 搜索并了解什么是 DeFi
-    - 书籍推荐：《How to DeFi》：[🔗](./defi/How_to_DeFi_CHN.pdf)
+    - 书籍推荐：《How to DeFi》：[🔗](https://github.com/Blockchain-zju/HistoryFiles/blob/main/defi/How_to_DeFi_CHN.pdf)
   - **NFT**：Non-fungible Token
     - 搜索并了解 NFT、ERC-721
-    - **Roadmap-NFT 第一层**：[🔗](./nft/NFTer-roadmap.md)
+    - **Roadmap-NFT 第一层**：[🔗](./nft.md)
 
 ## 第三层
 
@@ -182,19 +182,19 @@
 
   - **联盟链**：
 
-    - **联盟链学习 roadmap - 第二层**：[🔗](./consortium_blockchain/Consortium_Blockchian_Roadmap.md)
+    - **联盟链学习 roadmap - 第二层**：[🔗](./consortium.md)
 
 - **商业向**（可以在公有链和联盟链中选一个，有精力的话建议全部都搞）：
 
   - 公有链方向，深入了解 DeFi 和 NFT：
     - **DeFi**
       - 深入体验多款 DeFi 产品
-      - 了解 DeFi 的生态，阅读一些 DeFi 的研究报告 [🔗](./defi/defi_report.pdf)
+      - 了解 DeFi 的生态，阅读一些 DeFi 的研究报告 [🔗](https://github.com/Blockchain-zju/HistoryFiles/blob/main/defi/defi_report.pdf)
     - **NFT**
       - 深入体验多款 NFT 产品
-      - **Roadmap-NFT 第二层**：[🔗](./nft/NFTer-roadmap.md)
+      - **Roadmap-NFT 第二层**：[🔗](./nft.md)
   - 联盟链方向，深入了解各个联盟链框架以及联盟链的商业价值和应用实践：
-    - **联盟链学习 roadmap - 第三层**：[🔗](./consortium_blockchain/Consortium_Blockchian_Roadmap.md)
+    - **联盟链学习 roadmap - 第三层**：[🔗](./consortium.md)
     - 存证、溯源、供应链金融、数字身份、政务、版权保护....
     - 建议先看《2018 年中国区块链产业白皮书》，虽然目前已经是 2020 年了，但是这个报告确实不错
     - 有一些书籍：《产业区块链》（豆瓣介绍[🔗](https://book.douban.com/subject/35030217/)，腾讯系的区块链实践，马化腾作序，可以起到一些了解的作用）
