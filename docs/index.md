@@ -1,4 +1,4 @@
-# blockchainer-roadmap 2023
+# blockchainer-roadmap 2024
 
 区块链者学习路线 2024🚀🚀🚀🚀
 
@@ -184,7 +184,7 @@
 
 > 浩瀚无垠，分头突围
 
-### 其他优质资源
+## 其他优质资源
 
 -   awesome-blockchain：[🔗](https://github.com/chaozh/awesome-blockchain-cn)
 -   awesome-metaverse：[🔗](https://github.com/M3-org/awesome-metaverse)

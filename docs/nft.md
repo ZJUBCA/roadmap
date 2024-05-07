@@ -1,4 +1,4 @@
-# NFTer-roadmap 2021
+# NFTer-roadmap 2024
 
 NFT 学习路线总结，不断更新。
 
