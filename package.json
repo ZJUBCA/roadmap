@@ -1,7 +1,7 @@
 {
     "scripts": {
-        "format:prettier": "prettier . --write",
-        "prepare": "husky install"
+        "format:prettier": "prettier --write docs/**/*.md",
+        "prepare": "husky"
     },
     "devDependencies": {
         "prettier": "^3.2.5",
@@ -9,6 +9,6 @@
         "lint-staged": "^15.2.2"
     },
     "lint-staged": {
-        "**/*": "prettier --write --ignore-unknown"
+        "docs/**/*.md": "prettier --write --ignore-unknown"
     }
 }
