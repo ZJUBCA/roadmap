@@ -1,13 +1,14 @@
 site_name: ZJUBCA Blockchain Roadmap
 nav:
     - 学习路径: index.md
+    - 每周精选: weekly/weekly.md
     - ETH:
-          - 学习路径: eth.md
-          - 开发教程: eth_dapp.md
-    - NFT: nft.md
-    - 联盟链: consortium.md
-    - 参考: reference.md
-    - 历史文件: history.md
+          - 学习路径: eth/eth.md
+          - 开发教程: eth/eth_dapp.md
+    - NFT: nft/nft.md
+    - 联盟链: consortium/consortium.md
+    - 参考文档: reference/reference.md
+    - 历史文件: history/history.md
 #主题
 theme:
     name: "material"
