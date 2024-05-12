@@ -22,7 +22,7 @@ Base的愿景是创建一个所谓的“超级链”，使用Optimism技术来�
 
 5. 技术基础与创新
 
-   Base链建立在Optimism的OP Stack之上，采用Optimistic Rollups技术，与以太坊主网兼容性强，并计划逐步去中心化。
+    Base链建立在Optimism的OP Stack之上，采用Optimistic Rollups技术，与以太坊主网兼容性强，并计划逐步去中心化。
 
 6. 原生文化与社区活跃度：
    Base链通过举办链上夏季活动（Onchain Summer Event）、FarCon等活动，成功吸引了社区的关注和参与，增强了其原生文化的影响力。
@@ -55,7 +55,7 @@ Jesse Pollak展示了他对Base链开放性、去中心化以及其在推动链�
 6. 在讨论Base生态系统时，Jesse Pollak强调了通过meme项目覆盖广泛的用户群，以及Base链上社交产品的创新和尝试，如Friend.Tech等。
 7. Jesse对Base链的未来发展持乐观态度，并认为Meme币将成为吸引数百万用户加入Base网络的关键驱动力。
 
-##  Base链的未来
+## Base链的未来
 
 今年的坎昆升级之后，base又来了新一波的爆发，而base链的创始人在前几天，更是列出了一大批base链的项目，算是明牌表示支持了一众项目，在这些应用背后的，是 Paradigm、a16z、Multicoin、DragonFly、Variant Funds、1confirmation 等一批加密市场知名的 VC 机构。
 

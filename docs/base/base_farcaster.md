@@ -44,19 +44,18 @@ e.g 你可以在帖子中直接铸造base nft
 
 7. 关注名人账号，优化信息流
 
-   @jessepollak  base创始人
+    @jessepollak base创始人
 
-   @vitalik.eth     v神
+    @vitalik.eth v神
 
-   ...
+    ...
 
-   @arespollo  pollo   把我关注的都关注一下，顺带也关注我lol
+    @arespollo pollo 把我关注的都关注一下，顺带也关注我lol
 
 8. 名词科普
 
-   Cast ：一条帖子，理解成推特的一条推文
+    Cast ：一条帖子，理解成推特的一条推文
 
-   Channel ：频道，类似豆瓣的小组，如degen channel
+    Channel ：频道，类似豆瓣的小组，如degen channel
 
-   Warps ：没上链的货币，类比q币，没有价值，主要用途是用来奖励别人、购买空间、租频道
-
+    Warps ：没上链的货币，类比q币，没有价值，主要用途是用来奖励别人、购买空间、租频道
