@@ -5,6 +5,10 @@ nav:
     - ETH:
           - 学习路径: eth/eth.md
           - 开发教程: eth/eth_dapp.md
+    - Base:
+          - 介绍: base/base_intro.md
+          - Farcaster: base/base_farcaster.md
+          - Degen: base/base_degen.md
     - NFT: nft/nft.md
     - 联盟链: consortium/consortium.md
     - 参考文档: reference/reference.md
