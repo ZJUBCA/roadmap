@@ -54,9 +54,17 @@
             -   Unisat Market [🔗](https://unisat.io/market)
             -   RGB 市场仍在发展：HueHub [🔗](https://huehub.xyz/) Nomadland [🔗](https://market.nomadland.io/#/trade/info?id=0)
 -   **社交媒体资讯**
-    -   X (Twitter)，Discord [🔗](https://discord.com/)，Youtube，Telegram，Medium [🔗](https://medium.com/)，登链社区 [🔗](https://learnblockchain.cn/)
-    -   比特币生态资源导航 [🔗](https://123btc.org/)
-    -   其他不错的媒体：
+    -   X (Twitter)
+        -   吴说 [🔗](https://twitter.com/WuBlockchain)
+    -   网站
+        -   cointelegraph [🔗](https://cointelegraph.com/)
+        -   the block [🔗](https://www.theblock.co/)
+        -   Medium [🔗](https://medium.com/)
+        -   登链社区 [🔗](https://learnblockchain.cn/)
+        -   比特币生态资源导航 [🔗](https://123btc.org/)
+    -   Newsletter
+        -   coinbase 每周咨询 [🔗](https://www.coinbase.com/bytes)
+    -   媒体：
         -   Foresight News [🔗](https://foresightnews.pro/)
         -   Odaily 星球日报 [🔗](https://www.odaily.news/)
         -   BlockBeats [🔗](https://theblockbeats.info)
