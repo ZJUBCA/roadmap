@@ -1,6 +1,8 @@
 site_name: ZJUBCA Blockchain Roadmap
 nav:
     - 学习路径: index.md
+    - 技术分享:
+          - Fluence 空投代码分析: tech/fluence.md
     - 每周精选: weekly/weekly.md
     - ETH:
           - 学习路径: eth/eth.md
