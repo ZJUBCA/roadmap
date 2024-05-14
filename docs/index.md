@@ -56,23 +56,23 @@
 -   **社交媒体资讯**
     -   X (Twitter)
         -   吴说 [🔗](https://twitter.com/WuBlockchain)
+        -   Twitter 加密货币消息聚合平台 [🔗](https://www.coinfeeds.io/news)
     -   网站
         -   cointelegraph [🔗](https://cointelegraph.com/)
         -   the block [🔗](https://www.theblock.co/)
+        -   web3Caff [🔗](https://web3caff.com/zh/)
         -   Medium [🔗](https://medium.com/)
         -   登链社区 [🔗](https://learnblockchain.cn/)
         -   比特币生态资源导航 [🔗](https://123btc.org/)
     -   Newsletter
         -   coinbase 每周咨询 [🔗](https://www.coinbase.com/bytes)
+        -   TLDR Newsletter (5min 科技新闻) [🔗](https://tldr.tech/)
     -   媒体：
         -   Foresight News [🔗](https://foresightnews.pro/)
         -   Odaily 星球日报 [🔗](https://www.odaily.news/)
         -   BlockBeats [🔗](https://theblockbeats.info)
         -   PANews [🔗](https://www.panewslab.com/)
         -   TechFlow 深潮 [🔗](https://www.techflowpost.com/)
-        -   TLDR Newsletter (5min 科技新闻) [🔗](https://tldr.tech/)
-        -   Twitter 加密货币消息聚合平台 [🔗](https://www.coinfeeds.io/news)，技术内容较少
-        -   web3Caff [🔗](https://web3caff.com/zh/)
 -   **风险须知**
     -   遵守国家法律法规！
     -   dyor，都是可选项，不是必选项。
