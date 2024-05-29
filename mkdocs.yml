@@ -2,6 +2,8 @@ site_name: ZJUBCA Blockchain Roadmap
 nav:
     - 学习路径: index.md
     - 技术分享:
+          - 分层确定性钱包初探: tech/Hierarchical_Deterministic_Wallets/Hierarchical_Deterministic_Wallets.md
+          - 以太坊智能合约初探: tech/Ethereum_Smart_Contract_Introduction/Ethereum_Smart_Contract_Introduction.md
           - Fluence 空投代码分析: tech/fluence/fluence.md
           - Solana和Aptos技术对比浅析: tech/A_brief_technical_analysis_of_solana_and_move/A_brief_technical_analysis_of_solana_and_move.md
     - 每周精选: weekly/weekly.md
