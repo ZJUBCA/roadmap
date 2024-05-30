@@ -108,16 +108,28 @@
         -   wasm（WebAssembly）
             -   eth-ewasm：[🔗](https://github.com/ewasm)
     -   密码学：
-        -   应用密码学-书籍 [🔗](https://book.douban.com/subject/1088180/)
-        -   信息安全原理-书籍 [🔗](https://book.douban.com/subject/24733262/)
+        -   介绍了简单的 `secp256k1`签名算法、比特币交易签名、 `schnorr` 多签 [🔗](https://www.btcstudy.org/2022/06/13/part-2-bitcoin-p2tr-transaction-breakdown/)
+        -   [noble-secp256k1](https://github.com/paulmillr/noble-secp256k1)：secp256k1 签名和 ECDH 的最快 4KB JS 实现。极其简洁，但内容完整且经过算法优化，非常适合从底层了解签名算法。作者还专门写了一篇介绍椭圆曲线算法加速的文章 [🔗](https://paulmillr.com/posts/noble-secp256k1-fast-ecc/)
+        -
     -   DAG：
         -   IOTA：[🔗](https://docs.iota.org/introduction)
         -   Byteball：[🔗](https://byteball.org/)
     -   去中心化存储
         -   IPFS/Filecoin：[🔗](https://github.com/Blockchain-zju/blockchainer-roadmap/tree/master/ipfs)
+    -   DeFi
+        -   安全
+            -   文章：16个 solidity合约漏洞，修复和真实世界的案例 [🔗](https://hackernoon.com/hackpedia-16-solidity-hacks-vulnerabilities-their-fixes-and-real-world-examples-f3210eba5148)
+            -   工具：
+                -   [DeFiHackLabs](https://github.com/SunWeb3Sec/DeFiHackLabs)，收录了很多资安事件的概念性验证程序
+                -   [DeFiVulnLabs](https://github.com/SunWeb3Sec/DeFiVulnLabs)，整理了常见Solidity的漏洞测试与防御方式
+        -   实现
+    -   具体链相关资源
+        -   ETH
+            -   eth roadmap - 第一层：[🔗](eth/eth.md)
+        -
 -   **商业向**：
-    -   加密货币/数字货币：
-        -   了解历史上的币价走势
+    -   research/dataAnalysis：
+        -   文章：从新闻聚合器到链上分析工具，十大加密研究工具清单 [🔗](https://abmedia.io/20220726-the-10-must-have-crypto-research-tools)
         -   了解各国对 ICO 的监管态度、政策法规
     -   ICO：
         -   搜索并了解 ERC-20
@@ -133,8 +145,9 @@
         -   搜索并了解什么是 DeFi
         -   书籍推荐：《How to DeFi》：[🔗](https://github.com/Blockchain-zju/HistoryFiles/blob/main/defi/How_to_DeFi_CHN.pdf)
     -   **NFT**：Non-fungible Token
-        -   搜索并了解 NFT、ERC-721
         -   **Roadmap-NFT 第一层**：[🔗](nft/nft.md)
+        -   文章：了解 5 种流行的 NFT 投放方式及其优缺点 [🔗](https://web3caff.com/zh/archives/23106)
+        -
 
 ## 第三层
 
