@@ -109,7 +109,7 @@
             -   eth-ewasm：[🔗](https://github.com/ewasm)
     -   密码学：
         -   介绍了简单的 `secp256k1`签名算法、比特币交易签名、 `schnorr` 多签 [🔗](https://www.btcstudy.org/2022/06/13/part-2-bitcoin-p2tr-transaction-breakdown/)
-        -   [noble-secp256k1](https://github.com/paulmillr/noble-secp256k1)：secp256k1 签名和 ECDH 的最快 4KB JS 实现。极其简洁，但内容完整且经过算法优化，非常适合从底层了解签名算法。作者还专门写了一篇介绍椭圆曲线算法加速的文章 [🔗](https://paulmillr.com/posts/noble-secp256k1-fast-ecc/)
+        -   [noble-secp256k1](https://github.com/paulmillr/noble-secp256k1)：`secp256k1` 签名和 `ECDH` 的最快 4KB JS 实现。极其简洁，但内容完整且经过算法优化，非常适合从底层了解签名算法。作者还专门写了一篇介绍椭圆曲线算法加速的文章 [🔗](https://paulmillr.com/posts/noble-secp256k1-fast-ecc/)
         -
     -   DAG：
         -   IOTA：[🔗](https://docs.iota.org/introduction)
