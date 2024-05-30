@@ -103,14 +103,16 @@
         -   SOL 开发教程，非常详细 [🔗](https://www.soldev.app/course)
     -   虚拟机：
         -   evm
-            -   evm-awesome-list：[🔗](<https://github.com/ethereum/wiki/wiki/Ethereum-Virtual-Machine-(EVM)-Awesome-List>)
-            -   evm 解析：[🔗](https://github.com/CoinCulture/evm-tools/blob/master/analysis/guide.md)
+            -   evm-awesome-list：[🔗](https://ethereum.org/en/developers/docs/evm/)，以太坊开发者官方文档
+            -   evm 解析：[🔗](https://github.com/CoinCulture/evm-tools/blob/master/analysis/guide.md)，这是了解 EVM、它与 Solidity 的关系以及如何使用一些调试工具的指南。
+            -   文章：使用 yul 汇编深入理解 solidity 和 evm 的底层技术 [🔗](https://mirror.xyz/0xB38709B8198d147cc9Ff9C133838a044d78B064B/nk40v2MJKSHXXNSlbqqhpwJf4MtZ9V2Vp8P_bSNwjYc), 小白科普向，一共有三篇
+            -   [EVM Codes](https://www.evm.codes/)：探索 evm 和 solidity 底层必备工具，可以快速查找 Opcodes 操作码和 Precompiled 预编译函数的具体功能、用法和 gas 情况。另一个有用的工具是 [forge debugger](https://book.getfoundry.sh/forge/debugger)
         -   wasm（WebAssembly）
             -   eth-ewasm：[🔗](https://github.com/ewasm)
     -   密码学：
-        -   介绍了简单的 `secp256k1`签名算法、比特币交易签名、 `schnorr` 多签 [🔗](https://www.btcstudy.org/2022/06/13/part-2-bitcoin-p2tr-transaction-breakdown/)
+        -   文章：介绍了简单的 `secp256k1`签名算法、比特币交易签名、 `schnorr` 多签 [🔗](https://www.btcstudy.org/2022/06/13/part-2-bitcoin-p2tr-transaction-breakdown/)
         -   [noble-secp256k1](https://github.com/paulmillr/noble-secp256k1)：`secp256k1` 签名和 `ECDH` 的最快 4KB JS 实现。极其简洁，但内容完整且经过算法优化，非常适合从底层了解签名算法。作者还专门写了一篇介绍椭圆曲线算法加速的文章 [🔗](https://paulmillr.com/posts/noble-secp256k1-fast-ecc/)
-        -
+        -   文章：介绍基于 `schnorr` 签名算法的 `musig` 多签名，可用于设计链下多签名。[🔗](https://blog.blockstream.com/en-musig-a-new-multisignature-standard/) 这里还有一个 typescript 的实现 [🔗](https://github.com/wangshouh/musig)
     -   DAG：
         -   IOTA：[🔗](https://docs.iota.org/introduction)
         -   Byteball：[🔗](https://byteball.org/)
@@ -120,8 +122,8 @@
         -   安全
             -   文章：16个 solidity合约漏洞，修复和真实世界的案例 [🔗](https://hackernoon.com/hackpedia-16-solidity-hacks-vulnerabilities-their-fixes-and-real-world-examples-f3210eba5148)
             -   工具：
-                -   [DeFiHackLabs](https://github.com/SunWeb3Sec/DeFiHackLabs)，收录了很多资安事件的概念性验证程序
-                -   [DeFiVulnLabs](https://github.com/SunWeb3Sec/DeFiVulnLabs)，整理了常见Solidity的漏洞测试与防御方式
+                -   [DeFiHackLabs](https://github.com/SunWeb3Sec/DeFiHackLabs)：收录了很多资安事件的概念性验证程序
+                -   [DeFiVulnLabs](https://github.com/SunWeb3Sec/DeFiVulnLabs)：整理了常见Solidity的漏洞测试与防御方式
         -   实现
     -   具体链相关资源
         -   ETH
@@ -130,7 +132,7 @@
 -   **商业向**：
     -   research/dataAnalysis：
         -   文章：从新闻聚合器到链上分析工具，十大加密研究工具清单 [🔗](https://abmedia.io/20220726-the-10-must-have-crypto-research-tools)
-        -   了解各国对 ICO 的监管态度、政策法规
+        -   [🥩 RAW](https://github.com/chainfeeds/RSSAggregatorforWeb3)：一个聚合了500多个关于Web3的RSS的仓库，里面讲技术的略少，大量文章关于项目动态
     -   ICO：
         -   搜索并了解 ERC-20
         -   搜索并了解 ICO

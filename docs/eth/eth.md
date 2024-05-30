@@ -13,7 +13,7 @@
 3. 利用区块链浏览器 Etherscan 查看区块、交易、合约等信息：[🔗](http://etherscan.io/)
 4. 智能合约入门，solidity 官方文档 Basic 部分：[🔗](https://docs.soliditylang.org/en/latest/introduction-to-smart-contracts.html)
 5. 以太坊知识库：[🔗](https://learnblockchain.cn/eth/)
-6. 文章：分析 solidity 智能合约在EVM底层的存储架构，介绍不同的数据类型存储的地址槽和所占的大小。[🔗](https://programtheblockchain.com/posts/2018/03/09/understanding-ethereum-smart-contract-storage)
+6. 文章：分析 solidity 智能合约在EVM底层的存储架构，介绍不同的数据类型存储的地址槽和所占的大小 [🔗](https://programtheblockchain.com/posts/2018/03/09/understanding-ethereum-smart-contract-storage)
 
 ### 中级：
 
