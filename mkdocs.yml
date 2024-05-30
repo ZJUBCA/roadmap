@@ -7,6 +7,7 @@ nav:
           - Fluence 空投代码分析: tech/fluence/fluence.md
           - Solana和Aptos技术对比浅析: tech/A_brief_technical_analysis_of_solana_and_move/A_brief_technical_analysis_of_solana_and_move.md
           - 代币经济学: tech/Tokenomic/Tokenomic.pdf
+          - 如何与未开源合约进行交互: tech/How_to_interact_with_unopen_source_contract/How_to_interact_with_unopen_source_contract.pdf
     - 每周精选: weekly/weekly.md
     - ETH:
           - 学习路径: eth/eth.md
