@@ -82,43 +82,83 @@
 有了入门的基础后，其实接下去都是一些可选的专题，对其中感兴趣的专题可以进行了解与学习。
 
 -   **技术向**：
+
+    -   密码学：
+
+        -   文章：介绍了简单的 `secp256k1`签名算法、比特币交易签名、 `schnorr` 多签 [🔗](https://www.btcstudy.org/2022/06/13/part-2-bitcoin-p2tr-transaction-breakdown/)
+        -   [noble-secp256k1](https://github.com/paulmillr/noble-secp256k1)：`secp256k1` 签名和 `ECDH` 的最快 4KB JS 实现。极其简洁，但内容完整且经过算法优化，非常适合从底层了解签名算法。作者还专门写了一篇介绍椭圆曲线算法加速的文章 [🔗](https://paulmillr.com/posts/noble-secp256k1-fast-ecc/)
+        -   文章：介绍基于 `schnorr` 签名算法的 `musig` 多签名，可用于设计链下多签名。[🔗](https://blog.blockstream.com/en-musig-a-new-multisignature-standard/) 这里还有一个 typescript 的实现 [🔗](https://github.com/wangshouh/musig)
+
+    -   共识算法：
+
+        -   PoW 相关：[🔗](https://github.com/indutny/proof-of-work)
+        -   PoS：[🔗](https://github.com/ethereum/consensus-specs)
+        -   PBFT：[🔗](https://pmg.csail.mit.edu/papers/osdi99.pdf)
+        -   dpos+pbft 算法分析：[🔗](https://github.com/sqfasd/dpos-pbft)
+        -   PoH：[🔗](https://docs.solanalabs.com/implemented-proposals/tower-bft#vote-tower)
+        -   DAG：
+            -   IOTA：[🔗](https://docs.iota.org/introduction)
+            -   Byteball：[🔗](https://byteball.org/)
+
+    -   智能合约：
+
+        -   智能合约开发是区块链应用的基础，不同区块链平台的智能合约可能不太一样，但是大多数都是借鉴了以太坊的智能合约，对于公有链领域，搞懂以太坊及其智能合约是首要的。和前面一样，可以去阅读以太坊的官方文档，也可以看一些书。
+        -   以太坊官方文档：[🔗](https://ethereum.org/en/developers/docs/)
+        -   Solidity 最新文档（可以切换版本查看其他版本的文档）：[🔗](https://docs.soliditylang.org/en/latest/)
+        -   书籍：《精通以太坊》[🔗](https://github.com/ethereumbook/ethereumbook)，主要就是介绍以太坊，以及如何在以太坊上写智能合约，以太坊 CTO 著，好书，至今依然在更新
+        -   除了以太坊以外，还可以了解波卡、Polygon 和 Dfinity 等公有区块链。对于联盟链的智能合约，如 Hyperledger Fabric，可以自行找一些书或者文档看。
+        -   以太坊 Dapp 开发学习路线：[🔗](eth/eth_dapp.md)
+        -   SOL 开发教程，非常详细 [🔗](https://www.soldev.app/course)
+
+    -   虚拟机：
+
+        -   evm
+            -   evm-awesome-list：[🔗](https://ethereum.org/en/developers/docs/evm/)，以太坊开发者官方文档
+            -   evm 解析：[🔗](https://github.com/CoinCulture/evm-tools/blob/master/analysis/guide.md)，这是了解 EVM、它与 Solidity 的关系以及如何使用一些调试工具的指南。
+            -   文章：使用 yul 汇编深入理解 solidity 和 evm 的底层技术 [🔗](https://mirror.xyz/0xB38709B8198d147cc9Ff9C133838a044d78B064B/nk40v2MJKSHXXNSlbqqhpwJf4MtZ9V2Vp8P_bSNwjYc), 小白科普向，一共有三篇
+            -   [EVM Codes](https://www.evm.codes/)：探索 evm 和 solidity 底层必备工具，可以快速查找 Opcodes 操作码和 Precompiled 预编译函数的具体功能、用法和 gas 情况。另一个有用的工具是 [forge debugger](https://book.getfoundry.sh/forge/debugger)
+        -   wasm（WebAssembly）
+            -   eth-ewasm：[🔗](https://github.com/ewasm)
+
+    -   去中心化存储
+        -   IPFS/Filecoin：[🔗](https://github.com/Blockchain-zju/blockchainer-roadmap/tree/master/ipfs)
+    -   跨链：
+
+        -   跨链是目前区块链最前沿的技术，也是未来发展的重要方向之一
+        -   论文：V 神总结的区块链互操作性文章：Buterin V. Chain interoperabilit [🔗](https://www.r3.com/wp-content/uploads/2017/06/chain_interoperability_r3.pdf)
+        -   一些不错的博客文章：
+            -   关于跨链技术的分析与思考：[🔗](https://mp.weixin.qq.com/s/fgRPwzVPB3Si5aHSCACvAg)
+            -   跨链通信简要研究：[🔗](https://mp.weixin.qq.com/s/X7ztDBG6kqgrBaGwrrsfQw)
+        -   论文：Polkadot 最新的论文：Overview of Polkadot and its Design Considerations[🔗](https://eprint.iacr.org/2020/641.pdf)
+        -   国际最领先的跨链平台 Polkadot 源码（rust）：[🔗](https://github.com/paritytech/polkadot)
+        -   国内最领先的跨链平台 BitXHub 源码（go）：[🔗](https://github.com/meshplus/bitxhub)
+        -   有兴趣有精力的还可以了解下 Subtrate：[🔗](https://substrate.dev)
+
+    -   DeFi
+        -   安全
+            -   文章：16个 solidity合约漏洞，修复和真实世界的案例 [🔗](https://hackernoon.com/hackpedia-16-solidity-hacks-vulnerabilities-their-fixes-and-real-world-examples-f3210eba5148)
+            -   工具：
+                -   [DeFiHackLabs](https://github.com/SunWeb3Sec/DeFiHackLabs)：收录了很多资安事件的概念性验证程序
+                -   [DeFiVulnLabs](https://github.com/SunWeb3Sec/DeFiVulnLabs)：整理了常见Solidity的漏洞测试与防御方式
+        -   实现
+    -   MEV
     -   **联盟链**：
+
         -   **联盟链学习 roadmap - 第一层**：[🔗](consortium/consortium.md)
         -   联盟链领域只要搞懂了 Hyperledger Fabric、R3 Corda 这两个项目的东西基本上就搞懂了 80%的内容；学习方式可以是直接阅读这些项目上的文档、其他人写的博客、或者看书。
         -   Hyperledger Fabric 官方文档：[🔗](https://hyperledger-fabric.readthedocs.io/en/latest/)
         -   书籍《区块链技术进阶实战》（豆瓣介绍[🔗](https://book.douban.com/subject/30177480/)，介绍了 Hyperledger Fabric、以太坊、Hyperchain）
         -   书籍《区块链原理、设计与应用》（豆瓣介绍[🔗](https://book.douban.com/subject/27127839/)，全书都是在讲 Hyperledger Fabric，有源码分析）
-    -   共识算法：
-        -   PoW 相关：[🔗](https://github.com/indutny/proof-of-work)
-        -   PoS：[🔗](https://github.com/ethereum/consensus-specs)
-        -   PBFT：[🔗](https://pmg.csail.mit.edu/papers/osdi99.pdf)
-        -   dpos+pbft 算法分析：[🔗](https://github.com/sqfasd/dpos-pbft)
-    -   智能合约：
-        -   智能合约开发是区块链应用的基础，不同区块链平台的智能合约可能不太一样，但是大多数都是借鉴了以太坊的智能合约，对于公有链领域，搞懂以太坊及其智能合约是首要的。和前面一样，可以去阅读以太坊的官方文档，也可以看一些书。
-        -   以太坊官方文档：[🔗](https://ethereum.org/en/developers/docs/)
-        -   Solidity 最新文档（可以切换版本查看其他版本的文档）：[🔗](https://docs.soliditylang.org/en/latest/)
-        -   书籍：《精通以太坊》（豆瓣介绍[🔗](https://book.douban.com/subject/33424766/)，主要就是介绍以太坊，以及如何在以太坊上写智能合约，以太坊 CTO 著）
-        -   除了以太坊以外，还可以了解波卡、Polygon 和 Dfinity 等公有区块链。对于联盟链的智能合约，如 Hyperledger Fabric，可以自行找一些书或者文档看。
-        -   以太坊 Dapp 开发学习路线：[🔗](eth/eth_dapp.md)
-        -   SOL 开发教程，非常详细 [🔗](https://www.soldev.app/course)
-    -   虚拟机：
-        -   evm
-            -   evm-awesome-list：[🔗](<https://github.com/ethereum/wiki/wiki/Ethereum-Virtual-Machine-(EVM)-Awesome-List>)
-            -   evm 解析：[🔗](https://github.com/CoinCulture/evm-tools/blob/master/analysis/guide.md)
-        -   wasm（WebAssembly）
-            -   eth-ewasm：[🔗](https://github.com/ewasm)
-    -   密码学：
-        -   应用密码学-书籍 [🔗](https://book.douban.com/subject/1088180/)
-        -   信息安全原理-书籍 [🔗](https://book.douban.com/subject/24733262/)
-    -   DAG：
-        -   IOTA：[🔗](https://docs.iota.org/introduction)
-        -   Byteball：[🔗](https://byteball.org/)
-    -   去中心化存储
-        -   IPFS/Filecoin：[🔗](https://github.com/Blockchain-zju/blockchainer-roadmap/tree/master/ipfs)
+
+    -   具体链相关资源
+        -   ETH
+            -   eth roadmap - 第一层：[🔗](eth/eth.md)
+        -
+
 -   **商业向**：
-    -   加密货币/数字货币：
-        -   了解历史上的币价走势
-        -   了解各国对 ICO 的监管态度、政策法规
+    -   research/dataAnalysis：
+        -   文章：从新闻聚合器到链上分析工具，十大加密研究工具清单 [🔗](https://abmedia.io/20220726-the-10-must-have-crypto-research-tools)
+        -   [🥩 RAW](https://github.com/chainfeeds/RSSAggregatorforWeb3)：一个聚合了500多个关于Web3的RSS的仓库，里面讲技术的略少，大量文章关于项目动态
     -   ICO：
         -   搜索并了解 ERC-20
         -   搜索并了解 ICO
@@ -133,14 +173,16 @@
         -   搜索并了解什么是 DeFi
         -   书籍推荐：《How to DeFi》：[🔗](https://github.com/Blockchain-zju/HistoryFiles/blob/main/defi/How_to_DeFi_CHN.pdf)
     -   **NFT**：Non-fungible Token
-        -   搜索并了解 NFT、ERC-721
         -   **Roadmap-NFT 第一层**：[🔗](nft/nft.md)
+        -   文章：了解 5 种流行的 NFT 投放方式及其优缺点 [🔗](https://web3caff.com/zh/archives/23106)
+        -
 
 ## 第三层
 
 > 越了解，越广阔
 
 -   **技术向**：
+
     -   阅读经典论文/文章：
         -   bitcoin 白皮书：Bitcoin: A Peer-to-Peer Electronic Cash System[🔗](https://bitcoin.org/bitcoin.pdf)
         -   以太坊白皮书：Ethereum: A next-generation smart contract and decentralized application platform[🔗](https://github.com/ethereum/wiki/wiki/White-Paper)
@@ -154,20 +196,12 @@
         -   **这 33 篇区块链必读论文 , 读过 5 篇以上的竟不到 1%**：[🔗](https://www.chainnews.com/articles/363251574672.htm)
         -   建议可以按照自己感兴趣的主题去**Google Scholar**里搜索，如：blockchain, distribute ledger 等。
     -   阅读经典项目源码：
+
         -   Bitcoin 源码：[🔗](https://github.com/bitcoin/bitcoin)
         -   Ethereum 源码(go-ethereum)：[🔗](https://github.com/ethereum/go-ethereum)
         -   EOS 源码：[🔗](https://github.com/EOSIO/eos)
         -   Hyperledger Fabric 源码：[🔗](https://github.com/hyperledger/fabric)
-    -   跨链：
-        -   跨链是目前区块链最前沿的技术，也是未来发展的重要方向之一
-        -   论文：V 神总结的区块链互操作性文章：Buterin V. Chain interoperabilit [🔗](https://www.r3.com/wp-content/uploads/2017/06/chain_interoperability_r3.pdf)
-        -   一些不错的博客文章：
-            -   关于跨链技术的分析与思考：[🔗](https://mp.weixin.qq.com/s/fgRPwzVPB3Si5aHSCACvAg)
-            -   跨链通信简要研究：[🔗](https://mp.weixin.qq.com/s/X7ztDBG6kqgrBaGwrrsfQw)
-        -   论文：Polkadot 最新的论文：Overview of Polkadot and its Design Considerations[🔗](https://eprint.iacr.org/2020/641.pdf)
-        -   国际最领先的跨链平台 Polkadot 源码（rust）：[🔗](https://github.com/paritytech/polkadot)
-        -   国内最领先的跨链平台 BitXHub 源码（go）：[🔗](https://github.com/meshplus/bitxhub)
-        -   有兴趣有精力的还可以了解下 Subtrate：[🔗](https://substrate.dev)
+
     -   ETH2.0：
         -   了解 ETH1.0 的扩容方案
         -   了解 ETH2.0 的 Roadmap 路线图
@@ -175,6 +209,7 @@
         -   了解 layer2 最新进展 rollup 的两大方向 optimistic-rollup 和 zk-rollup 的区别
     -   **联盟链**：
         -   **联盟链学习 roadmap - 第二层**：[🔗](consortium/consortium.md)
+
 -   **商业向**（可以在公有链和联盟链中选一个，有精力的话建议全部都搞）：
     -   公有链方向，深入了解 DeFi 和 NFT：
         -   **DeFi**
