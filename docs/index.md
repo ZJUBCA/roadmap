@@ -153,7 +153,6 @@
     -   具体链相关资源
         -   ETH
             -   eth roadmap - 第一层：[🔗](eth/eth.md)
-        -
 
 -   **商业向**：
     -   research/dataAnalysis：
@@ -175,7 +174,6 @@
     -   **NFT**：Non-fungible Token
         -   **Roadmap-NFT 第一层**：[🔗](nft/nft.md)
         -   文章：了解 5 种流行的 NFT 投放方式及其优缺点 [🔗](https://web3caff.com/zh/archives/23106)
-        -
 
 ## 第三层
 
