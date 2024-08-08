@@ -16,6 +16,7 @@ nav:
           - 介绍: base/base_intro.md
           - Farcaster: base/base_farcaster.md
           - Degen: base/base_degen.md
+    - Ton: ton/ton.md
     - NFT: nft/nft.md
     - 联盟链: consortium/consortium.md
     - 参考文档: reference/reference.md

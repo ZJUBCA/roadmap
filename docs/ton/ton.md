@@ -21,4 +21,4 @@ https://blog.ton.org/six-unique-aspects-of-ton-blockchain-that-will-surprise-sol
 
 ## 生态
 
-dyor 见pdf
+dyor 见 blockchainer-roadmap\docs\ton\Ton生态分享.pdf
