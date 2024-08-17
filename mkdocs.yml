@@ -20,6 +20,9 @@ nav:
     - Ton: 
           - 介绍: ton/ton.md
           - Ton生态分享: ton/Ton生态分享.pdf
+    - Rust: rust/Rust.pdf
+    - Solana:
+          - 开发教程: solana/Solana.pdf
     - NFT: nft/nft.md
     - 联盟链: consortium/consortium.md
     - 参考文档: reference/reference.md
