@@ -1,5 +1,7 @@
 # ZJUBCA Blockchainer Roadmap
 
+![](homepage.png)
+
 ## Usage
 
 欢迎访问：[zjubca.github.io/roadmap](https://zjubca.github.io/roadmap) 🥳
