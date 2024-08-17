@@ -136,7 +136,6 @@
 
     -   DeFi
         -   安全
-            -   文章：16个 solidity合约漏洞，修复和真实世界的案例 [🔗](https://hackernoon.com/hackpedia-16-solidity-hacks-vulnerabilities-their-fixes-and-real-world-examples-f3210eba5148)
             -   工具：
                 -   [DeFiHackLabs](https://github.com/SunWeb3Sec/DeFiHackLabs)：收录了很多资安事件的概念性验证程序
                 -   [DeFiVulnLabs](https://github.com/SunWeb3Sec/DeFiVulnLabs)：整理了常见Solidity的漏洞测试与防御方式
