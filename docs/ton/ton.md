@@ -19,4 +19,4 @@ ton与eth的不同：[🔗](https://blog.ton.org/six-unique-aspects-of-ton-block
 
 ## 生态
 
-dyor 见 blockchainer-roadmap\docs\ton\Ton生态分享.pdf
+dyor 见 [🔗](Ton生态分享.pdf)
