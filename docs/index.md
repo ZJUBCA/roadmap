@@ -26,7 +26,7 @@
     -   《区块链黑暗森林自救手册》[🔗](https://github.com/slowmist/Blockchain-dark-forest-selfguard-handbook) 慢雾出品，降低资产风险
     -   《区块链红宝书--最接地气的币圈词典》[🔗](https://www.btc8686.com/wp-content/uploads/2022/02/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%BA%A2%E5%AE%9D%E4%B9%A6%E6%96%B0.pdf) 《Web3 黑话汇总》[🔗](https://github.com/WTFAcademy/WTF-gm) 一些常用的缩写
 -   **常用数字货币钱包**
-    -   MetaMusk：EVM 最常用钱包 [🔗](https://metamask.io/)
+    -   MetaMask：EVM 最常用钱包 [🔗](https://metamask.io/)
     -   OKX：支持公链最多，用户体验极好 [🔗](https://www.okx.com/zh-hans/web3)
     -   Unisat：BTC 常用钱包 [🔗](https://unisat.io/)
     -   Phantom：SOL 常用钱包 [🔗](https://phantom.app/)
