@@ -1,0 +1,2371 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../eth/">
+      
+      
+        <link rel="next" href="../../base/base_intro/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>开发教程 - ZJUBCA Blockchain Roadmap</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dapp" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="ZJUBCA Blockchain Roadmap" class="md-header__button md-logo" aria-label="ZJUBCA Blockchain Roadmap" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ZJUBCA Blockchain Roadmap
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              开发教程
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ZJUBCA Blockchain Roadmap" class="md-nav__button md-logo" aria-label="ZJUBCA Blockchain Roadmap" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ZJUBCA Blockchain Roadmap
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    学习路径
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    技术分享
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            技术分享
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tech/Hierarchical_Deterministic_Wallets/Hierarchical_Deterministic_Wallets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    分层确定性钱包初探
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tech/Ethereum_Smart_Contract_Introduction/Ethereum_Smart_Contract_Introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    以太坊智能合约初探
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tech/fluence/fluence/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fluence 空投代码分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tech/A_brief_technical_analysis_of_solana_and_move/A_brief_technical_analysis_of_solana_and_move/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Solana和Aptos技术对比浅析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tech/Tokenomic/Tokenomic.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    代币经济学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tech/Comparison_of_Pyth_and_Chainlink/Comparison_of_Pyth_and_Chainlink/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    预言机浅析:对比Pyth和Chainlink
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tech/How_to_interact_with_unopen_source_contract/How_to_interact_with_unopen_source_contract.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    如何与未开源合约进行交互
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Aptos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Aptos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Overview
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Aptos/1.Overview/1.1%20Aptos%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/Aptos%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aptos的前世今生
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Aptos/1.Overview/1.2%20Aptos%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0/Aptos%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aptos技术概述
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Aptos/1.Overview/1.3%20Aptos%E7%94%9F%E6%80%81%E4%BB%8B%E7%BB%8D/Aptos%E7%94%9F%E6%80%81%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aptos生态介绍
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Aptos生态项目分析
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Aptos生态项目分析
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_1" id="__nav_3_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Chingari
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Chingari
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.1%20Chingari/2.1.1%20Chingari%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/Chingari%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chingari技术分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.1%20Chingari/2.1.2%20Chingari%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/Chingari%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chingari投研分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_2" id="__nav_3_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Amnis Finance
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Amnis Finance
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.2%20Amnis%20Finance/2.2.1%20Amnis%20Finance%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/Amnis%20Finance%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Amnis Finance技术分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.2%20Amnis%20Finance/2.2.2%20Amnis%20Finance%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/Amnis%20Finance%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Amnis Finance投研分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_3" id="__nav_3_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Mereo
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Mereo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.3%20Mereo/2.3.1%20Mereo%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/Mereo%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mereo技术分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.3%20Mereo/2.3.2%20Mereo%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/Mereo%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mereo投研分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_4" id="__nav_3_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Merkle Trade
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Merkle Trade
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.4%20Merkle%20Trade/2.4.1%20Merkle%20Trade%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/Merkle%20Trade%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Merkle Trade技术分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.4%20Merkle%20Trade/2.4.2%20Merkle%20Trade%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/Merkle%20Trade%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Merkle Trade投研分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_5" id="__nav_3_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Martian
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Martian
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.5%20Martian/2.5.1%20Martian%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/Martian%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Martian技术分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.5%20Martian/2.5.2%20Martian%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/Martian%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Martian投研分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_6" id="__nav_3_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Shinami
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Shinami
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.6%20Shinami/2.6.1%20Shinami%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/Shinami%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shinami技术分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.6%20Shinami/2.6.2%20Shinami%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/Shinami%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shinami投研分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Aptos黑客松获奖项目分析
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Aptos黑客松获奖项目分析
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Aptos/3.Aptos%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%8E%B7%E5%A5%96%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/3.1%20%E5%8E%86%E6%AC%A1%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%B5%9B%E4%BA%8B%E7%9B%98%E7%82%B9/%E5%8E%86%E6%AC%A1%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%B5%9B%E4%BA%8B%E7%9B%98%E7%82%B9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    历次黑客松赛事盘点
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Aptos/3.Aptos%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%8E%B7%E5%A5%96%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/3.2%20Defi%26RWA%E8%B5%9B%E9%81%93/Aptos%E5%85%A8%E7%90%83%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%B5%9B%E9%81%93%E5%88%86%E4%BA%AB%28DeFi%26RWA%29.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Defi&RWA赛道
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Aptos/3.Aptos%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%8E%B7%E5%A5%96%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/3.3%20Gaming%26NFTs%E8%B5%9B%E9%81%93/Aptos%E5%85%A8%E7%90%83%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%B5%9B%E9%81%93%E5%88%86%E4%BA%AB%28Gaming%26NFTs%29.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gaming&NFTs赛道
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Aptos/3.Aptos%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%8E%B7%E5%A5%96%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/3.4%20AI%26Depin%E8%B5%9B%E9%81%93/Aptos%E5%85%A8%E7%90%83%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%B5%9B%E9%81%93%E5%88%86%E4%BA%AB%28AI%26DePIN%29.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI&Depin赛道
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Aptos/3.Aptos%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%8E%B7%E5%A5%96%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/3.5%20SocialFi%E8%B5%9B%E9%81%93/Aptos%E5%85%A8%E7%90%83%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%B5%9B%E9%81%93%E5%88%86%E4%BA%AB%28SocialFi%29.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SocialFi赛道
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Aptos/3.Aptos%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%8E%B7%E5%A5%96%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/3.6%20Others%E8%B5%9B%E9%81%93/Aptos%E5%85%A8%E7%90%83%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%B5%9B%E9%81%93%E5%88%86%E4%BA%AB%28Others%29.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Others赛道
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ETH
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            ETH
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eth/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    学习路径
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    开发教程
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    开发教程
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      以太坊技术原理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="以太坊技术原理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ethereum" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、什么是以太坊（Ethereum）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、深入理解以太坊技术原理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solidity-evm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solidity 及 EVM
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solidity 及 EVM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solidity" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、Solidity——面向合约对象的编程语言
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evm" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、EVM——基于堆栈的以太坊虚拟机
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      智能合约开发
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="智能合约开发">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、以太坊客户端
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、开发框架
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、开发框架">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-truffle" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Truffle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-hardhat" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Hardhat
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dapp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      三、Dapp 开发
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、Dapp 开发">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dapp_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      什么是 Dapp?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      常用工具及网站
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="常用工具及网站">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、数据查询
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、合约开发
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      三、社区交流
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Base
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Base
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../base/base_intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    介绍
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../base/base_farcaster/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Farcaster
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../base/base_degen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Degen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ton
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Ton
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ton/ton/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    介绍
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ton/Ton%E7%94%9F%E6%80%81%E5%88%86%E4%BA%AB.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ton生态分享
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/Rust.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rust
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Solana
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Solana
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../solana/Solana.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    开发教程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nft/nft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NFT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../consortium/consortium/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    联盟链
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    参考文档
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../history/history/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    历史文件
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      以太坊技术原理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="以太坊技术原理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ethereum" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、什么是以太坊（Ethereum）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、深入理解以太坊技术原理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solidity-evm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solidity 及 EVM
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solidity 及 EVM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solidity" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、Solidity——面向合约对象的编程语言
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evm" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、EVM——基于堆栈的以太坊虚拟机
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      智能合约开发
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="智能合约开发">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、以太坊客户端
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、开发框架
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、开发框架">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-truffle" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Truffle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-hardhat" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Hardhat
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dapp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      三、Dapp 开发
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、Dapp 开发">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dapp_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      什么是 Dapp?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      常用工具及网站
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="常用工具及网站">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、数据查询
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、合约开发
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      三、社区交流
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="dapp">初探以太坊 Dapp 开发<a class="headerlink" href="#dapp" title="Permanent link">&para;</a></h1>
+<p>BY ZJUBCA</p>
+<p>本文假设读者已经对区块链有了基本的概念，如果你对诸如区块链、智能合约与 Dapp 这类词语完全陌生，那么我们建议读者先阅读协会的：<a href="../../">🔗ZJUBCA-Roadmap</a></p>
+<h2 id="_1">以太坊技术原理<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="ethereum">一、什么是以太坊（Ethereum）<a class="headerlink" href="#ethereum" title="Permanent link">&para;</a></h3>
+<p>对以太坊的定义往往仁者见仁，但如果集大成来解释，以太坊是基于状态转换的「世界计算机」（所有人都可以访问并使用的计算机，不受空间限制）</p>
+<p>从计算机科学的角度来看，以太坊是一种确定但无界的由交易驱动的「状态机」（改变程序或系统保存的信息并保持共识的机体），它由全局可访问的离散单个状态和将变化应用于这种状态的虚拟机组成；从更实际的角度来看，以太坊是一种开源、在全球范围内呈去中心化并且能够执行「智能合约」（下文会详述，可简单理解为代码）的基础设施。</p>
+<p>在以太坊平台上，开发人员能够构建具有内置经济功能的强大的去中心化应用程序。它使用区块链来同步和存储系统的状态变化，并使用一种被称为「以太币」（Ether）的加密货币来计量和限制执行资源成本，提供了高可用性，可审计性，透明性和中立性。</p>
+<p><a href="https://kauri.io/#collections/A%20Hackathon%20Survival%20Guide/ethereum-101-part-1-what-is-ethereum/">🔗 以太坊白皮书</a></p>
+<h3 id="_2">二、深入理解以太坊技术原理<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>可能大家对上一节中提到的「状态机」的概念还有点模糊不清，为了让大家更清晰的深入到以太坊的技术原理中去，本节会以传统互联网为起点，循序渐进至以太坊的底层技术原理。</p>
+<p>用计算机技术来说，以太坊就是一个保存了数字交易永久记录的「公共数据库」。重要的是，这个数据库不需要任何中间方来维护双方的权益。相反，它可以作为一种「无需信任」的交易系统来运作，也就是你可以在不需要第三方的情况下进行点对点（P2P）交易。</p>
+<p><img alt="" src="../img/1.png" /></p>
+<p>以太坊区块链本质上是一个为交易服务的状态机。在计算机科学中，一个状态机指的是这样一种东西，它可以读取一系列的输入，并基于这些输入产生一个新的状态。</p>
+<p><img alt="" src="../img/2.png" /></p>
+<p>以太坊状态机的运行从一个「元状态」开始，这类似于在网络上没有发生任何交易之前的一个空白匣子。当交易执行时，这个元状态就转变为一些最终状态。在任何时候，这个最终状态都代表着以太坊区块链的现状。</p>
+<p><img alt="" src="../img/3.png" /></p>
+<p>以太坊系统中运行着数百万笔交易，这些交易被分组归类为「区块」。每个区块由「区块头」（Header）和一系列「交易信息」(Transactions）组成。在这里，你可以简单地将区块头理解为一个包含决定区块链共识状态关键信息的 “数据集合”， 每个块只有通过对区块头的验证，才能与其前面的区块通过区块头串联在一起形成有向无环的链式结构。</p>
+<p><img alt="" src="../img/4.png" /></p>
+<p>前文中提到，以太坊是由交易驱动的状态机。那么要想以太坊正确的从一个状态转到另一个状态，必须证明交易是有效且真实的，否则以太坊便失去了其不需要第三方维护这一核心价值。要想证明一个交易是有效的，就必须通过一个验证过程，这一过程称为「挖矿」。</p>
+<p>挖矿是指一组节点（即物理意义上的计算机）消耗它们的计算资源来创建一个有效交易的区块（这里仅以 Pow 为例）。网络中参与挖矿的节点被称为「矿工」。任何声明自己是「矿工」的节点都可以尝试创建和验证区块，全世界有许多矿工试图同时创建和验证区块。每个矿工在向区块链提交一个区块时同时，都要提供一个数学的证明，且把这个证明作为一个保证：如果这个数学证明存在，则该区块必然是有效的。</p>
+<p>一个矿工如果想要在主区块链上添加一个合法区块，就必须比其他矿工更快地对其证明。那么，通过让矿工提供数学证明来验证每个区块的过程被称为「工作量证明」。</p>
+<p>那么矿工为什么要消耗自己的计算机资源来验证并添加区块呢？答案是价值回报。任何完成这个验证工作的矿工都可以得到一定数额的价值回报。以太坊正是采用其链上数字货币「以太币」作为奖励。 每当一个矿工证明了一个区块，就会生成并得到一定数量的以太币。</p>
+<p>正如我们在上文给区块链的定义，区块链是一个具有共享状态的交易状态机。这个定义决定了，区块链的当前状态是一个单一的全局状态，每个人都必须接受。如果拥有多个链（状态）会破坏整个系统，因为人们不可能就哪个状态是正确的状态达成一致意见。如果这些链是分开的，就会出现一个人在一条链上有 10 个以太币，在另一条链上有 20 个的情况。在这种情况下，我们没有办法确定哪一个链最「有效」，无法确定一个人有多少有效的以太币。</p>
+<p>这一产生多条链的过程，被称为「分叉」（Fork）。因为分叉会破坏系统，因此我们通常会避免分叉，要求或者说迫使人们选择他们「相信」唯一有效的一条链。</p>
+<p><img alt="" src="../img/5.png" /></p>
+<p>为了确定哪个路径是最有效的，并防止分叉的发生，以太坊使用了一种叫做「GHOST 协议」的机制。简单地说，GHOST 协议让我们必须选择在链上做「最多计算」的路径。确定该路径的一种方法是通过计算每条链所使用最新区块的数量，来表示当前每条链上的区块总数（不包括创世区块）。块数越多，路径越长，则说明挖矿的难度越大，因此该链就为最多计算链。因此这个方法也可以被简称为「最长链原则」。通过这个方式，最终使每一个节点对当前区块链的状态（链）的唯一性达成共识。</p>
+<p><img alt="" src="../img/6.png" /></p>
+<p>到这里，我们就对以太坊区块链就有了一个宏观的认识。在这个链式架构的基础上，以太坊系统由如下所述的各主要组成部分支撑，如果你想更深入的了解这些，我们推荐你阅读以太坊黄皮书，不过请注意，他并没有那么易懂~</p>
+<p><a href="https://gitcode.net/mirrors/wanshan1024/ethereum_yellowpaper">🔗 以太坊黄皮书</a></p>
+<ul>
+<li>帐户；</li>
+<li>状态；</li>
+<li>Gas 与费用；</li>
+<li>交易；</li>
+<li>区块；</li>
+<li>交易执行；</li>
+<li>挖矿；</li>
+<li>工作量证明。</li>
+</ul>
+<h2 id="solidity-evm">Solidity 及 EVM<a class="headerlink" href="#solidity-evm" title="Permanent link">&para;</a></h2>
+<h3 id="solidity">一、Solidity——面向合约对象的编程语言<a class="headerlink" href="#solidity" title="Permanent link">&para;</a></h3>
+<p>Solidity 是由以太坊创始人之一的 Gavin Wood 所编写，是一门面向合约的、为实现智能合约而创建的高级编程语言。这门语言受到了 C++，Javascript 等语言的影响，属于静态类型语言，支持继承、库和复杂的用户定义类型等特性。其设计目的是为了能在以太坊虚拟机（EVM）上运行。</p>
+<p>众所周知，以太坊之所以被称为区块链 2.0 的开山鼻祖，其中重要的一点就是实现了「图灵完备」。所谓图灵完备，就是一切可计算的问题都能计算，这样的虚拟机或者编程语言就叫图灵完备的，图灵完备通常指具有无限存储能力的通用物理机器或编程语言。那么与图灵完备相反的是图灵不完备，比如比特币的脚本系统，就是图灵不完备的。要想充分发挥以太坊图灵完备的优势，就要通过编写运行在 EVM 上（也可以理解为链上）的「智能合约」。那么 Solidity，就是编写智能合约的编程语言。</p>
+<p>当然，除了 Solidity 以外，还有例如与 Python 接近的、文件名以.se 结尾 Serpent 编程语言也曾经流行过一段时间，除此之外也有开发者更喜欢使用 Vyper。但随着时间的推移和开发者们不断地学习和迭代，现在最成熟且应用最多的当数是 Solidity 了，因此这也是我们鼓励大家学习它的原因。</p>
+<p>以下是通过 Solidity 编写的“Hello Wordl!”代码，其中，^0.8.0 是编译器的版本号，HelloWorld 是合约名，greet 是状态变量。</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// SPDX-Lisence-Identifier: MIT</span>
+<span class="c1">// compiler version must be greater than or equal to 0.8.10 and less than 0.9.0</span>
+<span class="k">pragma solidity</span><span class="w"> </span><span class="o">^</span><span class="k">0.8.10</span><span class="p">;</span>
+
+<span class="k">contract</span><span class="w"> </span><span class="ni">HelloWorld</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">string</span><span class="w"> </span><span class="k">public </span><span class="nv">greet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello World!&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>如果你已经迫不及待的想要成为一名智能合约开发者，那么以下列出的学习工具一定有助于你：</p>
+<ul>
+<li>Remix ---智能合约在线开发工具：<a href="https://remix.ethereum.org">🔗</a></li>
+<li>Solidity 最新(0.8.0)中文文档：<a href="https://learnblockchain.cn/docs/solidity">🔗</a></li>
+<li>Cryptozombies ---玩游戏的方式学习 Solidity：<a href="https://cryptozombies.io">🔗</a></li>
+<li>Solidity by Example ---以太坊官方教程：<a href="https://solidity-by-example.org">🔗</a></li>
+</ul>
+<h3 id="evm">二、EVM——基于堆栈的以太坊虚拟机<a class="headerlink" href="#evm" title="Permanent link">&para;</a></h3>
+<p>在了解 EVM 之前，首先清楚什么是虚拟机？传统的虚拟机指的是，通过软件模拟的，具备完整硬件系统功能，并运行在隔离环境下的完整计算机系统，比如 VMware、Java 虚拟机等。
+那么什么是以太坊虚拟机呢？</p>
+<p>以太坊虚拟机的英文全称为“Ethereum Virtual Machine”，简称为 EVM，这个 EVM 就是建立在以太坊区块链上的代码运行环境，是一个完全独立的沙盒，合约代码可对外完全隔离并在 EVM 内部运行，其主要作用是处理以太坊系统内的智能合约。上文提到的 Solidity 代码在部署到以太坊网络之前需要被编译成字节码。这个字节码所对应的底层机制，实际上就是 EVM 所解析的一系列操作码指令，然后由 EVM 根据此操作码，真正的完成代码的执行。</p>
+<p>从传统互联网的角度来说，程序员在为一个软件编写程序时，会使用到编程语言，例如 C++。但 C++ 是计算机的 CPU 无法理解的高级语言。程序员通过 C++ 编写好的程序需要通过编译器翻译成 CPU 可以理解的语言，即字节代码（机器语言），从而对 CPU 发号施令让软件可以在计算机上顺利运行。</p>
+<p>如果听到这里你觉得有些困惑，不必担心，坚持看完下面的例子，一定能“柳暗花明又一村”。</p>
+<p>假设一名 ZJUBCAer 小蓝是一个英语盲，但作为一名区块链爱好者，它需要经常查看一些英语文章来及时掌握行业信息。为了解决语言障碍，它会把文章通过翻译软件转译成中文再阅读。</p>
+<p><img alt="" src="../img/8.png" /></p>
+<p>一篇用英语写成的文章被翻译为中文，变成了小蓝能看懂的语言，从而帮助小蓝能够轻松掌握区块链的行业信息。同理，一个用 C++ 编成的程序被编译为字节代码，变成 CPU 能看懂的语言，CPU 可以运行软件程序。
+可这跟以太坊的 EVM 有什么关系？答案是，EVM 之于以太坊，就像 CPU 之于计算机。</p>
+<p><img alt="" src="../img/9.png" /></p>
+<p>以太坊是一台世界级计算机，但它毕竟不是实体电脑，也没有 CPU，那么智能合约要如何在以太坊上运行呢？EVM 就是以太坊的 CPU，以太坊开发者们通过编程语言 Solidity 写好的程序，被编译为 EVM 可以理解的 EVM 字节代码，EVM 就可以运行智能合约的程序。</p>
+<p>到这里，相信你一定对 EVM 有了初步的认识，如果你想更进一步，那么我们建议你通过 EVM 练兵场，通过学以致用的方式，更好的掌握 EVM 的底层逻辑。</p>
+<p>EVM 练兵场：<a href="https://www.evm.codes/">🔗</a></p>
+<h2 id="_3">智能合约开发<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>什么是智能合约？其实通过上文的阅读，相信读者已经大概做到了心中有数，以太坊网络上运行程序就称之为智能合约，它和其他的程序一样，也是代码和数据(状态)的集合。</p>
+<p>智能合约（Smart Contract）和人工智能（Artificial Intelligence ）的智能没有关系，智能合约最早由尼克萨博在 95 年提出，它的概念很简单，就是将法律条文写成可执行代码。让法律条文的执行中立化，这个理念和区块链上的程序可以不被篡改、不被干预（只有有人触发交易，它将自动执行）的执行不谋而合，因此区块链引入了这个概念。以太坊网络上运行程序就称之为智能合约。</p>
+<h3 id="_4">一、以太坊客户端<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>大家都知道，如果想跟一个独立系统交互，仅仅编写了可以被该系统编译识别的代码还不够，还需要与该系统建立稳定的连接才能将数据传输过去。前文提到，以太坊虚拟机 EVM 是一个封闭的沙盒系统，其内部代码的运行是不受到外部世界的干扰的。那么，开发者如果想访问到以太坊并且期望与之交互应该怎么做呢？答案是通过以太坊客户端。</p>
+<p>「以太坊客户端」是一个软件应用程序，它实现以太坊规范并通过 P2P 网络与其他以太坊客户端（节点）进行通信。如果不同的以太坊客户端符合参考规范和标准化通信协议，则可以进行相互操作。</p>
+<p>以太坊是一个开源项目，由“黄皮书”正式规范定义。除了各种以太坊改进提案之外，此正式规范还定义了以太坊客户端的标准行为。因为以太坊有明确的正式规范，所以，任何一个独立开发的软件，只要实现了该范式，那他就可以作为一个以太坊节点，与以太坊或其它以太坊客户端交互。
+目前以太坊客户端支持 8 种语言的客户端，这里推荐其中两款：</p>
+<ul>
+<li>go-ethereum（geth）<a href="https://github.com/ethereum/go-ethereum">🔗</a>：Golang 实现，官方推荐，开发使用最多</li>
+<li>Parity<a href="https://github.com/ethcore/parity/releases">🔗</a>：Rust 实现，最轻便客户端，在历次以太网攻击中表现卓越</li>
+</ul>
+<h3 id="_5">二、开发框架<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>上文讲到，开发者如果想要跟以太坊交互，需要借助客户端来搭建节点才行。理论上虽然如此，但不禁想一下，如果每次开发都要手动搭建节点，且面向不同以太坊网络时还应重新搭建，未免给我们的开发增添了太多不必要的负担，对开发者的技术要求也更加严格，这显然是不利于以太坊乃至区块链技术的普及。</p>
+<p>互联网软件开发的历史已有数十年之久。我们受益于半个世纪以来积累的最佳实践，设计模式和智慧。相反，智能合约开发才刚刚开始。2015 推出的以太坊和 Solidity 仅有几年的时间。在智能合约刚推出的前几年，没有确定的工具堆栈来帮助开发者部署智能合约以及构建去中心化应用。</p>
+<p>但随着区块链技术的蓬勃发展以及广大开发者极客们的集思广益，诸如 Truffle、Hardhat 的 Dapp 开发框架应用的出现，极大的方便了开发者与区块链的交互，丰富了整个以太坊生态系统。</p>
+<h4 id="-truffle">- Truffle<a class="headerlink" href="#-truffle" title="Permanent link">&para;</a></h4>
+<p>Truffle 是第一套基于以太坊的 Solidity 语言的成熟的开发框架。本身是基于 JavaScript。它对客户端做了深度集成，使开发、测试、部署都只需要一个命令行，可以在控制台使用命令行直接调用输出结果，方便调试。
+Truffle 是本地编译、部署智能合约的框架；而向前文中提到的 geth 客户端连接的才是真正的以太坊环境；testrpc 是 Truffle 本地使用内存模拟的以太坊环境，关闭终端后，部署到 testrpc 的智能合约不会保存下来，对于开发调试更加方便，合约可以在 testrpc 中通过测试后，再部署到 geth 上，从而减少不必要的损失。</p>
+<ul>
+<li>Truffle：<a href="https://learnblockchain.cn/docs/truffle/quickstart.html">🔗</a></li>
+</ul>
+<h4 id="-hardhat">- Hardhat<a class="headerlink" href="#-hardhat" title="Permanent link">&para;</a></h4>
+<p>Hardhat 是一个编译、部署、测试和调试以太坊应用的开发环境。它可以帮助开发者管理和自动化构建智能合约和 dApps 过程中固有的重复性任务，并围绕这一工作流程轻松引入更多功能。
+Hardhat 内置了 Hardhat 网络，这是一个专为开发设计的本地以太坊网络。主要功能有 Solidity 调试，跟踪调用堆栈、console.log()和交易失败时的明确错误信息提示等，其在智能合约的 Debug 调试过程的交互性要优于 Truffle。
+除此之外，与 Truffle 不同的是，Hardhat 是一款基于插件的开发框架，其很多功能都来自于插件，开发者可以自由选择想使用的插件，甚至还可以将现有的 Truffle 项目迁移到 Hardhat 上。</p>
+<ul>
+<li>Hardhat：<a href="https://learnblockchain.cn/docs/hardhat/getting-started">🔗</a></li>
+</ul>
+<h3 id="dapp_1">三、Dapp 开发<a class="headerlink" href="#dapp_1" title="Permanent link">&para;</a></h3>
+<h4 id="dapp_2">什么是 Dapp?<a class="headerlink" href="#dapp_2" title="Permanent link">&para;</a></h4>
+<p>App 我们都知道是客户端应用，是 application 的简称。DApp 就是 D+App，D 是英文单词 decentralization 的首字母，单词翻译中文是去中心化，即 DApp 为去中心化应用。</p>
+<p>看到这里，大家思维中第一反应可能是，为什么要有 DApp，现在的 App 不是挺好吗？其实，两者并不是取代关系，而是并存关系，或者说 DApp 是对 App 的丰富和完善。因为 DApp 是依托于区块链底层技术的上层建筑，它和交易数据、交易资产有关联，和不可篡改去中心化存储也有关联，所以随着区块链技术越来越成熟普及，DApp 也更受到人们的青睐与期望，并更多地出现在各个生活场景中，如生产链防伪，捐款资金流向等等。</p>
+<p><img alt="" src="../img/10.png" /></p>
+<p>那么作为一名开发者，是开发一款自己的 Dapp 需要做的具体步骤是什么？
+Dapp 的一般开发流程：</p>
+<ol>
+<li>创建自己的 Web3.0 钱包</li>
+<li>使用 Solidity 编写智能合约代码</li>
+<li>通过 Dapp 开发框架如 Hardhat、Truffle，通过 node.js 测试合约并部署</li>
+<li>编写前端界面，并通过如 ether.js、web3.js 与智能合约进行交互</li>
+<li>
+<p>项目发布与测试</p>
+</li>
+<li>
+<p>node.js 介绍文档：<a href="https://www.runoob.com/nodejs/nodejs-tutorial.html">🔗</a></p>
+</li>
+<li>ether.js 中文文档：<a href="https://learnblockchain.cn/docs/ethers.js">🔗</a></li>
+<li>web3.js(1.0)中文文档：<a href="http://cw.hubwiz.com/card/c/web3.js-1.0/1/1/1/">🔗</a></li>
+</ol>
+<h2 id="_6">常用工具及网站<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="_7">一、数据查询<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Etherscan ---以太坊区块链浏览器：<a href="https://etherscan.io">🔗</a></li>
+<li>Ethereum Signature Database ---EVM 调用记录数据库：<a href="https://www.4byte.directory">🔗</a></li>
+<li>ENS ---以太坊域名系统：<a href="https://app.ens.domains">🔗</a></li>
+</ul>
+<h3 id="_8">二、合约开发<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>ChainIDE ---支持多链的在线合约开发工具：<a href="https://chainide.com/zh-CN">🔗</a></li>
+<li>Chainlist ---EVM 网络列表：<a href="https://chainlist.org/">🔗</a></li>
+<li>The Graph ---链上数据获取：<a href="https://thegraph.com">🔗</a></li>
+<li>Chainlink ---第三方预言机：<a href="https://docs.chain.link">🔗</a></li>
+<li>Alchemy ---第三方节点提供商：<a href="https://dashboard.alchemyapi.io/signup/chain">🔗</a></li>
+</ul>
+<h3 id="_9">三、社区交流<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>登链社区 ---区块链开发者论坛：<a href="https://learnblockchain.cn">🔗</a></li>
+<li>巴比特 ---区块链资讯平台：<a href="https://www.8btc.com">🔗</a></li>
+<li>Ethereum ---以太坊基金会官方开发网站：<a href="https://ethereum.org/en/developers">🔗</a></li>
+<li>Stack Overflow ---程序开发交流社区：<a href="https://stackoverflow.com">🔗</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

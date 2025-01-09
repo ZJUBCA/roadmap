@@ -1,0 +1,1919 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../Tokenomic/Tokenomic.pdf">
+      
+      
+        <link rel="next" href="../../How_to_interact_with_unopen_source_contract/How_to_interact_with_unopen_source_contract.pdf">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>预言机浅析:对比Pyth和Chainlink - ZJUBCA Blockchain Roadmap</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#what-is-an-oracle-and-what-is-pyth" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="ZJUBCA Blockchain Roadmap" class="md-header__button md-logo" aria-label="ZJUBCA Blockchain Roadmap" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ZJUBCA Blockchain Roadmap
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              预言机浅析:对比Pyth和Chainlink
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="ZJUBCA Blockchain Roadmap" class="md-nav__button md-logo" aria-label="ZJUBCA Blockchain Roadmap" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ZJUBCA Blockchain Roadmap
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    学习路径
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    技术分享
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            技术分享
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Hierarchical_Deterministic_Wallets/Hierarchical_Deterministic_Wallets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    分层确定性钱包初探
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ethereum_Smart_Contract_Introduction/Ethereum_Smart_Contract_Introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    以太坊智能合约初探
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fluence/fluence/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fluence 空投代码分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../A_brief_technical_analysis_of_solana_and_move/A_brief_technical_analysis_of_solana_and_move/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Solana和Aptos技术对比浅析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tokenomic/Tokenomic.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    代币经济学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    预言机浅析:对比Pyth和Chainlink
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_interact_with_unopen_source_contract/How_to_interact_with_unopen_source_contract.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    如何与未开源合约进行交互
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Aptos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Aptos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Overview
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/1.Overview/1.1%20Aptos%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/Aptos%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aptos的前世今生
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/1.Overview/1.2%20Aptos%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0/Aptos%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aptos技术概述
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/1.Overview/1.3%20Aptos%E7%94%9F%E6%80%81%E4%BB%8B%E7%BB%8D/Aptos%E7%94%9F%E6%80%81%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aptos生态介绍
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Aptos生态项目分析
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Aptos生态项目分析
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_1" id="__nav_3_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Chingari
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Chingari
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.1%20Chingari/2.1.1%20Chingari%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/Chingari%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chingari技术分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.1%20Chingari/2.1.2%20Chingari%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/Chingari%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chingari投研分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_2" id="__nav_3_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Amnis Finance
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Amnis Finance
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.2%20Amnis%20Finance/2.2.1%20Amnis%20Finance%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/Amnis%20Finance%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Amnis Finance技术分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.2%20Amnis%20Finance/2.2.2%20Amnis%20Finance%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/Amnis%20Finance%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Amnis Finance投研分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_3" id="__nav_3_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Mereo
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Mereo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.3%20Mereo/2.3.1%20Mereo%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/Mereo%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mereo技术分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.3%20Mereo/2.3.2%20Mereo%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/Mereo%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mereo投研分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_4" id="__nav_3_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Merkle Trade
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Merkle Trade
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.4%20Merkle%20Trade/2.4.1%20Merkle%20Trade%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/Merkle%20Trade%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Merkle Trade技术分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.4%20Merkle%20Trade/2.4.2%20Merkle%20Trade%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/Merkle%20Trade%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Merkle Trade投研分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_5" id="__nav_3_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Martian
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Martian
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.5%20Martian/2.5.1%20Martian%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/Martian%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Martian技术分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.5%20Martian/2.5.2%20Martian%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/Martian%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Martian投研分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_6" id="__nav_3_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Shinami
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Shinami
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.6%20Shinami/2.6.1%20Shinami%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/Shinami%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shinami技术分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.6%20Shinami/2.6.2%20Shinami%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/Shinami%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shinami投研分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Aptos黑客松获奖项目分析
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Aptos黑客松获奖项目分析
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/3.Aptos%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%8E%B7%E5%A5%96%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/3.1%20%E5%8E%86%E6%AC%A1%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%B5%9B%E4%BA%8B%E7%9B%98%E7%82%B9/%E5%8E%86%E6%AC%A1%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%B5%9B%E4%BA%8B%E7%9B%98%E7%82%B9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    历次黑客松赛事盘点
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/3.Aptos%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%8E%B7%E5%A5%96%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/3.2%20Defi%26RWA%E8%B5%9B%E9%81%93/Aptos%E5%85%A8%E7%90%83%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%B5%9B%E9%81%93%E5%88%86%E4%BA%AB%28DeFi%26RWA%29.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Defi&RWA赛道
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/3.Aptos%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%8E%B7%E5%A5%96%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/3.3%20Gaming%26NFTs%E8%B5%9B%E9%81%93/Aptos%E5%85%A8%E7%90%83%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%B5%9B%E9%81%93%E5%88%86%E4%BA%AB%28Gaming%26NFTs%29.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gaming&NFTs赛道
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/3.Aptos%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%8E%B7%E5%A5%96%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/3.4%20AI%26Depin%E8%B5%9B%E9%81%93/Aptos%E5%85%A8%E7%90%83%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%B5%9B%E9%81%93%E5%88%86%E4%BA%AB%28AI%26DePIN%29.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI&Depin赛道
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/3.Aptos%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%8E%B7%E5%A5%96%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/3.5%20SocialFi%E8%B5%9B%E9%81%93/Aptos%E5%85%A8%E7%90%83%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%B5%9B%E9%81%93%E5%88%86%E4%BA%AB%28SocialFi%29.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SocialFi赛道
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/3.Aptos%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%8E%B7%E5%A5%96%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/3.6%20Others%E8%B5%9B%E9%81%93/Aptos%E5%85%A8%E7%90%83%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%B5%9B%E9%81%93%E5%88%86%E4%BA%AB%28Others%29.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Others赛道
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ETH
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            ETH
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../eth/eth/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    学习路径
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../eth/eth_dapp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    开发教程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Base
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Base
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../base/base_intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    介绍
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../base/base_farcaster/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Farcaster
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../base/base_degen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Degen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ton
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Ton
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ton/ton/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    介绍
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ton/Ton%E7%94%9F%E6%80%81%E5%88%86%E4%BA%AB.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ton生态分享
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rust/Rust.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rust
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Solana
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Solana
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../solana/Solana.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    开发教程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nft/nft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NFT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../consortium/consortium/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    联盟链
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    参考文档
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../history/history/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    历史文件
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="what-is-an-oracle-and-what-is-pyth">What is an oracle and what is Pyth?<a class="headerlink" href="#what-is-an-oracle-and-what-is-pyth" title="Permanent link">&para;</a></h1>
+<ul>
+<li>根据中国人民银行的定义，预言机是一种机制，其功能是将外部世界的信息写入到区块链内，实现区块链与真实世界的数据互通。它为确定的智能合约提供了与不确定的外部世界进行数据交互的途径，是区块链与现实世界数据交互的接口。简单来说，预言机就是连接区块链世界和真实世界的桥梁，让区块链能够获取真实世界的数据。如今，预言机已成为加密世界中不可或缺的基础设施，特别是在DeFi领域。在借贷协议中，价格预言机决定何时清算用户的贷款。当用户的抵押品价值下降到一定阈值以下时，账户可能被清算。衍生品平台利用预言机来计算加密资产的价值，包括期权、期货和合成资产。指数平台（如Set）使用预言机来检索指数成分的价格。没有预言机，加密世界将陷入混乱，就像没有红绿灯的交通路口一样。</li>
+<li><strong>Pyth Network</strong>，这是世界上最大的一手预言机网络，持续在链上发布金融市场数据。网络的数据来自 90 多家一手数据提供商，包括世界上最大的一批交易所和做市商。Pyth 为 40 多个区块链上的智能合约开发者提供加密货币、股票、外汇对、ETFs 和大宗商品的实时喂价数据总体而言，Pyth Network致力于引入高保真金融数据（Hifi）到DeFi，为DeFi提供实时的真实世界金融市场数据，从而解决DeFi对现实世界数据访问的问题。</li>
+</ul>
+<p><img alt="" src="../img/%E9%A2%84%E8%A8%80%E6%9C%BA.png" /></p>
+<h1 id="why-does-web3-need-oracles">Why does Web3 need oracles?<a class="headerlink" href="#why-does-web3-need-oracles" title="Permanent link">&para;</a></h1>
+<p>关于预言机首先需要理解的是：<strong>为何 Web2</strong> 不需要预言机，但 Web3 一定需要？不少人经常有这样一种困惑，Binance、Coinmarket Cap 或者其他地方都有加密资产的数据，为什么 DeFi 协议和其他应用不直接拿来使用，而是需要一个预言机起作用？答案的关键，在于**链上环境的封闭性**。链上应用依照智能合约的设计执行业务并带来结果，但执行的触发条件却是从外部接收的——必须把一个外界条件带入合约中。某些网站上的加密资产价格，本质还是独立于区块链世界的外部数据，<strong>虽然是现成的，但并不意味着能用</strong>：我们仍需要一个助攻者的角色来把价格数据传递给链上协议，而这才是预言机必然存在的理由。那么，在区块链的世界中，假设你从某个 Defi 中按照时价购买了加密资产，大致会经历了以下过程：</p>
+<ul>
+<li>数据源将资产价格提供给预言机；</li>
+<li>预言机将价格传递给 DeFi 等应用；</li>
+<li>用户以 DeFi 应用中展示的价格购买资产；</li>
+</ul>
+<p><img alt="" src="../img/DeFi%E6%95%B0%E6%8D%AE%E7%94%A8%E4%BE%8B.png" /></p>
+<p>于是，<strong>预言机在其中起到了“报价员”的作用：从上游数据源获取价格，传递给下游应用，支持应用的使用场景从而串联起了整个上下游</strong>。</p>
+<h1 id="what-is-the-technical-architecture-of-the-pyth-oracle">What is the technical architecture of the Pyth oracle?<a class="headerlink" href="#what-is-the-technical-architecture-of-the-pyth-oracle" title="Permanent link">&para;</a></h1>
+<h2 id="what-is-the-oracle-problem">What is the oracle problem?<a class="headerlink" href="#what-is-the-oracle-problem" title="Permanent link">&para;</a></h2>
+<p>预言机不仅在区块链和外部世界之间搭建数据桥梁，还致力于克服所谓的“预言机问题”。这一问题主要涉及确保外部数据的安全性、身份验证和可信度，同时考虑到外部来源可能存在的故障。</p>
+<p>解决预言机问题通常需要经历以下步骤：</p>
+<ul>
+<li>验证器或预言机节点源数据。</li>
+<li>节点对源数据进行加密签名验证。</li>
+<li>进行数据聚合和共识计算。</li>
+<li>将数据传输至区块链网络。</li>
+</ul>
+<p>预言机问题通常通过推送或拉取模型来解决。大多数预言机采用第三方推送模型，其中预言机节点充当中介，从第一手或第二手来源获取数据。例如，Chainlink的主要喂价预言机节点从第二手来源获取数据。推送预言机会按照设定的时间间隔将价格更新推送到各个区块链，每次更新都会产生一定的Gas费用。然而，添加价格反馈或减少链上更新延迟会增加预言机网络的成本，从而影响其可扩展性。此外，获取数据需要多重信任假设：主要来源和次要来源都必须正确稳定，而且预言机网络也必须保持稳定。</p>
+<p>Pyth Network通过其拉取模型解决了第三方推送模型的缺点。凭借其庞大的第一手数据提供商网络，Pyth减轻了关于第三方数据可靠性的下游信任假设。在Pyth的拉取模型中，数据由网络内的实体直接提供，例如交易所、做市商和DeFi协议。这些实体受到激励，会提供可靠的数据，保持良好的声誉，并避免被协议禁止。</p>
+<h2 id="what-is-core-interaction">What is core interaction?<a class="headerlink" href="#what-is-core-interaction" title="Permanent link">&para;</a></h2>
+<p>Pyth 运行其协议的两个实例：一个位于 Solana 主网上，另一个位于 Pythnet 应用链上。 Solana 上的 Pyth 实例专门为 Solana 上的协议提供数据，而 Pythnet 上的 Pyth 实例为所有其他区块链上的协议提供数据。 在这两种情况下，三个核心实体进行交互以促进 Pyth 网络上的预言机更新：</p>
+<ul>
+<li>数据提供商/发布者（如 Jane Street、CTC、Binance、0x、Raydium 等）</li>
+<li>Pyth Oracle程序（聚合算法）</li>
+<li>数据消费者（应用程序/开发人员）</li>
+</ul>
+<p>数据提供者是 Pythnet 上的验证者。 作为 Pyth 数据的主要供应商，供应商通过在消费者发起的整个 DeFi 交易中收取少量费用来获得补偿。Pyth Oracle 程序是一种聚合算法，它结合了提供商提交的数据，并在计算过程中生成相应价格源的聚合价格和置信区间。</p>
+<p><img alt="" src="../img/%E6%A0%B8%E5%BF%83%E4%BA%A4%E4%BA%92.png" /></p>
+<h2 id="what-is-pyth-on-solana">What is Pyth on solana?<a class="headerlink" href="#what-is-pyth-on-solana" title="Permanent link">&para;</a></h2>
+<ul>
+<li>价格源由两个Solana账户表示：产品账户和价格账户。产品账户存储有关价格信息的元数据，例如股票代码、资产类型、对应的价格账户等。价格账户包含数据提供者授权的数据，包括每个提供者的名称、每个提供者提交的价格和置信区间。两个账户均由预言机程序维护，其中还包括第三个帐户，主要列出产品帐户，使应用程序能够对Pyth提供的完整价格源列表进行分类。</li>
+<li>数据提供商每400毫秒（Solana上的时隙长度）提交一次价格更新。每次更新都会触发价格和置信区间的频繁聚合更新，然后由下游应用程序使用。由于Solana的成本较低，Pyth（或任何预言机）可以运行高效的推送模型，开发人员只需将相关价格源传递到其应用程序、反序列化数据并读取/集成已发布的值。通过存储每个提供商提交的单独数据值，预言机可以让提供商对性能不佳或恶意行为负责。</li>
+</ul>
+<h2 id="what-is-pyth-application-chain">What is Pyth application chain?<a class="headerlink" href="#what-is-pyth-application-chain" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Pythnet的应用链是Solana主网的权威权益证明分支，其作为计算层来处理和聚合Pyth数据提供商网络提供的数据。由于Pythnet是Solana的一个分支，因此两者框架有些相似，但也有一些区别。</li>
+<li>Pythnet上的价格信息可供50多个区块链访问，而不仅仅是Solana，因为其价格信息直接发布到区块链。Solana上的推送模型（包括账户和oracle程序）与Pythnet类似，但Pythnet不是目标链，也不向提供商收取提交价格的费用。</li>
+<li>数据提供者在将数据推送到Pythnet进行聚合并通过oracle程序序列化到账户的同时，这些数据随后通过Wormhole跨链消息协议广播到其他区块链。</li>
+</ul>
+<h2 id="how-to-implement-cross-chain-message-passing">How to implement cross-chain message passing?<a class="headerlink" href="#how-to-implement-cross-chain-message-passing" title="Permanent link">&para;</a></h2>
+<p>大概在Pythnet链上的一个跨链消息传递步骤如下:</p>
+<ul>
+<li>在Pythnet上发布和聚合数据后，数据不会立即通过Wormhole路由。相反，Pyth通过消息缓冲区路由其数据，并将其散列到Merkle树中。这确保用户可以选择将哪些更新包含在单个事务中，从而降低成本，并允许数据更新包含任意计算。</li>
+<li>每次聚合更新后，聚合程序都会向消息缓冲区添加一条消息。对于每个时间段，Pythnet验证器读取消息并创建Merkle树，然后将包含所有价格的Merkle根的消息发送到Pythnet上的Wormhole合约。</li>
+<li>随后，Wormhole管理员（Wormhole节点）读取Merkle根消息，创建可验证操作批准（VAA），并将价格更新广播到相关区块链。VAA包含Wormhole管理员的签名，用于确认管理员已经见证并验证了VAA，包括虫洞守护者的签名。</li>
+<li>这些签名确认守护者已经见证并验证了消息中包含的信息，即价格的Merkle根。签名VAA是一种可验证且安全的方法，用于确认从Pythnet传输到目标区块链的数据的准确性，并已得到可信方（虫洞守护者）的验证。</li>
+</ul>
+<p><img alt="" src="../img/%E8%B7%A8%E9%93%BE%E6%B6%88%E6%81%AF%E4%BC%A0%E9%80%92.png" /></p>
+<h2 id="what-is-hermes-api">What is Hermes API?<a class="headerlink" href="#what-is-hermes-api" title="Permanent link">&para;</a></h2>
+<p>Hermes是一个 Web API，抽象了开发人员更新启动过程。 如果没有像 Hermes 这样的服务，开发人员将不得不手动编译具有所需价格源的更新有效负载，并使用经过虫洞验证的 Merkle 根从 Pythnet 获取相应的数据和 Merkle 证明。 Hermes 使开发人员能够轻松查询 Web 服务以访问预言机价格。 它允许数据消费者从 REST 或 WebSocket API 检索最新价格。</p>
+<p>WebSocket API 特点：</p>
+<ul>
+<li>最适合需要实时连续数据流的应用。</li>
+<li>维护成本低：初始设置后，可以来回发送数据，而无需重复 HTTP 标头的开销，这对于频繁的数据传输非常高效。</li>
+<li>实时更新由于客户端和服务器之间的持续连接，使得数据可以立即更新。</li>
+<li>场景：套利交易、收益率优化工具、DEX交易等。</li>
+</ul>
+<h1 id="how-is-pyth-different-from-chainlink">How is Pyth different from Chainlink?<a class="headerlink" href="#how-is-pyth-different-from-chainlink" title="Permanent link">&para;</a></h1>
+<p>聊到预言机，Chainlink是绕不过去的一道坎，Pyth和Chainlink究竟有何差异？总体来看，Pyth采用了与Chainlink截然不同的设计方案，核心区别在于：谁在链上提交数据？</p>
+<ol>
+<li>机制上:Chainlink的机制设计包含数据需求方、预言机节点和数据源三种角色，由第三方节点提交数据进行聚合，充当中介，同时也获取收益。Pyth的机制是直接点对点进行，让数据提供者直接把数据放在链上，消除第三方中介，核心差异即是Pyth所宣传的"Hi-fi for DeFi"，高保真金融数据。</li>
+<li>成本上:Pyth消除了和节点共享收入的需求，提高了数据供给方自身的盈利能力。Chainlink的数据聚合可以发生在链上或链下，如果是链上聚合，每个预言机节点在向链合约提交价格时都需要支付Gas费，而链下聚合只有一个聚合的价格被提交到链上，成本较低。</li>
+<li>覆盖范围上:Chainlink作为DeFi 发展多年的主要预言机主导者，具备先发的市场优势。尽管如此，Pyth虽然是后起之秀但是在覆盖的区块链数量和安全价值方面处于领先地位。 就覆盖区块链的多样性和安全价值而言，Chainlink 是 Pyth 的主要竞争。此外Pyth选择Solana作为大本营，高TPS以及低Gas的环境，让数据提供者直接在链上提交他们的价格进行汇总变得简单直接，因此可以选择皆链上聚合。</li>
+</ol>
+<p>一些更详细的对比如下:</p>
+<p><img alt="" src="../img/Comparison.png" /></p>
+<h1 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h1>
+<p>综上所述,我们可以总结出关于Pyth Network的几个要点：</p>
+<ul>
+<li>培育数据提供商网络和保证数据可靠准确：Pyth培育了第一方数据提供商网络，确保数据的可靠性和及时性。此外Pyth直接从原始数据源维护市场数据，确保数据的准确性和可靠性。</li>
+<li>基于拉动的预言机模式：相较Chainlink等传统预言机，采用基于拉动的预言机模式，将成本转嫁给了预言机用户，降低了整个网络的成本。</li>
+<li>提高价格更新频率：Pyth的设计使得价格更新频率更高，数据更新更及时，有助于市场参与者做出更准确的决策。</li>
+<li>广泛服务区块链：Pyth已扩展到为大多数区块链提供服务，覆盖了广泛的市场需求。Pyth在市场上占据了总价值第四大份额，彰显了其在行业中的地位和影响力。</li>
+</ul>
+<p>从8月主网正式上线至今，一共有37个Solana链上应用集成了Pyth的预言机服务，涵盖DEX、衍生品、DeFi借贷、稳定币、合成资产、ETF、资产管理平台、基础设施……Solana生态的明星项目，诸如jetprotocol、lifinity、drift均使用Pyth喂价。未来Pyth的市场价值有望得到进一步体现。
+<img alt="" src="../img/Pyth.png" /></p>
+<h1 id="reference-and-relevant-resources">Reference and Relevant resources<a class="headerlink" href="#reference-and-relevant-resources" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Online deck:https://docs.google.com/presentation/d/1I4ZnINpIBDUtu67AUfIzmGbBMI6QRuSjN4s8ljX65Fc/edit?usp=sharing</li>
+<li>
+<p>Reference:</p>
+<ul>
+<li>
+<p>https://pyth.network/</p>
+</li>
+<li>
+<p>https://chain.link/</p>
+</li>
+<li>
+<p>https://www.binance.com/zh-CN/square/post/4142724308034</p>
+</li>
+<li>
+<p>https://www.bitget.fit/zh-CN/academy/what-is-wormhole-w-and-how-does-it-work</p>
+</li>
+<li>
+<p>https://www.techflowpost.com/article/detail_9783.html</p>
+</li>
+<li>
+<p>http://defiplot.com/blog/pyth-research-report/</p>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

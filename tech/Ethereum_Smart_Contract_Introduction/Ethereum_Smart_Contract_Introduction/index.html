@@ -1,0 +1,2381 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../Hierarchical_Deterministic_Wallets/Hierarchical_Deterministic_Wallets/">
+      
+      
+        <link rel="next" href="../../fluence/fluence/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>以太坊智能合约初探 - ZJUBCA Blockchain Roadmap</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="ZJUBCA Blockchain Roadmap" class="md-header__button md-logo" aria-label="ZJUBCA Blockchain Roadmap" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ZJUBCA Blockchain Roadmap
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              以太坊智能合约初探
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="ZJUBCA Blockchain Roadmap" class="md-nav__button md-logo" aria-label="ZJUBCA Blockchain Roadmap" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ZJUBCA Blockchain Roadmap
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    学习路径
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    技术分享
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            技术分享
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Hierarchical_Deterministic_Wallets/Hierarchical_Deterministic_Wallets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    分层确定性钱包初探
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    以太坊智能合约初探
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    以太坊智能合约初探
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      前言
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      简介
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      编译
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="编译">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bytecode" class="md-nav__link">
+    <span class="md-ellipsis">
+      bytecode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abi" class="md-nav__link">
+    <span class="md-ellipsis">
+      ABI
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      部署
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      执行
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      销毁
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      存储空间
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="存储空间">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      栈
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      内存
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      存储（storage）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考链接
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fluence/fluence/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fluence 空投代码分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../A_brief_technical_analysis_of_solana_and_move/A_brief_technical_analysis_of_solana_and_move/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Solana和Aptos技术对比浅析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tokenomic/Tokenomic.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    代币经济学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Comparison_of_Pyth_and_Chainlink/Comparison_of_Pyth_and_Chainlink/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    预言机浅析:对比Pyth和Chainlink
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_interact_with_unopen_source_contract/How_to_interact_with_unopen_source_contract.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    如何与未开源合约进行交互
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Aptos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Aptos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Overview
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/1.Overview/1.1%20Aptos%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/Aptos%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aptos的前世今生
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/1.Overview/1.2%20Aptos%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0/Aptos%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aptos技术概述
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/1.Overview/1.3%20Aptos%E7%94%9F%E6%80%81%E4%BB%8B%E7%BB%8D/Aptos%E7%94%9F%E6%80%81%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aptos生态介绍
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Aptos生态项目分析
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Aptos生态项目分析
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_1" id="__nav_3_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Chingari
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Chingari
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.1%20Chingari/2.1.1%20Chingari%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/Chingari%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chingari技术分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.1%20Chingari/2.1.2%20Chingari%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/Chingari%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chingari投研分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_2" id="__nav_3_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Amnis Finance
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Amnis Finance
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.2%20Amnis%20Finance/2.2.1%20Amnis%20Finance%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/Amnis%20Finance%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Amnis Finance技术分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.2%20Amnis%20Finance/2.2.2%20Amnis%20Finance%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/Amnis%20Finance%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Amnis Finance投研分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_3" id="__nav_3_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Mereo
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Mereo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.3%20Mereo/2.3.1%20Mereo%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/Mereo%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mereo技术分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.3%20Mereo/2.3.2%20Mereo%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/Mereo%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mereo投研分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_4" id="__nav_3_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Merkle Trade
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Merkle Trade
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.4%20Merkle%20Trade/2.4.1%20Merkle%20Trade%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/Merkle%20Trade%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Merkle Trade技术分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.4%20Merkle%20Trade/2.4.2%20Merkle%20Trade%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/Merkle%20Trade%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Merkle Trade投研分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_5" id="__nav_3_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Martian
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Martian
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.5%20Martian/2.5.1%20Martian%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/Martian%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Martian技术分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.5%20Martian/2.5.2%20Martian%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/Martian%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Martian投研分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_6" id="__nav_3_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Shinami
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Shinami
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.6%20Shinami/2.6.1%20Shinami%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/Shinami%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shinami技术分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.6%20Shinami/2.6.2%20Shinami%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/Shinami%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shinami投研分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Aptos黑客松获奖项目分析
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Aptos黑客松获奖项目分析
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/3.Aptos%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%8E%B7%E5%A5%96%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/3.1%20%E5%8E%86%E6%AC%A1%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%B5%9B%E4%BA%8B%E7%9B%98%E7%82%B9/%E5%8E%86%E6%AC%A1%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%B5%9B%E4%BA%8B%E7%9B%98%E7%82%B9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    历次黑客松赛事盘点
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/3.Aptos%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%8E%B7%E5%A5%96%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/3.2%20Defi%26RWA%E8%B5%9B%E9%81%93/Aptos%E5%85%A8%E7%90%83%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%B5%9B%E9%81%93%E5%88%86%E4%BA%AB%28DeFi%26RWA%29.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Defi&RWA赛道
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/3.Aptos%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%8E%B7%E5%A5%96%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/3.3%20Gaming%26NFTs%E8%B5%9B%E9%81%93/Aptos%E5%85%A8%E7%90%83%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%B5%9B%E9%81%93%E5%88%86%E4%BA%AB%28Gaming%26NFTs%29.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gaming&NFTs赛道
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/3.Aptos%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%8E%B7%E5%A5%96%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/3.4%20AI%26Depin%E8%B5%9B%E9%81%93/Aptos%E5%85%A8%E7%90%83%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%B5%9B%E9%81%93%E5%88%86%E4%BA%AB%28AI%26DePIN%29.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI&Depin赛道
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/3.Aptos%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%8E%B7%E5%A5%96%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/3.5%20SocialFi%E8%B5%9B%E9%81%93/Aptos%E5%85%A8%E7%90%83%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%B5%9B%E9%81%93%E5%88%86%E4%BA%AB%28SocialFi%29.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SocialFi赛道
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/3.Aptos%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%8E%B7%E5%A5%96%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/3.6%20Others%E8%B5%9B%E9%81%93/Aptos%E5%85%A8%E7%90%83%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%B5%9B%E9%81%93%E5%88%86%E4%BA%AB%28Others%29.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Others赛道
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ETH
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            ETH
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../eth/eth/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    学习路径
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../eth/eth_dapp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    开发教程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Base
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Base
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../base/base_intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    介绍
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../base/base_farcaster/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Farcaster
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../base/base_degen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Degen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ton
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Ton
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ton/ton/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    介绍
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ton/Ton%E7%94%9F%E6%80%81%E5%88%86%E4%BA%AB.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ton生态分享
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rust/Rust.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rust
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Solana
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Solana
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../solana/Solana.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    开发教程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nft/nft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NFT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../consortium/consortium/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    联盟链
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    参考文档
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../history/history/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    历史文件
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      前言
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      简介
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      编译
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="编译">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bytecode" class="md-nav__link">
+    <span class="md-ellipsis">
+      bytecode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abi" class="md-nav__link">
+    <span class="md-ellipsis">
+      ABI
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      部署
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      执行
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      销毁
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      存储空间
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="存储空间">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      栈
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      内存
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      存储（storage）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考链接
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="_1">以太坊智能合约初探<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p><em>Author: <a href="https://github.com/Autosaida">Autosaida</a>; Written: 10/2022</em></p>
+<h2 id="_2">前言<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>智能合约作为以太坊最突出的创新点，让区块链拥有了更多可能。</p>
+<p>什么是智能合约，智能合约的整个生命周期是怎样的，具体是如何部署在链上的，又是如何运行的，其变量又是如何存储的，下面对相关问题进行研究学习。</p>
+<h2 id="_3">简介<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>宏观上来看，智能合约可以理解为一个存储在链上、运行在以太坊虚拟机EVM中的实例化对象。且根据区块链的特性，这个实例化对象将永远存在区块链网络中（除非进行自毁），一旦部署，智能合约的代码就无法改变，修改代码的唯一方法是部署新实例。</p>
+<p>智能合约通常用高级语言编写，例如solidity。代码经过编译生成字节码，可以在基于栈的虚拟机EVM中执行。合约对象拥有自己的函数（类方法）和状态变量（类变量），但显然对象并不是一个程序，并没有程序入口，因此只有被调用时才能执行其代码。</p>
+<p>具体来讲，<strong>智能合约是以太坊中的一种账户</strong>（CA，Contract Account），即可以拥有以太币余额、可发起交易的实体，另一种账户就是由用户私钥控制的外部账户（EOA，Externally Owned Account）。</p>
+<p><img alt="" src="../img/2022-10-21-20-18-44.png" /></p>
+<p>如上图所示，两种账户都有自己的地址、余额以及nonce，除此之外合约账户还有存储和代码部分，对应合约实例的状态变量和函数。</p>
+<p>而以太坊被视为由交易驱动的状态机，交易是由外部帐户发出、进行签名、且最终更新以太坊网络状态的操作。</p>
+<p><img alt="" src="../img/2022-10-21-20-30-19.png" /></p>
+<p>如上图所示，以太坊有几种不同类型的交易：</p>
+<ol>
+<li>常规交易：从一个帐户到另一个帐户的交易，即进行ETH转账，目标可以是外部账户也可以是合约账户。</li>
+<li>合约部署交易：没有目标地址<code>to</code>字段的交易，即外部账户创建智能合约，交易的<code>data</code>字段即为合约的部署、执行代码。</li>
+<li>执行合约：即外部账户与已经部署在链上的智能合约进行交互，调用其合约函数的交易。</li>
+</ol>
+<p>因此，<strong>智能合约也是参与交易，对区块链进行状态转换的重要组成部分</strong>。</p>
+<p>下面将以一个简单的合约为例，探索智能合约的整个生命周期：编译-&gt;部署-&gt;执行-&gt;销毁。</p>
+<h2 id="_4">编译<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>智能合约由高级语言实现后，需要首先经编译器编译为EVM可执行的字节码。</p>
+<p>这里编译的智能合约如下。</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// SPDX-License-Identifier: UNLICENSED</span>
+<span class="k">pragma solidity</span><span class="w"> </span><span class="o">^</span><span class="k">0.8.0</span><span class="p">;</span>
+
+<span class="kt">import</span><span class="w"> </span><span class="s2">&quot;hardhat/console.sol&quot;</span><span class="p">;</span>
+
+<span class="k">contract</span><span class="w"> </span><span class="ni">Greeter</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="k">public </span><span class="nv">greeting</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">constructor</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="nv">memory</span><span class="w"> </span>_greeting<span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span>greeting<span class="w"> </span><span class="o">=</span><span class="w"> </span>_greeting<span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">greet</span><span class="p">()</span><span class="w"> </span><span class="kt">public</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="nv">memory</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">return</span><span class="w"> </span>greeting<span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">setGreeting</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="nv">memory</span><span class="w"> </span>_greeting<span class="p">)</span><span class="w"> </span><span class="kt">public</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span>greeting<span class="w"> </span><span class="o">=</span><span class="w"> </span>_greeting<span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="bytecode">bytecode<a class="headerlink" href="#bytecode" title="Permanent link">&para;</a></h3>
+<p>使用hardhat编译后可以得到两个字节序列，bytecode和deployedBytecode。</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;bytecode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0x60806040523480156200001157600080fd5b5060405162000ca938038062000ca98339818101604052810190620000379190620001e3565b80600090816200004891906200047f565b505062000566565b6000604051905090565b600080fd5b600080fd5b600080fd5b600080fd5b6000601f19601f8301169050919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b620000b9826200006e565b810181811067ffffffffffffffff82111715620000db57620000da6200007f565b5b80604052505050565b6000620000f062000050565b9050620000fe8282620000ae565b919050565b600067ffffffffffffffff8211156200012157620001206200007f565b5b6200012c826200006e565b9050602081019050919050565b60005b83811015620001595780820151818401526020810190506200013c565b60008484015250505050565b60006200017c620001768462000103565b620000e4565b9050828152602081018484840111156200019b576200019a62000069565b5b620001a884828562000139565b509392505050565b600082601f830112620001c857620001c762000064565b5b8151620001da84826020860162000165565b91505092915050565b600060208284031215620001fc57620001fb6200005a565b5b600082015167ffffffffffffffff8111156200021d576200021c6200005f565b5b6200022b84828501620001b0565b91505092915050565b600081519050919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052602260045260246000fd5b600060028204905060018216806200028757607f821691505b6020821081036200029d576200029c6200023f565b5b50919050565b60008190508160005260206000209050919050565b60006020601f8301049050919050565b600082821b905092915050565b600060088302620003077fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff82620002c8565b620003138683620002c8565b95508019841693508086168417925050509392505050565b6000819050919050565b6000819050919050565b6000620003606200035a62000354846200032b565b62000335565b6200032b565b9050919050565b6000819050919050565b6200037c836200033f565b620003946200038b8262000367565b848454620002d5565b825550505050565b600090565b620003ab6200039c565b620003b881848462000371565b505050565b5b81811015620003e057620003d4600082620003a1565b600181019050620003be565b5050565b601f8211156200042f57620003f981620002a3565b6200040484620002b8565b8101602085101562000414578190505b6200042c6200042385620002b8565b830182620003bd565b50505b505050565b600082821c905092915050565b6000620004546000198460080262000434565b1980831691505092915050565b60006200046f838362000441565b9150826002028217905092915050565b6200048a8262000234565b67ffffffffffffffff811115620004a657620004a56200007f565b5b620004b282546200026e565b620004bf828285620003e4565b600060209050601f831160018114620004f75760008415620004e2578287015190505b620004ee858262000461565b8655506200055e565b601f1984166200050786620002a3565b60005b8281101562000531578489015182556001820191506020850194506020810190506200050a565b868310156200055157848901516200054d601f89168262000441565b8355505b6001600288020188555050505b505050505050565b61073380620005766000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c8063a413686214610046578063cfae321714610062578063ef690cc014610080575b600080fd5b610060600480360381019061005b919061032b565b61009e565b005b61006a6100b1565b60405161007791906103f3565b60405180910390f35b610088610143565b60405161009591906103f3565b60405180910390f35b80600090816100ad919061062b565b5050565b6060600080546100c090610444565b80601f01602080910402602001604051908101604052809291908181526020018280546100ec90610444565b80156101395780601f1061010e57610100808354040283529160200191610139565b820191906000526020600020905b81548152906001019060200180831161011c57829003601f168201915b5050505050905090565b6000805461015090610444565b80601f016020809104026020016040519081016040528092919081815260200182805461017c90610444565b80156101c95780601f1061019e576101008083540402835291602001916101c9565b820191906000526020600020905b8154815290600101906020018083116101ac57829003601f168201915b505050505081565b6000604051905090565b600080fd5b600080fd5b600080fd5b600080fd5b6000601f19601f8301169050919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b610238826101ef565b810181811067ffffffffffffffff8211171561025757610256610200565b5b80604052505050565b600061026a6101d1565b9050610276828261022f565b919050565b600067ffffffffffffffff82111561029657610295610200565b5b61029f826101ef565b9050602081019050919050565b82818337600083830152505050565b60006102ce6102c98461027b565b610260565b9050828152602081018484840111156102ea576102e96101ea565b5b6102f58482856102ac565b509392505050565b600082601f830112610312576103116101e5565b5b81356103228482602086016102bb565b91505092915050565b600060208284031215610341576103406101db565b5b600082013567ffffffffffffffff81111561035f5761035e6101e0565b5b61036b848285016102fd565b91505092915050565b600081519050919050565b600082825260208201905092915050565b60005b838110156103ae578082015181840152602081019050610393565b60008484015250505050565b60006103c582610374565b6103cf818561037f565b93506103df818560208601610390565b6103e8816101ef565b840191505092915050565b6000602082019050818103600083015261040d81846103ba565b905092915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052602260045260246000fd5b6000600282049050600182168061045c57607f821691505b60208210810361046f5761046e610415565b5b50919050565b60008190508160005260206000209050919050565b60006020601f8301049050919050565b600082821b905092915050565b6000600883026104d77fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8261049a565b6104e1868361049a565b95508019841693508086168417925050509392505050565b6000819050919050565b6000819050919050565b600061052861052361051e846104f9565b610503565b6104f9565b9050919050565b6000819050919050565b6105428361050d565b61055661054e8261052f565b8484546104a7565b825550505050565b600090565b61056b61055e565b610576818484610539565b505050565b5b8181101561059a5761058f600082610563565b60018101905061057c565b5050565b601f8211156105df576105b081610475565b6105b98461048a565b810160208510156105c8578190505b6105dc6105d48561048a565b83018261057b565b50505b505050565b600082821c905092915050565b6000610602600019846008026105e4565b1980831691505092915050565b600061061b83836105f1565b9150826002028217905092915050565b61063482610374565b67ffffffffffffffff81111561064d5761064c610200565b5b6106578254610444565b61066282828561059e565b600060209050601f8311600181146106955760008415610683578287015190505b61068d858261060f565b8655506106f5565b601f1984166106a386610475565b60005b828110156106cb578489015182556001820191506020850194506020810190506106a6565b868310156106e857848901516106e4601f8916826105f1565b8355505b6001600288020188555050505b50505050505056fea26469706673582212209066875f32a43c988b58ada125306c30a7a86fb49abd7bf8abf4a479062fa4a564736f6c63430008110033&quot;</span><span class="p">,</span>
+<span class="nt">&quot;deployedBytecode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0x608060405234801561001057600080fd5b50600436106100415760003560e01c8063a413686214610046578063cfae321714610062578063ef690cc014610080575b600080fd5b610060600480360381019061005b919061032b565b61009e565b005b61006a6100b1565b60405161007791906103f3565b60405180910390f35b610088610143565b60405161009591906103f3565b60405180910390f35b80600090816100ad919061062b565b5050565b6060600080546100c090610444565b80601f01602080910402602001604051908101604052809291908181526020018280546100ec90610444565b80156101395780601f1061010e57610100808354040283529160200191610139565b820191906000526020600020905b81548152906001019060200180831161011c57829003601f168201915b5050505050905090565b6000805461015090610444565b80601f016020809104026020016040519081016040528092919081815260200182805461017c90610444565b80156101c95780601f1061019e576101008083540402835291602001916101c9565b820191906000526020600020905b8154815290600101906020018083116101ac57829003601f168201915b505050505081565b6000604051905090565b600080fd5b600080fd5b600080fd5b600080fd5b6000601f19601f8301169050919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b610238826101ef565b810181811067ffffffffffffffff8211171561025757610256610200565b5b80604052505050565b600061026a6101d1565b9050610276828261022f565b919050565b600067ffffffffffffffff82111561029657610295610200565b5b61029f826101ef565b9050602081019050919050565b82818337600083830152505050565b60006102ce6102c98461027b565b610260565b9050828152602081018484840111156102ea576102e96101ea565b5b6102f58482856102ac565b509392505050565b600082601f830112610312576103116101e5565b5b81356103228482602086016102bb565b91505092915050565b600060208284031215610341576103406101db565b5b600082013567ffffffffffffffff81111561035f5761035e6101e0565b5b61036b848285016102fd565b91505092915050565b600081519050919050565b600082825260208201905092915050565b60005b838110156103ae578082015181840152602081019050610393565b60008484015250505050565b60006103c582610374565b6103cf818561037f565b93506103df818560208601610390565b6103e8816101ef565b840191505092915050565b6000602082019050818103600083015261040d81846103ba565b905092915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052602260045260246000fd5b6000600282049050600182168061045c57607f821691505b60208210810361046f5761046e610415565b5b50919050565b60008190508160005260206000209050919050565b60006020601f8301049050919050565b600082821b905092915050565b6000600883026104d77fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8261049a565b6104e1868361049a565b95508019841693508086168417925050509392505050565b6000819050919050565b6000819050919050565b600061052861052361051e846104f9565b610503565b6104f9565b9050919050565b6000819050919050565b6105428361050d565b61055661054e8261052f565b8484546104a7565b825550505050565b600090565b61056b61055e565b610576818484610539565b505050565b5b8181101561059a5761058f600082610563565b60018101905061057c565b5050565b601f8211156105df576105b081610475565b6105b98461048a565b810160208510156105c8578190505b6105dc6105d48561048a565b83018261057b565b50505b505050565b600082821c905092915050565b6000610602600019846008026105e4565b1980831691505092915050565b600061061b83836105f1565b9150826002028217905092915050565b61063482610374565b67ffffffffffffffff81111561064d5761064c610200565b5b6106578254610444565b61066282828561059e565b600060209050601f8311600181146106955760008415610683578287015190505b61068d858261060f565b8655506106f5565b601f1984166106a386610475565b60005b828110156106cb578489015182556001820191506020850194506020810190506106a6565b868310156106e857848901516106e4601f8916826105f1565b8355505b6001600288020188555050505b50505050505056fea26469706673582212209066875f32a43c988b58ada125306c30a7a86fb49abd7bf8abf4a479062fa4a564736f6c63430008110033&quot;</span><span class="p">,</span>
+</code></pre></div>
+<p>可以注意到，deployedBytecode是bytecode的子集，位于bytecode的后半部分，其前一个字节为0xfe，是evm中的INVALID指令，将bytecode分隔为前后两部分。</p>
+<p>前一部分即initial code，或者叫creation bytecode，后一部分为deployedBytecode，或者说是runtime bytecode。</p>
+<p>初始化代码，即创建智能合约的代码，用于将运行时代码存储在链上，需要执行构造函数、初始化相关状态变量，并计算运行时代码（将一大块数据读入内存），最终将其返回给EVM。显然初始化工作只需要在创建时执行一次，并不需要存储在链上。</p>
+<p>运行时字节码，是最终存储在链上的合约对象的代码，可以在后续的交易中被执行。</p>
+<p>上述bytecode就是初始化代码和运行时字节码的合并。</p>
+<h3 id="abi">ABI<a class="headerlink" href="#abi" title="Permanent link">&para;</a></h3>
+<p>除了字节码，还得到了合约接口的ABI。</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;abi&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;inputs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;internalType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;_greeting&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;stateMutability&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nonpayable&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;constructor&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;inputs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;greet&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;outputs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;internalType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;stateMutability&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;view&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;function&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;inputs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;greeting&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;outputs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;internalType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;stateMutability&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;view&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;function&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;inputs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;internalType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;_greeting&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;setGreeting&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;outputs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">      </span><span class="nt">&quot;stateMutability&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nonpayable&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;function&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+</code></pre></div>
+<p>合约应用二进制接口Application Binary Interface（ABI）是从区块链外部与合约进行交互或者合约与合约间进行交互的一种标准方式。使用的数据会根据其类型按照规定的方法进行编码。</p>
+<p>更通俗的理解，包含两方面内容：
+1. ABI是合约接口的说明。
+2. ABI定义与合约进行交互的数据编码规则。</p>
+<p>ABI是合约接口的说明，内容包括合约的函数名称、参数名称、参数类型等信息。这些信息以JSON格式保存，如上述编译得到的abi数据。知道这些信息可以便于与合约交互。相关字段含义可见<a href="https://docs.soliditylang.org/en/latest/abi-spec.html#json">abi-spec-json</a>。</p>
+<p>而具体来说如何将调用信息传给evm，显然evm需要接收字节序列，那么如何将要调用的函数名称、具体的参数信息传给evm，让虚拟机正确执行我们想要执行的代码逻辑，就是ABI的另一个作用，定义与合约进行交互的数据编码规则，具体可见<a href="https://docs.soliditylang.org/en/latest/abi-spec.html">abi-spec</a>。</p>
+<h2 id="_5">部署<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>合约编译完成后，就可以部署在链上，供外部用户直接或间接的使用。</p>
+<p>部署代码如下。</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ethers</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;hardhat&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Greeter__factory</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;../typechain/factories/Greeter__factory&quot;</span><span class="p">;</span>
+
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">signer</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">ethers</span><span class="p">.</span><span class="nx">getSigners</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">signer</span><span class="p">.</span><span class="nx">address</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">G</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Greeter__factory</span><span class="p">(</span><span class="nx">signer</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">G</span><span class="p">.</span><span class="nx">deploy</span><span class="p">(</span><span class="s2">&quot;123&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">g</span><span class="p">.</span><span class="nx">deployed</span><span class="p">();</span>
+
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0x60806040523480156200001157600080fd5b5060405162000ca938038062000ca98339818101604052810190620000379190620001e3565b80600090816200004891906200047f565b505062000566565b6000604051905090565b600080fd5b600080fd5b600080fd5b600080fd5b6000601f19601f8301169050919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b620000b9826200006e565b810181811067ffffffffffffffff82111715620000db57620000da6200007f565b5b80604052505050565b6000620000f062000050565b9050620000fe8282620000ae565b919050565b600067ffffffffffffffff8211156200012157620001206200007f565b5b6200012c826200006e565b9050602081019050919050565b60005b83811015620001595780820151818401526020810190506200013c565b60008484015250505050565b60006200017c620001768462000103565b620000e4565b9050828152602081018484840111156200019b576200019a62000069565b5b620001a884828562000139565b509392505050565b600082601f830112620001c857620001c762000064565b5b8151620001da84826020860162000165565b91505092915050565b600060208284031215620001fc57620001fb6200005a565b5b600082015167ffffffffffffffff8111156200021d576200021c6200005f565b5b6200022b84828501620001b0565b91505092915050565b600081519050919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052602260045260246000fd5b600060028204905060018216806200028757607f821691505b6020821081036200029d576200029c6200023f565b5b50919050565b60008190508160005260206000209050919050565b60006020601f8301049050919050565b600082821b905092915050565b600060088302620003077fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff82620002c8565b620003138683620002c8565b95508019841693508086168417925050509392505050565b6000819050919050565b6000819050919050565b6000620003606200035a62000354846200032b565b62000335565b6200032b565b9050919050565b6000819050919050565b6200037c836200033f565b620003946200038b8262000367565b848454620002d5565b825550505050565b600090565b620003ab6200039c565b620003b881848462000371565b505050565b5b81811015620003e057620003d4600082620003a1565b600181019050620003be565b5050565b601f8211156200042f57620003f981620002a3565b6200040484620002b8565b8101602085101562000414578190505b6200042c6200042385620002b8565b830182620003bd565b50505b505050565b600082821c905092915050565b6000620004546000198460080262000434565b1980831691505092915050565b60006200046f838362000441565b9150826002028217905092915050565b6200048a8262000234565b67ffffffffffffffff811115620004a657620004a56200007f565b5b620004b282546200026e565b620004bf828285620003e4565b600060209050601f831160018114620004f75760008415620004e2578287015190505b620004ee858262000461565b8655506200055e565b601f1984166200050786620002a3565b60005b8281101562000531578489015182556001820191506020850194506020810190506200050a565b868310156200055157848901516200054d601f89168262000441565b8355505b6001600288020188555050505b505050505050565b61073380620005766000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c8063a413686214610046578063cfae321714610062578063ef690cc014610080575b600080fd5b610060600480360381019061005b919061032b565b61009e565b005b61006a6100b1565b60405161007791906103f3565b60405180910390f35b610088610143565b60405161009591906103f3565b60405180910390f35b80600090816100ad919061062b565b5050565b6060600080546100c090610444565b80601f01602080910402602001604051908101604052809291908181526020018280546100ec90610444565b80156101395780601f1061010e57610100808354040283529160200191610139565b820191906000526020600020905b81548152906001019060200180831161011c57829003601f168201915b5050505050905090565b6000805461015090610444565b80601f016020809104026020016040519081016040528092919081815260200182805461017c90610444565b80156101c95780601f1061019e576101008083540402835291602001916101c9565b820191906000526020600020905b8154815290600101906020018083116101ac57829003601f168201915b505050505081565b6000604051905090565b600080fd5b600080fd5b600080fd5b600080fd5b6000601f19601f8301169050919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b610238826101ef565b810181811067ffffffffffffffff8211171561025757610256610200565b5b80604052505050565b600061026a6101d1565b9050610276828261022f565b919050565b600067ffffffffffffffff82111561029657610295610200565b5b61029f826101ef565b9050602081019050919050565b82818337600083830152505050565b60006102ce6102c98461027b565b610260565b9050828152602081018484840111156102ea576102e96101ea565b5b6102f58482856102ac565b509392505050565b600082601f830112610312576103116101e5565b5b81356103228482602086016102bb565b91505092915050565b600060208284031215610341576103406101db565b5b600082013567ffffffffffffffff81111561035f5761035e6101e0565b5b61036b848285016102fd565b91505092915050565b600081519050919050565b600082825260208201905092915050565b60005b838110156103ae578082015181840152602081019050610393565b60008484015250505050565b60006103c582610374565b6103cf818561037f565b93506103df818560208601610390565b6103e8816101ef565b840191505092915050565b6000602082019050818103600083015261040d81846103ba565b905092915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052602260045260246000fd5b6000600282049050600182168061045c57607f821691505b60208210810361046f5761046e610415565b5b50919050565b60008190508160005260206000209050919050565b60006020601f8301049050919050565b600082821b905092915050565b6000600883026104d77fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8261049a565b6104e1868361049a565b95508019841693508086168417925050509392505050565b6000819050919050565b6000819050919050565b600061052861052361051e846104f9565b610503565b6104f9565b9050919050565b6000819050919050565b6105428361050d565b61055661054e8261052f565b8484546104a7565b825550505050565b600090565b61056b61055e565b610576818484610539565b505050565b5b8181101561059a5761058f600082610563565b60018101905061057c565b5050565b601f8211156105df576105b081610475565b6105b98461048a565b810160208510156105c8578190505b6105dc6105d48561048a565b83018261057b565b50505b505050565b600082821c905092915050565b6000610602600019846008026105e4565b1980831691505092915050565b600061061b83836105f1565b9150826002028217905092915050565b61063482610374565b67ffffffffffffffff81111561064d5761064c610200565b5b6106578254610444565b61066282828561059e565b600060209050601f8311600181146106955760008415610683578287015190505b61068d858261060f565b8655506106f5565b601f1984166106a386610475565b60005b828110156106cb578489015182556001820191506020850194506020810190506106a6565b868310156106e857848901516106e4601f8916826105f1565b8355505b6001600288020188555050505b50505050505056fea26469706673582212209066875f32a43c988b58ada125306c30a7a86fb49abd7bf8abf4a479062fa4a564736f6c63430008110033&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">coder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ethers</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">AbiCoder</span><span class="p">();</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">coder</span><span class="p">.</span><span class="nx">encode</span><span class="p">([</span><span class="s2">&quot;string&quot;</span><span class="p">],[</span><span class="s2">&quot;123&quot;</span><span class="p">]).</span><span class="nx">substring</span><span class="p">(</span><span class="mf">2</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">b</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">s</span><span class="p">;</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">tx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">signer</span><span class="p">.</span><span class="nx">sendTransaction</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">b</span><span class="p">,</span>
+<span class="w">  </span><span class="p">});</span>
+
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">g</span><span class="p">.</span><span class="nx">deployTransaction</span><span class="p">.</span><span class="nx">data</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">main</span><span class="p">().</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">process</span><span class="p">.</span><span class="nx">exitCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div>
+<p>这里使用两种方式，先是直接使用<code>ContractFactory</code>进行部署，之后则通过发送交易的方式来部署，实质上是一样的。</p>
+<p>如前面所说，合约的创建实际上就是没有目标地址<code>to</code>字段的交易，交易的<code>data</code>字段即为合约部署、执行的bytecode。这里构造函数需要传入参数，故需要先对传入参数进行abi编码，再直接附加到bytecode后即可。可以验证两种部署方式最终的<code>data</code>是一致的。</p>
+<p>而最终的合约地址是如何得到的，可参考<a href="https://ethereum.stackexchange.com/questions/760/how-is-the-address-of-an-ethereum-contract-computed">How is the address of an Ethereum contract computed</a>。</p>
+<p>下面简单分析部署时执行的initial code，使用<a href="https://ethervm.io/decompile">在线网站</a>，直接阅读反编译得到的伪代码，或者参考<a href="https://www.evm.codes/">evm文档</a>，阅读反汇编得到的指令。</p>
+<p><img alt="" src="../img/2022-10-24-10-12-45.png" /></p>
+<p>首先初始化空闲内存指针为0x80，之后判断msg.value的值是否为0，由于这里的合约构造函数并没有声明为<code>payable</code>，因此不能接收以太币，value不为0则revert。</p>
+<p>如下面这样进行部署就会revert。</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">G</span><span class="p">.</span><span class="nx">deploy</span><span class="p">(</span><span class="s2">&quot;123&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">value</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">ethers.utils.parseEther</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">)});</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ethers</span><span class="p">.</span><span class="nx">provider</span><span class="p">;</span>
+<span class="nx">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">g</span><span class="p">.</span><span class="nx">deployed</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">p</span><span class="p">.</span><span class="nx">getBalance</span><span class="p">(</span><span class="nx">g</span><span class="p">.</span><span class="nx">address</span><span class="p">));</span>
+</code></pre></div>
+<p>之后的temp1，将传入的code序列的长度减去0xca9，0xca9就是前面的bytecode的长度，因此这里temp1得到的实际上是传入的参数字节序列的长度。</p>
+<p>之后调用了两个比较复杂的<code>func_01E3</code>和<code>func_047F</code>函数。主要就是执行构造函数，即将传入的字符串参数存储到对应的位置。这里greeting状态变量显然应该存储在slot0中，故需要计算出对应的位置，再进行存储。</p>
+<p>最后将运行时代码读入内存。再返回给EVM。</p>
+<h2 id="_6">执行<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>合约部署完成后，就可以被外部账户直接或间接的调用，在EVM中执行代码。</p>
+<p>如下所示，可以直接在部署后的合约实例上进行相关调用。</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">signer</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">ethers</span><span class="p">.</span><span class="nx">getSigners</span><span class="p">();</span>
+
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">G</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Greeter__factory</span><span class="p">(</span><span class="nx">signer</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">G</span><span class="p">.</span><span class="nx">deploy</span><span class="p">(</span><span class="s2">&quot;123&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">g</span><span class="p">.</span><span class="nx">deployed</span><span class="p">();</span>
+
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">g</span><span class="p">.</span><span class="nx">greet</span><span class="p">());</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">tx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">g</span><span class="p">.</span><span class="nx">setGreeting</span><span class="p">(</span><span class="s2">&quot;456&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">tx</span><span class="p">.</span><span class="nx">wait</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tx</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">g</span><span class="p">.</span><span class="nx">greet</span><span class="p">());</span>
+</code></pre></div>
+<p>这里通过<code>tx.data</code>查看调用合约时交易发送的calldata。</p>
+<div class="highlight"><pre><span></span><code>0xa4136862000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000033435360000000000000000000000000000000000000000000000000000000000
+</code></pre></div>
+<p>实际上就是根据ABI规定的标准进行编码后得到的数据。</p>
+<p>前4个字节为函数选择器，标识了将要执行目标合约的哪个函数，后面则是使用的参数。</p>
+<p>而函数选择器实际上就是函数签名的keccak256哈希的前4个字节。</p>
+<p>因此使用下面两种方式，直接构造calldata，然后发送交易，来调用合约的目标函数，效果也是一样的。</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">itace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ethers</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">Interface</span><span class="p">([</span><span class="s2">&quot;function setGreeting(string)&quot;</span><span class="p">]);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">calldata1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">itace</span><span class="p">.</span><span class="nx">encodeFunctionData</span><span class="p">(</span><span class="s2">&quot;setGreeting&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;789&quot;</span><span class="p">]);</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">calldata1</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">tx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">signer</span><span class="p">.</span><span class="nx">sendTransaction</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">to</span><span class="o">:</span><span class="kt">g.address</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">data</span><span class="o">:</span><span class="kt">calldata1</span><span class="p">,</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">tx</span><span class="p">.</span><span class="nx">wait</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">g</span><span class="p">.</span><span class="nx">greet</span><span class="p">());</span>
+
+
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">func_selector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ethers</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">id</span><span class="p">(</span><span class="s2">&quot;setGreeting(string)&quot;</span><span class="p">).</span><span class="nx">substring</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">coder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ethers</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">AbiCoder</span><span class="p">();</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">coder</span><span class="p">.</span><span class="nx">encode</span><span class="p">([</span><span class="s2">&quot;string&quot;</span><span class="p">],[</span><span class="s2">&quot;123&quot;</span><span class="p">]).</span><span class="nx">substring</span><span class="p">(</span><span class="mf">2</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">calldata2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">func_selector</span><span class="o">+</span><span class="nx">data</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">calldata2</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">tx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">signer</span><span class="p">.</span><span class="nx">sendTransaction</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">to</span><span class="o">:</span><span class="kt">g.address</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">data</span><span class="o">:</span><span class="kt">calldata2</span><span class="p">,</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">tx</span><span class="p">.</span><span class="nx">wait</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">g</span><span class="p">.</span><span class="nx">greet</span><span class="p">());</span>
+</code></pre></div>
+<p>下面简单分析合约的runtime bytecode，看函数选择器是如何发挥作用的。</p>
+<p><img alt="" src="../img/2022-10-24-15-02-02.png" /></p>
+<p>可以看到由于合约没有设置<code>receive</code>函数，也没有<code>payable</code>函数，不能接收以太币，故在最开始判断若value不为0则revert。</p>
+<p>之后由于函数选择器是4个字节，故要执行函数的calldata至少也应该是4个字节，否则revert。</p>
+<p>然后取calldata的前4字节，即函数选择器，后续是一个if/else组成的dispatcher，会根据函数选择器的值，进入不同的分支，从而执行对应的函数。</p>
+<p>这里显示合约有三个函数，多出的一个<code>greeting()</code>是编译器为我们自动生成的用于读取状态变量<code>greeting</code>的函数。</p>
+<p>4个字节的函数选择器可以在<a href="https://www.4byte.directory/signatures/">ethereum signature database</a>查询，得到对应的函数签名。</p>
+<p>这里区分一下合约函数调用与交易的概念。</p>
+<p>有些函数为<code>view</code>或<code>pure</code>，如这里的<code>greet()</code>函数，并不会改变状态变量，因此实际上只需要在节点本地执行一下即可，即不改变整个区块链的状态，不需要广播、达成共识最终写入区块链，这样的调用也就不是交易，在底层调用的是<code>eth_call</code>。</p>
+<p>而改变状态的函数调用，才是一个交易，底层调用的是<code>eth_sendTransaction</code>。</p>
+<p>需要注意的是，虽然诸如<code>view</code>或<code>pure</code>这样的函数，直接调用的话默认情况下执行<code>eth_call</code>，不改变区块链状态，但也可以主动发送交易来进行调用（虽然好像只会浪费gas）。</p>
+<p>如下所示，可以调用<code>greet()</code>函数，发起一个交易。</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">itace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ethers</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">Interface</span><span class="p">([</span><span class="s2">&quot;function greet()&quot;</span><span class="p">]);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">calldata</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">itace</span><span class="p">.</span><span class="nx">encodeFunctionData</span><span class="p">(</span><span class="s2">&quot;greet&quot;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">tx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">signer</span><span class="p">.</span><span class="nx">sendTransaction</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">to</span><span class="o">:</span><span class="w"> </span><span class="kt">g.address</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">calldata</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">tx</span><span class="p">.</span><span class="nx">wait</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tx</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="_7">销毁<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>合约可以调用<code>selfdestruct</code>函数来实现自毁，可以向合约中添加如下函数。</p>
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">destroySmartContract</span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">payable</span><span class="w"> </span>_to<span class="p">)</span><span class="w"> </span><span class="kt">public</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span>selfdestruct<span class="p">(</span>_to<span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>自毁函数接收一个参数，会将合约余额转给目标地址。</p>
+<p>自毁并不会改变过去已经上链的区块中的数据。但在自毁之后的所有区块中，该合约的状态和代码会被删除。</p>
+<p>如下调用自毁函数后，再调用原合约函数，就会报错。</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">tx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">g</span><span class="p">.</span><span class="nx">destroySmartContract</span><span class="p">(</span><span class="nx">signer</span><span class="p">.</span><span class="nx">address</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">tx</span><span class="p">.</span><span class="nx">wait</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">g</span><span class="p">.</span><span class="nx">greet</span><span class="p">());</span>
+</code></pre></div>
+<h2 id="_8">存储空间<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>前面提到EVM是基于栈的虚拟机，在分析bytecode时又提到了内存，而状态变量又是永久存储在链上，显然这些都是不同的存储空间。</p>
+<p>可参考<a href="https://docs.soliditylang.org/en/latest/introduction-to-smart-contracts.html#storage-memory-and-the-stack">Storage, Memory and the Stack</a>。以太坊虚拟机有3个区域用来存储数据：栈（stack）、内存（memory）和存储（storage）。</p>
+<p><img alt="" src="../img/2022-10-24-16-26-53.png" /></p>
+<p>如上图所示，栈和内存在EVM执行代码时临时使用，而状态变量涉及的合约存储部分则永久保存在链上。整个EVM的执行模型如下。</p>
+<p><img alt="" src="../img/2022-10-24-16-30-49.png" /></p>
+<p>三种存储空间的类型如下。</p>
+<p><img alt="" src="../img/2022-10-24-16-33-41.png" /></p>
+<h3 id="_9">栈<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../img/2022-10-24-16-38-35.png" /></p>
+<p>栈是一个256 bits×1024的空间，EVM是基于栈的，所有的计算都在栈上执行，因此通常存储指令的操作数。</p>
+<h3 id="_10">内存<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../img/2022-10-24-16-38-48.png" /></p>
+<p>内存是线性的，可按字节级寻址，用于存储对象，内存分配方式为顺序分配。编程中，如果一个局部变量属于变长字节数组、字符串、结构体等类型，其通常会被memory修饰符修饰，以表明存储在内存中。</p>
+<p>内存中前4个32字节的slot被保留，具体如下。</p>
+<p>0x00 - 0x3f（64 字节）：哈希方法的暂存空间</p>
+<p>0x40 - 0x5f（32 字节）：空闲内存指针，指向下一个对象将要被存储的地址</p>
+<p>0x60 - 0x7f（32 字节）：0-slot</p>
+<p>0-slot用作动态内存数组的初始值，并且永远不应该被写入，而由于内存是顺序分配的，空闲内存指针显然会被初始化为0x80，和前面分析合约bytecode时的结果一致。</p>
+<h3 id="storage">存储（storage）<a class="headerlink" href="#storage" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../img/2022-10-24-16-39-02.png" /></p>
+<p>合约存储是一个256 bits 映射到 256 bits的键值存储，用于持久化存储合约账户的状态变量。</p>
+<p>具体可见参考<a href="https://docs.soliditylang.org/en/latest/internals/layout_in_storage.html">solidity文档</a>，结合知道创宇的例子<a href="https://zhuanlan.zhihu.com/p/414840665">智能合约变量储存机制详解</a>，了解状态变量在存储中的布局。</p>
+<h2 id="_11">参考链接<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p><a href="https://takenobu-hs.github.io/downloads/ethereum_evm_illustrated.pdf">ethereum_evm_illustrated</a></p>
+<p><a href="https://ethereum.org/zh/developers/docs">以太坊开发者文档</a></p>
+<p><a href="https://learnblockchain.cn/books/geth">以太坊技术与实现</a></p>
+<p><a href="https://learnblockchain.cn/2018/01/04/understanding-smart-contracts">完全理解以太坊智能合约</a></p>
+<p><a href="https://www.infoq.cn/article/sZhX9ujD6Bqq3UhkO4Hk">智能合约编写之Solidity运行原理</a></p>
+<p><a href="https://www.jianshu.com/p/58cb09b05ead">精通以太坊-智能合约</a></p>
+<p><a href="https://blog.openzeppelin.com/deconstructing-a-solidity-contract-part-i-introduction-832efd2d7737/">deconstructing-a-solidity-contract</a></p>
+<p><a href="https://noxx.substack.com/p/evm-deep-dives-the-path-to-shadowy">evm-deep-dives</a></p>
+<p><a href="https://www.fisco.com.cn/class_32/380.html">浅谈合约ABI</a></p>
+<p><a href="https://medium.com/authereum/bytecode-and-init-code-and-runtime-code-oh-my-7bcd89065904">Understanding Bytecode on Ethereum</a></p>
+<p><a href="https://medium.com/coinmonks/the-difference-between-bytecode-and-deployed-bytecode-64594db723df">The difference between bytecode and deployed bytecode</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

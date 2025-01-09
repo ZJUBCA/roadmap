@@ -1,0 +1,2732 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../..">
+      
+      
+        <link rel="next" href="../../Ethereum_Smart_Contract_Introduction/Ethereum_Smart_Contract_Introduction/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>分层确定性钱包初探 - ZJUBCA Blockchain Roadmap</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="ZJUBCA Blockchain Roadmap" class="md-header__button md-logo" aria-label="ZJUBCA Blockchain Roadmap" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ZJUBCA Blockchain Roadmap
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              分层确定性钱包初探
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="ZJUBCA Blockchain Roadmap" class="md-nav__button md-logo" aria-label="ZJUBCA Blockchain Roadmap" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ZJUBCA Blockchain Roadmap
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    学习路径
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    技术分享
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            技术分享
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    分层确定性钱包初探
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    分层确定性钱包初探
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      前言
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      私钥、公钥与地址
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="私钥、公钥与地址">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      随机生成私钥
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      椭圆曲线算法生成公钥
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      哈希生成地址
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keystore" class="md-nav__link">
+    <span class="md-ellipsis">
+      keystore
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      代码测试
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bip32" class="md-nav__link">
+    <span class="md-ellipsis">
+      BIP32：分层确定性钱包
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BIP32：分层确定性钱包">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      种子生成主密钥
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#child-key-derivationckd" class="md-nav__link">
+    <span class="md-ellipsis">
+      子密钥派生（Child key derivation，CKD）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      代码测试
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bip39" class="md-nav__link">
+    <span class="md-ellipsis">
+      BIP39：使用助记词生成确定性钱包
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BIP39：使用助记词生成确定性钱包">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      熵生成助记词
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      助记词生成种子
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      代码测试
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bip44" class="md-nav__link">
+    <span class="md-ellipsis">
+      BIP44：确定性钱包的多账户层次结构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BIP44：确定性钱包的多账户层次结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      路径级别
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      代码测试
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考链接
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ethereum_Smart_Contract_Introduction/Ethereum_Smart_Contract_Introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    以太坊智能合约初探
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fluence/fluence/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fluence 空投代码分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../A_brief_technical_analysis_of_solana_and_move/A_brief_technical_analysis_of_solana_and_move/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Solana和Aptos技术对比浅析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tokenomic/Tokenomic.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    代币经济学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Comparison_of_Pyth_and_Chainlink/Comparison_of_Pyth_and_Chainlink/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    预言机浅析:对比Pyth和Chainlink
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_interact_with_unopen_source_contract/How_to_interact_with_unopen_source_contract.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    如何与未开源合约进行交互
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Aptos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Aptos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Overview
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/1.Overview/1.1%20Aptos%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/Aptos%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aptos的前世今生
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/1.Overview/1.2%20Aptos%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0/Aptos%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aptos技术概述
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/1.Overview/1.3%20Aptos%E7%94%9F%E6%80%81%E4%BB%8B%E7%BB%8D/Aptos%E7%94%9F%E6%80%81%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aptos生态介绍
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Aptos生态项目分析
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Aptos生态项目分析
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_1" id="__nav_3_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Chingari
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Chingari
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.1%20Chingari/2.1.1%20Chingari%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/Chingari%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chingari技术分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.1%20Chingari/2.1.2%20Chingari%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/Chingari%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chingari投研分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_2" id="__nav_3_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Amnis Finance
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Amnis Finance
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.2%20Amnis%20Finance/2.2.1%20Amnis%20Finance%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/Amnis%20Finance%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Amnis Finance技术分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.2%20Amnis%20Finance/2.2.2%20Amnis%20Finance%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/Amnis%20Finance%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Amnis Finance投研分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_3" id="__nav_3_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Mereo
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Mereo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.3%20Mereo/2.3.1%20Mereo%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/Mereo%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mereo技术分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.3%20Mereo/2.3.2%20Mereo%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/Mereo%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mereo投研分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_4" id="__nav_3_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Merkle Trade
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Merkle Trade
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.4%20Merkle%20Trade/2.4.1%20Merkle%20Trade%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/Merkle%20Trade%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Merkle Trade技术分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.4%20Merkle%20Trade/2.4.2%20Merkle%20Trade%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/Merkle%20Trade%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Merkle Trade投研分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_5" id="__nav_3_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Martian
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Martian
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.5%20Martian/2.5.1%20Martian%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/Martian%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Martian技术分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.5%20Martian/2.5.2%20Martian%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/Martian%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Martian投研分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_6" id="__nav_3_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Shinami
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Shinami
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.6%20Shinami/2.6.1%20Shinami%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/Shinami%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shinami技术分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/2.Aptos%E7%94%9F%E6%80%81%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/2.6%20Shinami/2.6.2%20Shinami%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/Shinami%E6%8A%95%E7%A0%94%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shinami投研分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Aptos黑客松获奖项目分析
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Aptos黑客松获奖项目分析
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/3.Aptos%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%8E%B7%E5%A5%96%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/3.1%20%E5%8E%86%E6%AC%A1%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%B5%9B%E4%BA%8B%E7%9B%98%E7%82%B9/%E5%8E%86%E6%AC%A1%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%B5%9B%E4%BA%8B%E7%9B%98%E7%82%B9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    历次黑客松赛事盘点
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/3.Aptos%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%8E%B7%E5%A5%96%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/3.2%20Defi%26RWA%E8%B5%9B%E9%81%93/Aptos%E5%85%A8%E7%90%83%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%B5%9B%E9%81%93%E5%88%86%E4%BA%AB%28DeFi%26RWA%29.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Defi&RWA赛道
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/3.Aptos%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%8E%B7%E5%A5%96%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/3.3%20Gaming%26NFTs%E8%B5%9B%E9%81%93/Aptos%E5%85%A8%E7%90%83%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%B5%9B%E9%81%93%E5%88%86%E4%BA%AB%28Gaming%26NFTs%29.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gaming&NFTs赛道
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/3.Aptos%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%8E%B7%E5%A5%96%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/3.4%20AI%26Depin%E8%B5%9B%E9%81%93/Aptos%E5%85%A8%E7%90%83%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%B5%9B%E9%81%93%E5%88%86%E4%BA%AB%28AI%26DePIN%29.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI&Depin赛道
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/3.Aptos%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%8E%B7%E5%A5%96%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/3.5%20SocialFi%E8%B5%9B%E9%81%93/Aptos%E5%85%A8%E7%90%83%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%B5%9B%E9%81%93%E5%88%86%E4%BA%AB%28SocialFi%29.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SocialFi赛道
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aptos/3.Aptos%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%8E%B7%E5%A5%96%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/3.6%20Others%E8%B5%9B%E9%81%93/Aptos%E5%85%A8%E7%90%83%E9%BB%91%E5%AE%A2%E6%9D%BE%E8%B5%9B%E9%81%93%E5%88%86%E4%BA%AB%28Others%29.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Others赛道
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ETH
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            ETH
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../eth/eth/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    学习路径
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../eth/eth_dapp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    开发教程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Base
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Base
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../base/base_intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    介绍
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../base/base_farcaster/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Farcaster
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../base/base_degen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Degen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ton
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Ton
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ton/ton/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    介绍
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ton/Ton%E7%94%9F%E6%80%81%E5%88%86%E4%BA%AB.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ton生态分享
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rust/Rust.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rust
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Solana
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Solana
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../solana/Solana.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    开发教程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nft/nft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NFT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../consortium/consortium/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    联盟链
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    参考文档
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../history/history/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    历史文件
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      前言
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      私钥、公钥与地址
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="私钥、公钥与地址">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      随机生成私钥
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      椭圆曲线算法生成公钥
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      哈希生成地址
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keystore" class="md-nav__link">
+    <span class="md-ellipsis">
+      keystore
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      代码测试
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bip32" class="md-nav__link">
+    <span class="md-ellipsis">
+      BIP32：分层确定性钱包
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BIP32：分层确定性钱包">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      种子生成主密钥
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#child-key-derivationckd" class="md-nav__link">
+    <span class="md-ellipsis">
+      子密钥派生（Child key derivation，CKD）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      代码测试
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bip39" class="md-nav__link">
+    <span class="md-ellipsis">
+      BIP39：使用助记词生成确定性钱包
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BIP39：使用助记词生成确定性钱包">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      熵生成助记词
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      助记词生成种子
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      代码测试
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bip44" class="md-nav__link">
+    <span class="md-ellipsis">
+      BIP44：确定性钱包的多账户层次结构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BIP44：确定性钱包的多账户层次结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      路径级别
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      代码测试
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考链接
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="_1">分层确定性钱包初探<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p><em>Author: <a href="https://github.com/Autosaida">Autosaida</a>; Written: 08/2022</em></p>
+<h2 id="_2">前言<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>初次使用metamask钱包时，选择创建新账户。在设置密码后，会给出一串英文单词作为助记词，而后**钱包账户**就会成功创建。此时metamask中就会显示一个Account 1，能看到账户对应的地址，也可以输入钱包账户的密码来查看对应的私钥。还可以继续选择create account，此时就会继续生成Account 2、Account 3...每个account也会有对应的地址与私钥。</p>
+<p>钱包是如何创建一个个account，其私钥、地址以及助记词之间是什么关系，下面对相关问题进行研究学习。</p>
+<h2 id="_3">私钥、公钥与地址<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>有两类以太坊账户可以用来持有和操作以太币：外部账户和合约账户。metamask中创建的一个个地址与私钥就是一个个外部账户。</p>
+<p>账户的核心是私钥。私钥用来生成数字签名，所有以太坊交易都要求在链上包含有效的数字签名，故数字签名能够证明对应私钥的所有权，拥有私钥即拥有了对应以太坊地址的控制权。创建账号的关键也即生成一个私钥。 </p>
+<p>私钥通过椭圆曲线算法生成公钥，公钥又通过哈希函数生成账户地址。基本过程如下图所示。</p>
+<p><img alt="" src="../img/2022-08-16-11-09-22.png" /></p>
+<p>私钥 -&gt; 公钥 -&gt; 地址，过程均为不可逆的。</p>
+<p>首先随机生成一个私钥（32字节），然后使用私钥通过椭圆曲线算法生成公钥（64字节），最后将公钥哈希得到账户地址（20字节）。</p>
+<p>下面逐步说明各个步骤。</p>
+<h3 id="_4">随机生成私钥<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>生成私钥的第一步，也是最重要的一步就是找到一个密码学安全的熵，即随机性来源。</p>
+<p>私钥为32字节，故实际上就是在0-2<sup>256</sup>之间随机选取一个数值，只要选择的过程不可预测不可重复，那么通过什么方式获得这个数值并不重要。</p>
+<p>具体来说，以太坊私钥不能为0，也不能超过一个接近于1.158*10<sup>77</sup>的数字。</p>
+<p>故要生成私钥，实质是随机选取一个在上述有效范围内的256位的数值。</p>
+<h3 id="_5">椭圆曲线算法生成公钥<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>在椭圆曲线运算中，质数的模乘运算是非常简单的，但是反向的模除运算却是几乎不可能的，这被称为离散对数难题，是以太坊等加密货币数字签名的基础。</p>
+<p>公钥正是私钥通过椭圆曲线乘法得来，故只能单向计算，私钥可以算出公钥，但由公钥不能得到私钥。</p>
+<p>公钥K = k * G，K为公钥，k为私钥，G为一个生成点。</p>
+<p>以太坊使用跟比特币系统相同的椭圆曲线算法，称为secp256k1。使用了该标准定义的一种特殊的椭圆曲线和一系列的数学常量，公钥就是椭圆曲线上的一个满足椭圆曲线等式的(x，y)坐标，由x、y两个数值组成，通过私钥唯一确定。</p>
+<p>x、y各32字节，故公钥为64字节，可能会看到65字节表示的公钥，这是由SECG所发布的行业标准的一种序列化编码方式，在最前面加一个字节的前缀，04表示公钥为非压缩格式，即完整存储了x和y的坐标各32字节。但是从secp256k1的椭圆曲线方式可以看到，只要知道其中一个坐标值，另外一个坐标值都是可以通过解方程得出的，因此可以只存储其中一个坐标，这样就可以节约32个字节，从而引入了压缩格式的公钥。如果为压缩格式，则前缀为02或03。</p>
+<p>故非压缩格式的公钥65字节（后64字节为实际的公钥），压缩格式的公钥33字节。</p>
+<h3 id="_6">哈希生成地址<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>将公钥进行哈希，即可得到地址。</p>
+<p>对64字节的完整公钥使用Keccak-256算法来进行哈希，哈希结果的最后20字节即为对应私钥的账户地址。</p>
+<p>哈希结果并不区分大小写，但我们可以发现很多地方，如etherscan中的地址是同时存在大小写的。</p>
+<p>这是由于<a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-55.md">eip-55</a>引入了checksum机制，通过修改地址中字母的大小写，可以校验地址的准确性，降低用户输入错误地址的风险。</p>
+<h3 id="keystore">keystore<a class="headerlink" href="#keystore" title="Permanent link">&para;</a></h3>
+<p>keystore文件一般是JSON文件，实质上就是加密后的私钥。故keystore必须用对应密码解密后才能得到私钥，获取账户控制权。即 keystore + 文件密码 = 私钥。</p>
+<p>使用keystore可以不用记住复杂的私钥，记住设置的密码即可控制对应的账户。</p>
+<p>一般内容如下。</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;df5f03234385f576f8f69e85194a8e02315132f5&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;e0aa3592-e854-43ed-92ae-2082cd012961&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;crypto&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;cipher&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aes-128-ctr&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;cipherparams&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;iv&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;caf873134967841a20a2e341fe4f2c16&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;ciphertext&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ca0cf572f6f5f6e4db7467430ee1b15e25082181a6002cf1d0d954e771b53395&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;kdf&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;scrypt&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;kdfparams&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;dklen&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4096</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;p&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;r&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;salt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a8cc9a642bebe14c32f4e2ed249dd4c30e21379abcccfc3fc0596d7c80b5de2c&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;mac&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2c529cb3be67518c41a3394fa4054e773449bcc34671389c17e453391ca31413&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>存储了密文、加密算法以及所需的相关参数。</p>
+<h3 id="_7">代码测试<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>下面使用代码来根据私钥生成公钥及对应账户地址，并进行验证。使用coincurve库进行椭圆曲线运算，pycryptodome库进行哈希运算。</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">coincurve</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">Crypto.Hash</span><span class="w"> </span><span class="kn">import</span> <span class="n">keccak</span>
+<span class="n">test_priv</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x11</span><span class="s1">&#39;</span><span class="o">*</span><span class="mi">32</span>
+<span class="c1"># test_priv = b&#39;\xff&#39;*32</span>
+<span class="c1"># test_priv = b&#39;\x00&#39;*32</span>
+<span class="n">test_pub</span> <span class="o">=</span> <span class="n">coincurve</span><span class="o">.</span><span class="n">PublicKey</span><span class="o">.</span><span class="n">from_secret</span><span class="p">(</span><span class="n">test_priv</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">compressed</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">test_pub</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">test_pub</span><span class="o">.</span><span class="n">hex</span><span class="p">())</span>
+
+<span class="n">test_addr</span> <span class="o">=</span> <span class="n">keccak</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">test_pub</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">digest_bits</span> <span class="o">=</span> <span class="mi">256</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">test_addr</span><span class="o">.</span><span class="n">digest</span><span class="p">()[</span><span class="o">-</span><span class="mi">20</span><span class="p">:]</span><span class="o">.</span><span class="n">hex</span><span class="p">())</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">65</span>
+<span class="sd">044f355bdcb7cc0af728ef3cceb9615d90684bb5b2ca5f859ab0f0b704075871aa385b6b1b8ead809ca67454d9683fcf2ba03456d6fe2c4abe2b07f0fbdbb2f1c1</span>
+<span class="sd">19e7e376e7c213b7e7e7e46cc70a5dd086daff2a</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</code></pre></div>
+<p>私钥全0或过大都会报错提示不在范围内，且生成公钥要设置<code>compressed=False</code>，不然默认生成压缩格式的公钥。可以看到非压缩格式的公钥为65字节，开头前缀为04，最后将公钥（不带前缀）进行keccak-256哈希运算，结果的最后20字节即为私钥对应的账户地址。</p>
+<p>可以用现成的demo对<a href="https://github.com/miguelmota/ethereum-private-key-to-public-key">ethereum-private-key-to-public-key</a>和<a href="https://github.com/miguelmota/ethereum-private-key-to-address">ethereum-private-key-to-address</a>对结果进行测试，证明运算无误。</p>
+<p>显然这样随意选取的简单的私钥是极不安全的。（但在etherscan中看到甚至还有交易记录）</p>
+<h2 id="bip32">BIP32：分层确定性钱包<a class="headerlink" href="#bip32" title="Permanent link">&para;</a></h2>
+<p>一个人可能拥有多个账户，因此使用钱包来对多个账户进行管理。一般分为非确定性钱包和确定性钱包。</p>
+<p>非确定性钱包（Nodeterministic Wallet）：钱包中的每个密钥都是从不同的随机数独立生成的，密钥彼此之间没有任何关系，这种钱包也被称为JBOK钱包（Just a Bunch Of Keys）。</p>
+<p>确定性钱包（Deterministic Wallet）：其中所有的密钥都是从一个主密钥派生出来的，在该类型的钱包中，所有的密钥之间都是相互关联的，只要知道了生成主密钥使用的种子，就可以派生得到全部的密钥；在确定性钱包中，可以使用不同的密钥推导方式。目前最常用的推导方法是树状结构，即分层确定性钱包（Hierarchical Deterministic Wallets），在<a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki">BIP32</a>中提出。</p>
+<p>显然使用分层确定性钱包，用户只需要记住种子，就可以派生出多个账户来使用，不需要麻烦的备份管理众多账户的私钥。</p>
+<p>通过种子生成主密钥，主密钥再逐层推导得到众多的子密钥。基本过程如下。</p>
+<p><img alt="" src="../img/2022-08-16-18-47-06.png" /></p>
+<p>种子 -&gt; 主密钥 -&gt; 各层子密钥。</p>
+<p>首先随机生成一个种子（16-64字节），然后对种子进行哈希生成主密钥和主链码（各32字节），根据密钥和链码使用密钥派生函数即可逐层派生子密钥。</p>
+<p>下面结合python模块<a href="https://github.com/darosior/python-bip32">bip32</a>代码进行说明。</p>
+<h3 id="_8">种子生成主密钥<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>由seed可推导出对应的全部子密钥，即一个seed可生成管理一串私钥，故这里seed相当于前面生成单个账户的私钥，需要确保其随机性，长度在16-64字节之间，建议为32字节。</p>
+<p>生成足够随机安全的种子后，对其进行HMAC-SHA512哈希，得到64字节的哈希结果，前32字节即为主私钥，可以生成对应的33字节的压缩主公钥。后32字节为主链码，作为熵在后续扩展密钥过程中使用。具体如下图所示。</p>
+<p><img alt="" src="../img/2022-08-16-18-51-21.png" /></p>
+<p>bip32中的相关代码如下。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># bip32.py</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">from_seed</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">seed</span><span class="p">,</span> <span class="n">network</span><span class="o">=</span><span class="s2">&quot;main&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get a BIP32 &quot;wallet&quot; out of this seed (maybe after BIP39?)</span>
+
+<span class="sd">    :param seed: The seed as bytes.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">secret</span> <span class="o">=</span> <span class="n">hmac</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;Bitcoin seed&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">seed</span><span class="p">,</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha512</span><span class="p">)</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">BIP32</span><span class="p">(</span><span class="n">secret</span><span class="p">[</span><span class="mi">32</span><span class="p">:],</span> <span class="n">secret</span><span class="p">[:</span><span class="mi">32</span><span class="p">],</span> <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">)</span>
+
+<span class="c1"># utils.py</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_privkey_to_pubkey</span><span class="p">(</span><span class="n">privkey</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Takes a 32 bytes privkey and returns a 33 bytes secp256k1 pubkey&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">coincurve</span><span class="o">.</span><span class="n">PublicKey</span><span class="o">.</span><span class="n">from_secret</span><span class="p">(</span><span class="n">privkey</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">()</span>
+</code></pre></div>
+<p>方法<code>from_seed</code>接受种子seed作为参数，然后对种子进行HMAC-SHA512哈希，前32字节作为主私钥，后32字节作为主链码，来生成BIP32对象。后续调用<code>_privkey_to_pubkey</code>函数，使用coincurve库来生成对应的压缩公钥。</p>
+<p>有了主私钥（公钥）和主链码，即可派生后续一层层的子密钥。</p>
+<h3 id="child-key-derivationckd">子密钥派生（Child key derivation，CKD）<a class="headerlink" href="#child-key-derivationckd" title="Permanent link">&para;</a></h3>
+<p>派生子密钥的方法有两种：父私钥-&gt;子密钥，父公钥-&gt;子密钥。具体如下图所示。 </p>
+<p><img alt="" src="../img/2022-08-16-19-36-26.png" /></p>
+<p><img alt="" src="../img/2022-08-16-19-36-37.png" /></p>
+<p>即父私钥/公钥+父链码，再加一个索引号，即可调用哈希函数生成子密钥和对应链码。使用父私钥为强化衍生，使用父公钥为常规衍生。强化衍生不会将父级链码暴露到不安全的环境下，所以相较于常规衍生更安全。</p>
+<p>为了区分两种不同的派生方案，在索引号也进行了区分，索引号小于2<sup>31</sup>用于常规衍生，而2<sup>31</sup>到2<sup>32-1</sup>用于强化衍生，为了方便表示，索引号 i' 就表示索引号 2<sup>31</sup>+i，如0x80000000表示为0'。</p>
+<p>路径m/5/4'表示主密钥的第五个常规衍生的子密钥的第4个强化衍生的子密钥。</p>
+<p>由父密钥衍生子密钥可以对密钥树进行深度扩展，使用不同的索引号可以进行水平扩展，从而可以无限的生成私钥，即一个种子生成多个账户。</p>
+<p>其中子密钥不能推导出同层级的兄弟密钥，也不能推出父密钥。如果没有子链码也不能推导出孙密钥。</p>
+<p>bip32中的相关代码如下。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># bip32.py</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_extended_privkey_from_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get an extended privkey from a derivation path.</span>
+
+<span class="sd">    :param path: A list of integers (index of each depth) or a string with</span>
+<span class="sd">                m/x/x&#39;/x notation. (e.g. m/0&#39;/1/2&#39;/2 or m/0H/1/2H/2).</span>
+<span class="sd">    :return: chaincode (bytes), privkey (bytes)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">privkey</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">PrivateDerivationError</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">_deriv_path_str_to_list</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+
+    <span class="n">chaincode</span><span class="p">,</span> <span class="n">privkey</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">chaincode</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">privkey</span>
+    <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">path</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">index</span> <span class="o">&amp;</span> <span class="n">HARDENED_INDEX</span><span class="p">:</span>
+            <span class="n">privkey</span><span class="p">,</span> <span class="n">chaincode</span> <span class="o">=</span> <span class="n">_derive_hardened_private_child</span><span class="p">(</span>
+                <span class="n">privkey</span><span class="p">,</span> <span class="n">chaincode</span><span class="p">,</span> <span class="n">index</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">privkey</span><span class="p">,</span> <span class="n">chaincode</span> <span class="o">=</span> <span class="n">_derive_unhardened_private_child</span><span class="p">(</span>
+                <span class="n">privkey</span><span class="p">,</span> <span class="n">chaincode</span><span class="p">,</span> <span class="n">index</span>
+            <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">chaincode</span><span class="p">,</span> <span class="n">privkey</span>
+
+<span class="c1"># utils.py</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_derive_unhardened_private_child</span><span class="p">(</span><span class="n">privkey</span><span class="p">,</span> <span class="n">chaincode</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A.k.a CKDpriv, in bip-0032</span>
+
+<span class="sd">    :param privkey: The parent&#39;s private key, as bytes</span>
+<span class="sd">    :param chaincode: The parent&#39;s chaincode, as bytes</span>
+<span class="sd">    :param index: The index of the node to derive, as int</span>
+
+<span class="sd">    :return: (child_privatekey, child_chaincode)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">privkey</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">chaincode</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="ow">not</span> <span class="n">index</span> <span class="o">&amp;</span> <span class="n">HARDENED_INDEX</span>
+    <span class="n">pubkey</span> <span class="o">=</span> <span class="n">_privkey_to_pubkey</span><span class="p">(</span><span class="n">privkey</span><span class="p">)</span>
+    <span class="c1"># payload is the I from the BIP. Index is 32 bits unsigned int, BE.</span>
+    <span class="n">payload</span> <span class="o">=</span> <span class="n">hmac</span><span class="o">.</span><span class="n">new</span><span class="p">(</span>
+        <span class="n">chaincode</span><span class="p">,</span> <span class="n">pubkey</span> <span class="o">+</span> <span class="n">index</span><span class="o">.</span><span class="n">to_bytes</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;big&quot;</span><span class="p">),</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha512</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">child_private</span> <span class="o">=</span> <span class="n">coincurve</span><span class="o">.</span><span class="n">PrivateKey</span><span class="p">(</span><span class="n">payload</span><span class="p">[:</span><span class="mi">32</span><span class="p">])</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">privkey</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">BIP32DerivationError</span><span class="p">(</span>
+            <span class="s2">&quot;Invalid private key at index </span><span class="si">{}</span><span class="s2">, try the &quot;</span> <span class="s2">&quot;next one!&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">child_private</span><span class="o">.</span><span class="n">secret</span><span class="p">,</span> <span class="n">payload</span><span class="p">[</span><span class="mi">32</span><span class="p">:]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_derive_hardened_private_child</span><span class="p">(</span><span class="n">privkey</span><span class="p">,</span> <span class="n">chaincode</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A.k.a CKDpriv, in bip-0032, but the hardened way</span>
+
+<span class="sd">    :param privkey: The parent&#39;s private key, as bytes</span>
+<span class="sd">    :param chaincode: The parent&#39;s chaincode, as bytes</span>
+<span class="sd">    :param index: The index of the node to derive, as int</span>
+
+<span class="sd">    :return: (child_privatekey, child_chaincode)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">privkey</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">chaincode</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">index</span> <span class="o">&amp;</span> <span class="n">HARDENED_INDEX</span>
+    <span class="c1"># payload is the I from the BIP. Index is 32 bits unsigned int, BE.</span>
+    <span class="n">payload</span> <span class="o">=</span> <span class="n">hmac</span><span class="o">.</span><span class="n">new</span><span class="p">(</span>
+        <span class="n">chaincode</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">privkey</span> <span class="o">+</span> <span class="n">index</span><span class="o">.</span><span class="n">to_bytes</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;big&quot;</span><span class="p">),</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha512</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">child_private</span> <span class="o">=</span> <span class="n">coincurve</span><span class="o">.</span><span class="n">PrivateKey</span><span class="p">(</span><span class="n">payload</span><span class="p">[:</span><span class="mi">32</span><span class="p">])</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">privkey</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">BIP32DerivationError</span><span class="p">(</span>
+            <span class="s2">&quot;Invalid private key at index </span><span class="si">{}</span><span class="s2">, try the &quot;</span> <span class="s2">&quot;next one!&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">child_private</span><span class="o">.</span><span class="n">secret</span><span class="p">,</span> <span class="n">payload</span><span class="p">[</span><span class="mi">32</span><span class="p">:]</span>
+</code></pre></div>
+<p>方法<code>get_extended_privkey_from_path</code>获取指定路径下的扩展私钥，即BIP32中定义的<code>CKDpriv</code>函数，通过父私钥得到子私钥。</p>
+<p>使用for循环逐层衍生，其中<code>HARDENED_INDEX</code>即0x80000000，用于判断是强化衍生还是常规衍生。<code>_derive_unhardened_private_child</code>和<code>_derive_hardened_private_child</code>即具体实现了BIP32中定义的<a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki#private-parent-key--private-child-key">Private parent key → private child key</a>衍生逻辑。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># bip32.py</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_extended_pubkey_from_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get an extended pubkey from a derivation path.</span>
+
+<span class="sd">    :param path: A list of integers (index of each depth) or a string with</span>
+<span class="sd">                    m/x/x&#39;/x notation. (e.g. m/0&#39;/1/2&#39;/2 or m/0H/1/2H/2).</span>
+<span class="sd">    :return: chaincode (bytes), pubkey (bytes)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">_deriv_path_str_to_list</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">_hardened_index_in_path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">privkey</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">PrivateDerivationError</span>
+
+    <span class="n">chaincode</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">chaincode</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">privkey</span>
+    <span class="n">pubkey</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pubkey</span>
+    <span class="c1"># We&#39;ll need the private key at some point anyway, so let&#39;s derive</span>
+    <span class="c1"># everything from private keys.</span>
+    <span class="k">if</span> <span class="n">_hardened_index_in_path</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">path</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">index</span> <span class="o">&amp;</span> <span class="n">HARDENED_INDEX</span><span class="p">:</span>
+                <span class="n">key</span><span class="p">,</span> <span class="n">chaincode</span> <span class="o">=</span> <span class="n">_derive_hardened_private_child</span><span class="p">(</span>
+                    <span class="n">key</span><span class="p">,</span> <span class="n">chaincode</span><span class="p">,</span> <span class="n">index</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">key</span><span class="p">,</span> <span class="n">chaincode</span> <span class="o">=</span> <span class="n">_derive_unhardened_private_child</span><span class="p">(</span>
+                    <span class="n">key</span><span class="p">,</span> <span class="n">chaincode</span><span class="p">,</span> <span class="n">index</span>
+                <span class="p">)</span>
+            <span class="n">pubkey</span> <span class="o">=</span> <span class="n">_privkey_to_pubkey</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+    <span class="c1"># We won&#39;t need private keys for the whole path, so let&#39;s only use</span>
+    <span class="c1"># public key derivation.</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">path</span><span class="p">:</span>
+            <span class="n">pubkey</span><span class="p">,</span> <span class="n">chaincode</span> <span class="o">=</span> <span class="n">_derive_public_child</span><span class="p">(</span><span class="n">pubkey</span><span class="p">,</span> <span class="n">chaincode</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">chaincode</span><span class="p">,</span> <span class="n">pubkey</span>
+
+<span class="c1"># utils.py</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_derive_public_child</span><span class="p">(</span><span class="n">pubkey</span><span class="p">,</span> <span class="n">chaincode</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A.k.a CKDpub, in bip-0032.</span>
+
+<span class="sd">    :param pubkey: The parent&#39;s (compressed) public key, as bytes</span>
+<span class="sd">    :param chaincode: The parent&#39;s chaincode, as bytes</span>
+<span class="sd">    :param index: The index of the node to derive, as int</span>
+
+<span class="sd">    :return: (child_pubkey, child_chaincode)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pubkey</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">chaincode</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="ow">not</span> <span class="n">index</span> <span class="o">&amp;</span> <span class="n">HARDENED_INDEX</span>
+    <span class="c1"># payload is the I from the BIP. Index is 32 bits unsigned int, BE.</span>
+    <span class="n">payload</span> <span class="o">=</span> <span class="n">hmac</span><span class="o">.</span><span class="n">new</span><span class="p">(</span>
+        <span class="n">chaincode</span><span class="p">,</span> <span class="n">pubkey</span> <span class="o">+</span> <span class="n">index</span><span class="o">.</span><span class="n">to_bytes</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;big&quot;</span><span class="p">),</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha512</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">tmp_pub</span> <span class="o">=</span> <span class="n">coincurve</span><span class="o">.</span><span class="n">PublicKey</span><span class="o">.</span><span class="n">from_secret</span><span class="p">(</span><span class="n">payload</span><span class="p">[:</span><span class="mi">32</span><span class="p">])</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">BIP32DerivationError</span><span class="p">(</span>
+            <span class="s2">&quot;Invalid private key at index </span><span class="si">{}</span><span class="s2">, try the &quot;</span> <span class="s2">&quot;next one!&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="n">parent_pub</span> <span class="o">=</span> <span class="n">coincurve</span><span class="o">.</span><span class="n">PublicKey</span><span class="p">(</span><span class="n">pubkey</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">child_pub</span> <span class="o">=</span> <span class="n">coincurve</span><span class="o">.</span><span class="n">PublicKey</span><span class="o">.</span><span class="n">combine_keys</span><span class="p">([</span><span class="n">tmp_pub</span><span class="p">,</span> <span class="n">parent_pub</span><span class="p">])</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">BIP32DerivationError</span><span class="p">(</span>
+            <span class="s2">&quot;Invalid public key at index </span><span class="si">{}</span><span class="s2">, try the &quot;</span> <span class="s2">&quot;next one!&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">child_pub</span><span class="o">.</span><span class="n">format</span><span class="p">(),</span> <span class="n">payload</span><span class="p">[</span><span class="mi">32</span><span class="p">:]</span>
+</code></pre></div>
+<p>方法<code>get_extended_pubkey_from_path</code>获取指定路径下的扩展公钥，涵盖BIP中定义的<code>CKDpub</code>函数，通过父公钥得到子公钥。</p>
+<p>首先根据路径判断是否存在强化衍生，如果存在则必须通过私钥来生成公钥，故先得到扩展私钥，再调用<code>_privkey_to_pubkey</code>函数生成对应公钥，逐层衍生，最终得到对应路径下的公钥。如果不存在强化衍生，则可以只使用父公钥来得到子公钥，调用<code>_derive_public_child</code>函数，具体实现了BIP32中定义的<a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki#public-parent-key--public-child-key">Public parent key → public child key</a>衍生逻辑。</p>
+<p>整个树状密钥派生结构可如下图表示。</p>
+<p><img alt="" src="../img/2022-08-16-20-40-41.png" /></p>
+<p>其中右下角为强化衍生，其余均为常规衍生。</p>
+<h3 id="_9">代码测试<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>可使用如下代码对BIP32进行测试。</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">bip32</span><span class="w"> </span><span class="kn">import</span> <span class="n">BIP32</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">base58</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="n">seed</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x11</span><span class="s1">&#39;</span> <span class="o">*</span> <span class="mi">32</span>
+<span class="n">bip32</span> <span class="o">=</span> <span class="n">BIP32</span><span class="o">.</span><span class="n">from_seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;master private key:&#39;</span><span class="p">,</span> <span class="n">bip32</span><span class="o">.</span><span class="n">get_xpriv</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;master public key:&#39;</span><span class="p">,</span> <span class="n">bip32</span><span class="o">.</span><span class="n">get_xpub</span><span class="p">())</span>
+<span class="n">priv_key</span> <span class="o">=</span> <span class="n">bip32</span><span class="o">.</span><span class="n">get_privkey_from_path</span><span class="p">(</span><span class="s2">&quot;m/5/4&#39;&quot;</span><span class="p">)</span>
+<span class="n">pub_key</span> <span class="o">=</span> <span class="n">bip32</span><span class="o">.</span><span class="n">get_pubkey_from_path</span><span class="p">(</span><span class="s2">&quot;m/5/4&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;privkey from m/5/4</span><span class="se">\&#39;</span><span class="s1">:&#39;</span><span class="p">,</span> <span class="n">priv_key</span><span class="o">.</span><span class="n">hex</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pubkey from m/5/4</span><span class="se">\&#39;</span><span class="s1">:&#39;</span><span class="p">,</span> <span class="n">pub_key</span><span class="o">.</span><span class="n">hex</span><span class="p">())</span>
+</code></pre></div>
+<p>其中主扩展私钥和主扩展公钥的输出分别为xprv和xpub开头的字符串，这是由BIP32定义的<a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki#serialization-format">Serialization format</a>。</p>
+<h2 id="bip39">BIP39：使用助记词生成确定性钱包<a class="headerlink" href="#bip39" title="Permanent link">&para;</a></h2>
+<p>根据BIP32，用户只需要保存一个种子即可控制其对应的一系列账户。但显然一长串的十六进制种子字符串仍旧不是一个很方便的数据，不利于记录且容易记错，因此产生了<a href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki">BIP39</a>，BIP39提出使用助记词生成确定性钱包，即通过一组便于记忆的单词来生成种子，从而让种子的记忆备份更友好。</p>
+<p>BIP39说明了如何生成助记词，以及如何将生成的助记词转化成一个二进制种子。如下图所示。</p>
+<p><img alt="" src="../img/2022-08-17-01-11-00.png" /></p>
+<p>种子即可直接用于BIP32，生成管理一系列账户。</p>
+<p>下面结合python模块<a href="https://github.com/trezor/python-mnemonic">mnemonic</a>代码进行说明。</p>
+<h3 id="_10">熵生成助记词<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>熵生成助记词的基本过程如下图所示。</p>
+<p><img alt="" src="../img/2022-08-17-01-16-52.png" /></p>
+<p>首先第一步，还是要生成一个密码学安全的熵，即随机性来源，用于生成助记词，因此这个数的选取也要足够随机足够安全。</p>
+<p>熵的长度记为ENT，其取值范围为128-256位（16到32字节）。按步长32位，可为[128, 160, 192, 224, 256]（16、20、24、28、32字节）。上图的生成过程就是使用128位的熵。</p>
+<p>之后对熵进行SHA256哈希运算，并取出哈希结果的前N位（ENT/32，如：熵长128位，则N = 4）作为熵的校验和（Checksum）。</p>
+<p>然后将Checksum添加到熵的尾部，并将该新得到的序列按照11位一段进行分隔，这样对于128位熵长的序列就会生成12段（132/11=12），将每段11位对应的值映射到一个预定义的2048个单词的表中（2<sup>11</sup> = 2048），即可得到一串对应的单词，128位的熵最终得到12个单词。</p>
+<p>显然不同熵长有不同的Checksum长度，最终生成的助记词的长度也不同，具体对应关系如下表。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Entropy(bits)</th>
+<th style="text-align: center;">Checksum(bits)</th>
+<th style="text-align: center;">Entropy+Checksum(bits)</th>
+<th style="text-align: center;">Mnemonic length(words)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">128</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">132</td>
+<td style="text-align: center;">12</td>
+</tr>
+<tr>
+<td style="text-align: center;">160</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">165</td>
+<td style="text-align: center;">15</td>
+</tr>
+<tr>
+<td style="text-align: center;">192</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">198</td>
+<td style="text-align: center;">18</td>
+</tr>
+<tr>
+<td style="text-align: center;">224</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">231</td>
+<td style="text-align: center;">21</td>
+</tr>
+<tr>
+<td style="text-align: center;">256</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">264</td>
+<td style="text-align: center;">24</td>
+</tr>
+</tbody>
+</table>
+<p>mnemonic模块的实现代码如下。</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">generate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">strength</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">128</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">strength</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">128</span><span class="p">,</span> <span class="mi">160</span><span class="p">,</span> <span class="mi">192</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">256</span><span class="p">]:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;Strength should be one of the following [128, 160, 192, 224, 256], but it is not (</span><span class="si">%d</span><span class="s2">).&quot;</span>
+            <span class="o">%</span> <span class="n">strength</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_mnemonic</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">urandom</span><span class="p">(</span><span class="n">strength</span> <span class="o">//</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">to_mnemonic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">16</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">32</span><span class="p">]:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;Data length should be one of the following: [16, 20, 24, 28, 32], but it is not (</span><span class="si">%d</span><span class="s2">).&quot;</span>
+            <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="nb">bin</span><span class="p">(</span><span class="nb">int</span><span class="o">.</span><span class="n">from_bytes</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">byteorder</span><span class="o">=</span><span class="s2">&quot;big&quot;</span><span class="p">))[</span><span class="mi">2</span><span class="p">:]</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">*</span> <span class="mi">8</span><span class="p">)</span>
+        <span class="o">+</span> <span class="nb">bin</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="mi">16</span><span class="p">))[</span><span class="mi">2</span><span class="p">:]</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">256</span><span class="p">)[:</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">*</span> <span class="mi">8</span> <span class="o">//</span> <span class="mi">32</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">//</span> <span class="mi">11</span><span class="p">):</span>
+        <span class="n">idx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">11</span> <span class="p">:</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">11</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wordlist</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">language</span> <span class="o">==</span> <span class="s2">&quot;japanese&quot;</span><span class="p">:</span>  <span class="c1"># Japanese must be joined by ideographic space.</span>
+        <span class="n">result_phrase</span> <span class="o">=</span> <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\u3000</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">result_phrase</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result_phrase</span>
+</code></pre></div>
+<p>方法<code>generate</code>随机生成一组助记词，使用<code>os.urandom()</code>来生成熵，且限定了熵长为[128, 160, 192, 224, 256]。</p>
+<p>之后调用<code>to_mnemonic</code>方法根据随机熵生成助记词，实现与前面的描述一致。</p>
+<h3 id="_11">助记词生成种子<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>助记词生成种子的基本过程如下图所示。</p>
+<p><img alt="" src="../img/2022-08-17-01-47-34.png" /></p>
+<p>主要使用密钥拉伸（Key stretching）算法PBKDF2来生成种子。</p>
+<p>PBKDF2基本原理是通过一个为随机函数（如这里使用的HMAC-SHA512），把助记词明文和盐值作为输入参数，然后重复进行多次运算（这里2048轮），最终产生生成一个更长的（512位）密钥种子。</p>
+<p>密钥拉伸函数需要两个参数：助记词和盐（salt）。盐可以提高暴力破解的难度。盐由常量字符串"mnemonic"及一个可选的密码组成，不设置密码则salt就为"mnemonic"。若使用了不同的密码，则同一组助记词通过密钥拉伸函数会得到不同的种子。</p>
+<p>这里盐值中设置的密码可以作为一个额外的安全因子来保护种子，即使助记词的备份被窃取，也可以保证钱包的安全。（当然你也要记得自己加了怎样的盐）</p>
+<p>mnemonic模块的实现代码如下。</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">to_seed</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mnemonic</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">passphrase</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
+    <span class="n">mnemonic</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">normalize_string</span><span class="p">(</span><span class="n">mnemonic</span><span class="p">)</span>
+    <span class="n">passphrase</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">normalize_string</span><span class="p">(</span><span class="n">passphrase</span><span class="p">)</span>
+    <span class="n">passphrase</span> <span class="o">=</span> <span class="s2">&quot;mnemonic&quot;</span> <span class="o">+</span> <span class="n">passphrase</span>
+    <span class="n">mnemonic_bytes</span> <span class="o">=</span> <span class="n">mnemonic</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+    <span class="n">passphrase_bytes</span> <span class="o">=</span> <span class="n">passphrase</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+    <span class="n">stretched</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">pbkdf2_hmac</span><span class="p">(</span>
+        <span class="s2">&quot;sha512&quot;</span><span class="p">,</span> <span class="n">mnemonic_bytes</span><span class="p">,</span> <span class="n">passphrase_bytes</span><span class="p">,</span> <span class="n">PBKDF2_ROUNDS</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">stretched</span><span class="p">[:</span><span class="mi">64</span><span class="p">]</span>
+</code></pre></div>
+<p>方法<code>to_seed</code>根据助记词生成种子。可以看到使用的salt为"mnemonic"+passphrase，密码默认为空，最后调用pbkdf2函数生成64字节（512位）的种子。</p>
+<h3 id="_12">代码测试<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>使用如下代码对BIP32及BIP39进行测试。</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">mnemonic</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mnemonic</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bip32</span><span class="w"> </span><span class="kn">import</span> <span class="n">BIP32</span>
+
+<span class="n">mnemo</span> <span class="o">=</span> <span class="n">Mnemonic</span><span class="p">(</span><span class="s2">&quot;english&quot;</span><span class="p">)</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">mnemo</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">strength</span> <span class="o">=</span> <span class="mi">256</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mnemonic:&#39;</span><span class="p">,</span> <span class="n">words</span><span class="p">)</span>
+<span class="n">seed</span> <span class="o">=</span> <span class="n">mnemo</span><span class="o">.</span><span class="n">to_seed</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">passphrase</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;seed:&#39;</span><span class="p">,</span> <span class="n">seed</span><span class="o">.</span><span class="n">hex</span><span class="p">())</span>
+
+<span class="n">master_key</span> <span class="o">=</span> <span class="n">mnemo</span><span class="o">.</span><span class="n">to_hd_master_key</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;master_key from mnemo:&#39;</span><span class="p">,</span> <span class="n">master_key</span><span class="p">)</span>
+
+<span class="n">bip32</span> <span class="o">=</span> <span class="n">BIP32</span><span class="o">.</span><span class="n">from_seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+<span class="n">priv_key</span> <span class="o">=</span> <span class="n">bip32</span><span class="o">.</span><span class="n">get_xpriv_from_path</span><span class="p">(</span><span class="s2">&quot;m/5/4&#39;&quot;</span><span class="p">)</span>
+<span class="n">pub_key</span> <span class="o">=</span> <span class="n">bip32</span><span class="o">.</span><span class="n">get_xpub_from_path</span><span class="p">(</span><span class="s2">&quot;m/5/4&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;xpriv from m/5/4</span><span class="se">\&#39;</span><span class="s1">:&#39;</span><span class="p">,</span> <span class="n">priv_key</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;xpub from m/5/4</span><span class="se">\&#39;</span><span class="s1">:&#39;</span><span class="p">,</span> <span class="n">pub_key</span><span class="p">)</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">mnemonic: find wool wrestle thought head shoe mobile among find top eager sniff depart zero combine about else later gaze stay journey depth shaft coil</span>
+<span class="sd">seed: 963f67803815c1c97784dda18260f467e01e58b6d39171357c124fb1e2130487a94869f0b66298346a6c894797bb6bd988cf76e2bc2b85dc9dbcf0c0603116cf</span>
+<span class="sd">master_key from mnemo: xprv9s21ZrQH143K34L3cV5waZgj6FN9KznoPbNYzRJxcjMvWjZomTJN2JcJcThXK37wriXYsaxqZMVyCsfypR9AbFMZYw4p2rFRbjvEKqLfQay</span>
+<span class="sd">xpriv from m/5/4&#39;: xprv9wcQaJMMuBa2wJ33Z1Tg3HAqUE1WFYDxG5bsvuTMN1HBtLMkaVKd5U8SLz5QC4Z6kGNDEhLRKs9yhRYpLHnjmsfNeYbUteM5F1EH3oEdrjK</span>
+<span class="sd">xpub from m/5/4&#39;: xpub6AbkyotFjZ8L9n7Wf2zgQR7a2FqzezwodJXUjHrxvLpAm8gu82dsdGSvCHvVVJ4YC2B94L7xTgvcZLnSRQdJu7R9JscZxUZuKYfcAq1YXuU</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</code></pre></div>
+<p>可使用<a href="https://iancoleman.io/bip39/#english">在线助记词转换器</a>对结果进行检查.</p>
+<p><img alt="" src="../img/2022-08-17-11-52-52.png" /></p>
+<p><img alt="" src="../img/2022-08-17-11-53-11.png" /></p>
+<p>结果无误。</p>
+<h2 id="bip44">BIP44：确定性钱包的多账户层次结构<a class="headerlink" href="#bip44" title="Permanent link">&para;</a></h2>
+<p>根据BIP32，在密钥树状结构中，每个子密钥都有自己的路径，但并没有明确规定每个路径的具体使用途径，使得钱包开发者可以自定义自己的节点结构，这就很容易导致没有办法100%保证使用了HD钱包A的用户将自己的助记词/种子导入到HD钱包B中还能正常工作；也没有办法保证HD钱包支持多个链的私钥管理。</p>
+<p>由此产生了<a href="https://github.com/bitcoin/bips/blob/master/bip-0043.mediawiki">BI433</a>和<a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">BIP44</a>，提出确定性钱包的多账户层次结构，对BIP32的子节点派生路径的模式、每段的含义做出具体的规定，同时也扩展了对多币种的支持。</p>
+<p>事实上现如今的HD钱包都遵循了BIP32和BIP44的规定，也只有遵循了这两个规范的钱包应用才是大概率完全兼容的。</p>
+<h3 id="_13">路径级别<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>BIP44指定了包含5个预定义树状层级的结构：
+<div class="highlight"><pre><span></span><code>m / purpose&#39; / coin_type&#39; / account&#39; / change / address_index
+</code></pre></div></p>
+<p>m是固定的，purpose也是固定的，值为44（44'即0x8000002C），代表遵循BIP44。</p>
+<p>coin_type代表的是币种，0代表比特币，1代表比特币测试链，60代表以太坊，完整的币种列表可见<a href="https://github.com/satoshilabs/slips/blob/master/slip-0044.md">slip44</a>。</p>
+<p>account将密钥空间拆分为独立的用户身份，可自主用于不同的功能，如专门用于储蓄的账户，专门用于捐赠的账户。</p>
+<p>change值为常量0或1。常量0用于外部链，常量1用于内部链。外部链用于在钱包之外可见的地址（例如用于接收付款）。内部链用于在钱包之外不可见的地址，并用于返回交易更改。因此一般为0。</p>
+<p>address_index就是地址索引，从0开始，代表生成第几个地址。</p>
+<p>以太坊钱包也同样遵循BIP44，路径为m/44'/60'/a'/0/n，其中60即为以太币对应的coin_type，a表示帐号，n表示生成的第n个地址。</p>
+<h3 id="_14">代码测试<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>使用如下代码进行测试，根据助记词输出以太坊对应路径的账户地址。</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">mnemonic</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mnemonic</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bip32</span><span class="w"> </span><span class="kn">import</span> <span class="n">BIP32</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">coincurve</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">Crypto.Hash</span><span class="w"> </span><span class="kn">import</span> <span class="n">keccak</span>
+
+<span class="n">words</span> <span class="o">=</span> <span class="s1">&#39;your mnemonic&#39;</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_addr_by_path</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">words</span>
+    <span class="n">mnemo</span> <span class="o">=</span> <span class="n">Mnemonic</span><span class="p">(</span><span class="s2">&quot;english&quot;</span><span class="p">)</span>
+    <span class="n">seed</span> <span class="o">=</span> <span class="n">mnemo</span><span class="o">.</span><span class="n">to_seed</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">passphrase</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">bip32</span> <span class="o">=</span> <span class="n">BIP32</span><span class="o">.</span><span class="n">from_seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">privkey</span> <span class="o">=</span> <span class="n">bip32</span><span class="o">.</span><span class="n">get_privkey_from_path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="n">pubkey</span> <span class="o">=</span> <span class="n">coincurve</span><span class="o">.</span><span class="n">PublicKey</span><span class="o">.</span><span class="n">from_secret</span><span class="p">(</span><span class="n">privkey</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">compressed</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">addr</span> <span class="o">=</span> <span class="n">keccak</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">pubkey</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">digest_bits</span> <span class="o">=</span> <span class="mi">256</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">addr</span><span class="o">.</span><span class="n">digest</span><span class="p">()[</span><span class="o">-</span><span class="mi">20</span><span class="p">:]</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">get_addr_by_path</span><span class="p">(</span><span class="s2">&quot;m/44&#39;/60&#39;/0&#39;/0/0&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">get_addr_by_path</span><span class="p">(</span><span class="s2">&quot;m/44&#39;/60&#39;/0&#39;/0/1&quot;</span><span class="p">))</span>
+</code></pre></div>
+<p>将输出结果与metamask钱包中的地址进行比较，可以看出钱包中生成的第一个账户路径就是<code>m/44'/60'/0'/0/0</code>，第二个就是<code>m/44'/60'/0'/0/1</code>，以此类推。</p>
+<h2 id="_15">总结<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<p>回顾一下发展过程，为了避免管理多个账户，出现了BIP32分层确定性钱包，从而可以从一个种子生成管理无限的账户，而种子并不方便，因此出现了BIP39，可以从助记词生成种子，继而生成分层确定性钱包，更加便利，而BIP32并没有明确规定生成的树状密钥层次结构各层的具体用途，因此可能导致各钱包实现不同，也无法支持多币种，因此出现了BIP44，给树状密钥结构的路径赋予了明确的意义，也解决了多币种问题。</p>
+<p>整个流程基本如下图所示。</p>
+<p><img alt="" src="../img/2022-08-20-09-30-59.png" /></p>
+<p>最后区分一下密码的概念，助记词生成种子使用的密码passphrase用作PBKDF2算法的盐，可以有也可以没有，目前主流钱包的助记词是无密码的；keystore的密码是用于解密加密文件得到私钥的；metamask创建时输入的密码是钱包密码，用于解密存储在本地的助记词等关键数据，类似于keystore的密码。</p>
+<h2 id="_16">参考链接<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<p><a href="https://blog.csdn.net/pulong0748/article/details/109022685">详解私钥、密码、keystore和助记词</a></p>
+<p><a href="https://www.jianshu.com/p/84c7dcf3098a">ETH钱包助记词、私钥、Keystore创建原理</a></p>
+<p><a href="https://blog.csdn.net/weixin_39842528/article/details/82224907">区块链开发之确定性算法bip32，bip39，bip44</a></p>
+<p><a href="https://blog.csdn.net/tlkj6868xds/article/details/105164619">精通以太坊4：以太坊背后的密码学</a></p>
+<p><a href="https://www.cnblogs.com/kumata/p/10477369.html">比特币：账户私钥、公钥、地址的生成</a></p>
+<p><a href="https://learnblockchain.cn/2018/09/28/hdwallet">理解开发HD 钱包涉及的 BIP32、BIP44、BIP39</a></p>
+<p><a href="https://blog.csdn.net/thefist11cc/article/details/114480937">比特币钱包(3) BIP32 HD钱包之密钥树</a></p>
+<p><a href="https://stevenocean.github.io/2018/09/23/generate-hd-wallet-by-bip39.html">基于BIP-32和BIP-39规范生成HD钱包</a></p>
+<p><a href="https://www.arcblock.io/blog/zh/post/2018/12/01/hd-wallets-design-and-implementation">分层确定性钱包 HD Wallet 剖析：设计和实现</a></p>
+<p><a href="https://stevenocean.github.io/2018/04/02/about-ethereum-keystore.html">以太坊账户管理之keystore文件</a></p>
+<p><a href="https://privacypros.io/wallets/mnemonic-phrase">Understanding BIP39 and Your Mnemonic Phrase</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>
