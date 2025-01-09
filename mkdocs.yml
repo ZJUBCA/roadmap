@@ -9,7 +9,37 @@ nav:
           - 代币经济学: tech/Tokenomic/Tokenomic.pdf
           - 预言机浅析:对比Pyth和Chainlink: tech/Comparison_of_Pyth_and_Chainlink/Comparison_of_Pyth_and_Chainlink.md
           - 如何与未开源合约进行交互: tech/How_to_interact_with_unopen_source_contract/How_to_interact_with_unopen_source_contract.pdf
-    - 每周精选: weekly/weekly.md
+    - Aptos:
+          - Overview:
+                - Aptos的前世今生: Aptos/1.Overview/1.1 Aptos的前世今生/Aptos的前世今生.md
+                - Aptos技术概述: Aptos/1.Overview/1.2 Aptos技术概述/Aptos技术概述.md
+                - Aptos生态介绍: Aptos/1.Overview/1.3 Aptos生态介绍/Aptos生态介绍.md
+          - Aptos生态项目分析:
+                - Chingari:
+                      - Chingari技术分析: Aptos/2.Aptos生态项目分析/2.1 Chingari/2.1.1 Chingari技术分析/Chingari技术分析.md
+                      - Chingari投研分析: Aptos/2.Aptos生态项目分析/2.1 Chingari/2.1.2 Chingari投研分析/Chingari投研分析.md
+                - Amnis Finance:
+                      - Amnis Finance技术分析: Aptos/2.Aptos生态项目分析/2.2 Amnis Finance/2.2.1 Amnis Finance技术分析/Amnis Finance技术分析.md
+                      - Amnis Finance投研分析: Aptos/2.Aptos生态项目分析/2.2 Amnis Finance/2.2.2 Amnis Finance投研分析/Amnis Finance投研分析.md
+                - Mereo:
+                      - Mereo技术分析: Aptos/2.Aptos生态项目分析/2.3 Mereo/2.3.1 Mereo技术分析/Mereo技术分析.md
+                      - Mereo投研分析: Aptos/2.Aptos生态项目分析/2.3 Mereo/2.3.2 Mereo投研分析/Mereo投研分析.md
+                - Merkle Trade:
+                      - Merkle Trade技术分析: Aptos/2.Aptos生态项目分析/2.4 Merkle Trade/2.4.1 Merkle Trade技术分析/Merkle Trade技术分析.md
+                      - Merkle Trade投研分析: Aptos/2.Aptos生态项目分析/2.4 Merkle Trade/2.4.2 Merkle Trade投研分析/Merkle Trade投研分析.md
+                - Martian:
+                      - Martian技术分析: Aptos/2.Aptos生态项目分析/2.5 Martian/2.5.1 Martian技术分析/Martian技术分析.md 
+                      - Martian投研分析: Aptos/2.Aptos生态项目分析/2.5 Martian/2.5.2 Martian投研分析/Martian投研分析.md
+                - Shinami:
+                      - Shinami技术分析: Aptos/2.Aptos生态项目分析/2.6 Shinami/2.6.1 Shinami技术分析/Shinami技术分析.md
+                      - Shinami投研分析: Aptos/2.Aptos生态项目分析/2.6 Shinami/2.6.2 Shinami投研分析/Shinami投研分析.md
+          - Aptos黑客松获奖项目分析:
+                - 历次黑客松赛事盘点: Aptos/3.Aptos黑客松获奖项目分析/3.1 历次黑客松赛事盘点/历次黑客松赛事盘点.md
+                - Defi&RWA赛道: Aptos/3.Aptos黑客松获奖项目分析/3.2 Defi&RWA赛道/Aptos全球黑客松赛道分享(DeFi&RWA).pdf
+                - Gaming&NFTs赛道: Aptos/3.Aptos黑客松获奖项目分析/3.3 Gaming&NFTs赛道/Aptos全球黑客松赛道分享(Gaming&NFTs).pdf
+                - AI&Depin赛道: Aptos/3.Aptos黑客松获奖项目分析/3.4 AI&Depin赛道/Aptos全球黑客松赛道分享(AI&DePIN).pdf
+                - SocialFi赛道: Aptos/3.Aptos黑客松获奖项目分析/3.5 SocialFi赛道/Aptos全球黑客松赛道分享(SocialFi).pdf
+                - Others赛道: Aptos/3.Aptos黑客松获奖项目分析/3.6 Others赛道/Aptos全球黑客松赛道分享(Others).pdf
     - ETH:
           - 学习路径: eth/eth.md
           - 开发教程: eth/eth_dapp.md
